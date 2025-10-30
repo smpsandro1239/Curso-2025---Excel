@@ -1,3 +1,4 @@
+
 {
   "id": "7",
   "title": "Colaboração & Automização",
@@ -8,8 +9,9 @@
       "id": "7.1",
       "title": "Comentários e @menções",
       "illustration": "assets/images/modules/07/lessons/01-illust.svg",
+      "illustrationAlt": "Célula do Excel com indicador roxo de comentário e notificação de @menção. Excel cell with purple comment indicator and @mention notification.",
       "theory": "Na sua central de comando, a comunicação é chave. Os comentários são o sistema de intercomunicação do Excel: permitem-lhe deixar notas, fazer perguntas e ter conversas sobre dados específicos sem nunca alterar o conteúdo da célula. Usar uma '@menção' é como chamar um colega específico pelo altifalante, garantindo que ele recebe uma notificação.",
-      "quickNote": "Pode ver todos os comentários de uma folha de cálculo de uma só vez indo ao separador 'Rever' e clicando em 'Mostrar Comentários'. Isto abre um painel que lista todas as conversas ativas.",
+      "quickNote": "Use o atalho Shift+F2 (ou ⌘+Shift+F2 no Mac) para adicionar um comentário rapidamente. Para ver todos os comentários de uma folha, vá ao separador 'Rever' e clique em 'Mostrar Comentários' (atalho Win: Alt+R, P).",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
@@ -48,17 +50,28 @@
         }
       ],
       "challenge": {
-        "description": "Numa folha de orçamento partilhada, adicione um comentário à célula da despesa 'Marketing', perguntando por que motivo o valor deste mês está tão acima da média. Marque a conversa como resolvida depois de receber uma resposta imaginária.",
+        "description": "Numa folha de orçamento partilhada, adicione um comentário à célula da despesa 'Marketing', perguntando por que motivo o valor deste mês está tão acima da média. Marque a conversa como resolvida depois de receber uma resposta imaginária. Bónus: Noutro comentário, adicione uma @menção e anexe uma hiperligação para um documento de apoio (ex: www.exemplo.com).",
         "initialCode": "Despesa | Valor\nVendas | 1.200€\nMarketing | 3.500€\nRH | 800€",
-        "solution": "1. Clique com o botão direito na célula com '3.500€'. \n2. Escolha 'Novo Comentário'. \n3. Escreva a sua pergunta. \n4. Para resolver, clique nos três pontos no canto do comentário e selecione 'Resolver thread'."
-      }
+        "solution": "1. Clique com o botão direito na célula com '3.500€'. \n2. Escolha 'Novo Comentário'. \n3. Escreva a sua pergunta. \n4. Para resolver, clique nos três pontos no canto do comentário e selecione 'Resolver thread'.\nBónus: Crie um novo comentário, digite '@Nome' e depois cole o link. O Excel irá torná-lo clicável."
+      },
+      "glossary": [
+        { "word": "Comentário / Comment", "def": "Caixa de conversação ligada a uma célula." },
+        { "word": "@Menção / @Mention", "def": "Etiqueta de utilizador que gera notificação." },
+        { "word": "Nota / Note", "def": "Caixa amarela estática (sistema legado)." },
+        { "word": "Resolver / Resolve", "def": "Marca conversação como concluída (pode reabrir)." },
+        { "word": "Indicador Roxo / Purple Indicator", "def": "Sinal de que há comentário na célula." },
+        { "word": "Painel de Comentários / Comments Pane", "def": "Lista todas as conversas da folha." },
+        { "word": "Shift + F2 (Mac: ⌘ + Shift + F2)", "def": "Atalho para adicionar um novo comentário." },
+        { "word": "Cloud / Cloud", "def": "Ficheiro deve estar em OneDrive/SharePoint para notificações." }
+      ]
     },
     {
       "id": "7.2",
       "title": "Proteger abas e células",
       "illustration": "assets/images/modules/07/lessons/02-illust.svg",
+      "illustrationAlt": "Folha de Excel com células de input desbloqueadas e folha protegida, com as células de fórmulas bloqueadas. Excel sheet with input cells unlocked and sheet protected, formula cells locked.",
       "theory": "Numa central de comando, nem todos podem aceder a todos os botões. Proteger folhas e células é como trancar as portas das salas críticas e colocar capas protetoras sobre os botões que não devem ser tocados. Garante que os utilizadores só podem inserir dados onde é suposto, prevenindo a destruição acidental de fórmulas e relatórios.",
-      "quickNote": "Por defeito, TODAS as células numa folha do Excel estão no estado 'Bloqueado'. A proteção só tem efeito depois de ir ao separador 'Rever' e clicar em 'Proteger Folha'. O truque é desbloquear as células de input ANTES de proteger a folha.",
+      "quickNote": "Por defeito, TODAS as células numa folha do Excel estão no estado 'Bloqueado'. A proteção só tem efeito depois de ir ao separador 'Rever' e clicar em 'Proteger Folha' (atalho Win: Alt, R, P, P). O truque é desbloquear as células de input ANTES de proteger a folha.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
@@ -100,14 +113,25 @@
         "description": "Tem um modelo de fatura. Desbloqueie as células onde o utilizador deve inserir o nome do cliente, os itens e as quantidades. De seguida, proteja a folha para que as fórmulas de cálculo, o logótipo e a formatação não possam ser alterados.",
         "initialCode": "Modelo de fatura com células de input e células de cálculo.",
         "solution": "1. Selecione todas as células de input (ex: nome do cliente, descrição dos itens, etc.) mantendo a tecla Ctrl pressionada. \n2. Pressione 'Ctrl + 1', vá ao separador 'Proteção' e desmarque 'Bloqueado'. Clique em OK. \n3. Vá ao separador 'Rever' > 'Proteger Folha' e clique em OK."
-      }
+      },
+      "glossary": [
+        { "word": "Bloqueado / Locked", "def": "Estado padrão de uma célula; só tem efeito após proteger a folha." },
+        { "word": "Desbloqueado / Unlocked", "def": "Permite a edição da célula mesmo com a folha protegida." },
+        { "word": "Proteger Folha / Protect Sheet", "def": "Comando no separador 'Rever' que ativa a proteção na folha." },
+        { "word": "Ctrl + 1", "def": "Atalho para abrir a janela 'Formatar Células', onde se encontra o separador 'Proteção'." },
+        { "word": "Alt + R, P, P (Win)", "def": "Atalho de teclado para proteger a folha." },
+        { "word": "Palavra-passe / Password", "def": "Código opcional para desproteger a folha. Se for esquecida, pode ser muito difícil de recuperar." },
+        { "word": "Células de Input / Input Cells", "def": "Células que devem ser desbloqueadas para permitir a introdução de dados pelo utilizador." },
+        { "word": "Células de Fórmula / Formula Cells", "def": "Células que contêm cálculos e que, por norma, devem permanecer bloqueadas." }
+      ]
     },
     {
       "id": "7.3",
       "title": "Gravar macro simples (formatação)",
       "illustration": "assets/images/modules/07/lessons/03-illust.svg",
+      "illustrationAlt": "Folha de Excel com um botão de forma que executa uma macro para limpar células de input. Excel sheet with shape button that runs a macro to clear input cells.",
       "theory": "Uma macro é um robot assistente na sua central de comando. Em vez de fazer uma sequência de tarefas repetitivas manualmente, você faz uma vez, enquanto o 'Gravador de Macros' observa e anota cada passo. Depois, pode atribuir essa gravação a um botão que, quando pressionado, executa toda a sequência de tarefas instantaneamente.",
-      "quickNote": "Para usar macros, precisa de ativar o separador 'Programador'. Vá a 'Ficheiro' > 'Opções' > 'Personalizar Faixa de Opções' e marque a caixa 'Programador'.",
+      "quickNote": "Para usar macros, precisa de ativar o separador 'Programador'. Vá a 'Ficheiro' > 'Opções' > 'Personalizar Faixa de Opções' e marque a caixa 'Programador'. Dica de teclado (Windows): use Alt+W, M, R para abrir o gravador de macros.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
@@ -146,17 +170,28 @@
         }
       ],
       "challenge": {
-        "description": "Grave uma macro que limpa o conteúdo de um formulário. A macro deve selecionar o intervalo de células de input (ex: B2:B10) e apagar o seu conteúdo, deixando o formulário pronto para ser preenchido novamente.",
+        "description": "Grave uma macro que limpa o conteúdo de um formulário. A macro deve selecionar o intervalo de células de input (ex: B2:B10) e apagar o seu conteúdo, deixando o formulário pronto para ser preenchido novamente. Bónus (avançado): para evitar acidentes, pesquise como adicionar um 'InputBox' ao código VBA da macro para pedir uma confirmação antes de apagar.",
         "initialCode": "Formulário com dados preenchidos.",
         "solution": "1. Ative o separador 'Programador'. \n2. Clique em 'Gravar Macro', dê-lhe um nome (ex: 'LimparFormulario'). \n3. Selecione o intervalo B2:B10. \n4. Pressione a tecla 'Delete'. \n5. Clique em 'Parar Gravação'. \n6. (Opcional) Atribua a macro a um botão 'Limpar'."
-      }
+      },
+      "glossary": [
+        { "word": "Macro / Macro", "def": "Sequência gravada de comandos." },
+        { "word": "Gravador de Macros / Macro Recorder", "def": "Ferramenta que captura acções." },
+        { "word": ".xlsm / .xlsm", "def": "Formato com permissão para macros." },
+        { "word": "Referências Relativas / Relative References", "def": "Grava deslocamentos em vez de células fixas." },
+        { "word": "Botão de Forma / Shape Button", "def": "Forma que pode executar macro." },
+        { "word": "Programador / Developer", "def": "Separador que deve ser activado." },
+        { "word": "Guardar Como / Save As", "def": "Necessário para escolher .xlsm." },
+        { "word": "Alt + W, M, R", "def": "Atalho para gravador (Win)." }
+      ]
     },
     {
       "id": "7.4",
       "title": "Power Query – importar CSV",
       "illustration": "assets/images/modules/07/lessons/04-illust.svg",
+      "illustrationAlt": "Editor do Power Query a mostrar a divisão de uma coluna por delimitador em Nome Próprio e Apelido. Power Query Editor showing Split Column by Delimiter into First Name and Last Name.",
       "theory": "O Power Query é a sala de triagem e descontaminação da sua central de comando. Em vez de trazer dados 'sujos' diretamente para a sua base, o Power Query interceta-os na fronteira. Permite-lhe limpá-los, moldá-los e transformá-los seguindo um conjunto de regras que define uma vez. Depois, apenas os dados perfeitos e estruturados têm permissão para entrar na sua folha de cálculo.",
-      "quickNote": "Cada passo de transformação que aplica no editor do Power Query é gravado numa lista. Pode voltar atrás, editar ou apagar qualquer passo sem afetar os outros. É um processo de limpeza de dados não-destrutivo.",
+      "quickNote": "Cada passo de transformação que aplica no editor do Power Query é gravado numa lista. Pode voltar atrás, editar ou apagar qualquer passo sem afetar os outros. É um processo de limpeza de dados não-destrutivo. Dica de teclado (Windows): use a sequência Alt, A, P, T, C para importar de Texto/CSV.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
@@ -195,10 +230,21 @@
         }
       ],
       "challenge": {
-        "description": "Importe um ficheiro CSV que tem uma coluna 'Nome Completo'. Use o editor do Power Query para dividir essa coluna em duas: 'Nome Próprio' e 'Apelido', usando o espaço como delimitador. Carregue o resultado final para uma nova folha.",
-        "initialCode": "Ficheiro CSV com coluna 'Nome Completo':\n'Ana Silva'\n'Bruno Costa'\n'Carla Mendes'",
-        "solution": "1. Inicie a importação do CSV e clique em 'Transformar Dados'. \n2. No editor do Power Query, selecione a coluna 'Nome Completo'. \n3. Vá ao separador 'Transformar' > 'Dividir Coluna' > 'Por Delimitador'. \n4. Escolha 'Espaço' como delimitador e clique em OK. \n5. Renomeie as novas colunas. \n6. Clique em 'Fechar e Carregar'."
-      }
+        "description": "Importe um ficheiro CSV que tem uma coluna 'Nome Completo'. Use o editor do Power Query para dividir essa coluna em duas: 'Nome Próprio' e 'Apelido', usando o espaço como delimitador. Bónus: Adicione um passo para alterar o tipo de dados de uma coluna de texto para número.",
+        "initialCode": "Ficheiro CSV com colunas 'Nome Completo' e 'ID_Texto':\n'Ana Silva';'00123'\n'Bruno Costa';'00124'\n'Carla Mendes';'00125'",
+        "solution": "1. Inicie a importação do CSV e clique em 'Transformar Dados'. \n2. No editor do Power Query, selecione a coluna 'Nome Completo'. \n3. Vá ao separador 'Transformar' > 'Dividir Coluna' > 'Por Delimitador'. \n4. Escolha 'Espaço' como delimitador e clique em OK. \n5. Renomeie as novas colunas. \nBónus:\n1. Selecione a coluna 'ID_Texto'.\n2. Vá ao separador 'Transformar', clique em 'Tipo de Dados' e escolha 'Número Inteiro'.\n3. Clique em 'Fechar e Carregar'."
+      },
+      "glossary": [
+        { "word": "Power Query / Power Query", "def": "Motor de ETL integrado no Excel." },
+        { "word": "ETL / ETL", "def": "Extract, Transform, Load (extrair, transformar, carregar)." },
+        { "word": "CSV / CSV", "def": "Ficheiro de valores separados por vírgula." },
+        { "word": "Editor do Power Query / Power Query Editor", "def": "Janela onde se aplicam transformações." },
+        { "word": "Passos / Steps", "def": "Lista cronológica de transformações." },
+        { "word": "Atualizar / Refresh", "def": "Reaplica todos os passos com novos dados." },
+        { "word": "Delimitador / Delimiter", "def": "Caractere que separa colunas (ex: espaço)." },
+        { "word": "Alt + A, P, T, C", "def": "Atalho para importar texto/CSV (Win)." },
+        { "word": "Não-destrutivo / Non-destructive", "def": "Transformações não alteram origem." }
+      ]
     },
     {
       "id": "7.5",
