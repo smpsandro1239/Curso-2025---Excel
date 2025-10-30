@@ -8,8 +8,9 @@
       "id": "6.1",
       "title": "Gráfico de colunas vs. de barras",
       "illustration": "assets/images/modules/06/lessons/01-illust.svg",
+      "illustrationAlt": "Gráfico de barras do Excel ordenado de forma decrescente a mostrar a população de 4 cidades. Excel bar chart sorted descending showing population of 4 cities.",
       "theory": "Pense nos gráficos como os diferentes canais da sua 'TV de dados'. O gráfico de colunas é o seu canal de notícias do tempo, perfeito para mostrar a evolução de algo ao longo de períodos (ex: vendas por mês). O gráfico de barras é o seu canal de competições desportivas, ideal para comparar participantes (ex: vendas por produto), especialmente se os nomes forem longos.",
-      "quickNote": "Selecione os seus dados e pressione 'Alt + F1'. O Excel criará instantaneamente um gráfico de colunas padrão numa nova folha. É o atalho mais rápido para começar a visualizar.",
+      "quickNote": "Selecione os seus dados e pressione 'Alt + F1' (ou ⌘ + F1 no Mac) para criar instantaneamente um gráfico de colunas padrão na mesma folha. Para ordenar um gráfico, a forma mais fácil é ordenar os dados de origem: clique com o botão direito na coluna de valores e escolha 'Ordenar'.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
@@ -44,14 +45,23 @@
           "question": "Qual o atalho para criar um gráfico padrão a partir de dados selecionados?",
           "options": ["Ctrl + G", "Alt + C", "Shift + F1", "Alt + F1"],
           "correctAnswer": "Alt + F1",
-          "feedback": "O atalho 'Alt + F1' cria instantaneamente um gráfico de colunas (o tipo padrão) numa nova folha de cálculo com base nos dados selecionados, sendo a forma mais rápida de iniciar uma visualização."
+          "feedback": "O atalho 'Alt + F1' cria instantaneamente um gráfico de colunas (o tipo padrão) na mesma folha de cálculo com base nos dados selecionados, sendo a forma mais rápida de iniciar uma visualização."
         }
       ],
       "challenge": {
-        "description": "Crie um gráfico de barras que compare a população de quatro cidades. Ordene o gráfico do maior para o menor para facilitar a leitura.",
+        "description": "Crie um gráfico de barras que compare a população de quatro cidades. Ordene os dados de origem do maior para o menor para que o gráfico fique mais fácil de ler (dica de alto contraste: use o 'Estilo de Gráfico 2'). Bónus: Adicione etiquetas de dados às barras para mostrar os valores exatos.",
         "initialCode": "Cidade | População\nLisboa | 545.000\nPorto | 231.000\nBraga | 193.000\nFaro | 67.000",
-        "solution": "1. Selecione os dados. \n2. Vá a 'Inserir' > 'Gráficos' e escolha um gráfico de barras 2D. \n3. Para ordenar, volte aos dados, clique com o botão direito na coluna da população e escolha 'Ordenar > Do Maior ao Menor'. O gráfico atualizar-se-á automaticamente."
-      }
+        "solution": "1. Selecione os dados. \n2. Vá a 'Inserir' > 'Gráficos' e escolha um gráfico de barras 2D. \n3. Para ordenar, clique com o botão direito na coluna da população e escolha 'Ordenar > Do Maior ao Menor'. O gráfico atualizar-se-á automaticamente. \nBónus: Clique no gráfico, depois no sinal '+' que aparece no canto superior direito e marque a caixa 'Etiquetas de Dados'."
+      },
+      "glossary": [
+        { "word": "Gráfico de Colunas / Column Chart", "def": "Barras verticais; ideal para séries temporais." },
+        { "word": "Gráfico de Barras / Bar Chart", "def": "Barras horizontais; ideal para comparação categorial." },
+        { "word": "Alt + F1 / Alt + F1", "def": "Atalho para criar gráfico de colunas na mesma folha." },
+        { "word": "Ordenar / Sort", "def": "Organizar categorias por valor (crescente ou decrescente)." },
+        { "word": "Categorias / Categories", "def": "Itens que pretendemos comparar." },
+        { "word": "Valores / Values", "def": "Números que determinam o comprimento das barras." },
+        { "word": "Sobreposição / Overlap", "def": "Problema visual quando há demasiadas categorias." }
+      ]
     },
     {
       "id": "6.2",
