@@ -1,4 +1,3 @@
-
 {
   "id": "1",
   "title": "Introdução ao Excel",
@@ -10,7 +9,7 @@
       "title": "O que é o Excel?",
       "illustration": "assets/images/modules/01/lessons/01-illust.svg",
       "theory": "Pense no Excel como um super-caderno digital. Em vez de páginas de papel, tem uma grelha infinita de células onde pode escrever texto, números e, o mais importante, criar fórmulas que fazem cálculos automáticos. É a ferramenta definitiva para organizar, analisar e visualizar qualquer tipo de informação.",
-      "quickNote": "Cada ficheiro do Excel é chamado de 'Pasta de Trabalho' e pode conter várias 'Folhas de cálculo', como separadores num caderno.",
+      "quickNote": "Cada ficheiro do Excel é chamado de 'Pasta de Trabalho'. Atalhos úteis: 'Ctrl+Shift+4' aplica o formato Moeda; 'Tab' e 'Shift+Tab' saltam entre células.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
@@ -19,13 +18,13 @@
         },
         {
           "title": "Exemplo 2 – O Caso Comum",
-          "description": "Inserir um número e formatá-lo como moeda. Para outras moedas, pode usar a pequena seta junto ao botão 'Moeda'.",
+          "description": "Inserir um número e formatá-lo como moeda. Clique na seta ao lado do botão Moeda para trocar rapidamente entre símbolos monetários comuns.",
           "code": "1. Na célula B1, digite: 1234,5\n2. No separador 'Base', no grupo 'Número', escolha 'Moeda'.\n3. O Excel exibe: 1.234,50 €"
         },
         {
           "title": "Exemplo 3 – A Armadilha",
           "description": "Digitar '1/4' à espera de uma fração, mas o Excel converte para uma data.",
-          "code": "PROBLEMA: Ao digitar 1/4, o Excel converte para '01-abr'.\nSOLUÇÃO: Para forçar o formato de texto, digite um apóstrofo antes: '1/4"
+          "code": "PROBLEMA: Ao digitar 1/4, o Excel converte para '01-abr'.\nSOLUÇÃO 1 (Texto): Para forçar o formato de texto, digite um apóstrofo antes: '1/4\nSOLUÇÃO 2 (Fórmula): Use a função =TEXTO(1/4; \"#/#\") para formatar o valor como uma fração."
         }
       ],
       "quiz": [
