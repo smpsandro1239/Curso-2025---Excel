@@ -1,0 +1,253 @@
+{
+  "id": "2",
+  "title": "Formatação & Estética",
+  "bigIdea": "Photoshop das tabelas",
+  "cover": "assets/images/modules/02/cover.svg",
+  "lessons": [
+    {
+      "id": "2.1",
+      "title": "Formatos de Célula",
+      "illustration": "assets/images/modules/02/lessons/01-illust.svg",
+      "theory": "Os formatos de célula são como as 'lentes' que usa para ver os seus dados. O número '45321' é sempre o mesmo, mas com a lente 'Data' torna-se '21/02/2024', e com a lente 'Moeda' fica '45.321,00 €'. A formatação muda a aparência, não o valor real que o Excel armazena.",
+      "quickNote": "Use o atalho 'Ctrl + 1' para abrir a janela 'Formatar Células', o centro de controlo para toda a formatação. É o atalho mais importante deste módulo!",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Converter um número decimal para percentagem.",
+          "code": "Célula A1 contém: 0.75\n---\nAplicar formato 'Percentagem'\n---\nResultado: A célula exibe '75%'"
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Exibir um número de telefone com indicativo e espaçamento.",
+          "code": "Célula A1 contém: 912345678\n---\nAplicar formato personalizado: +351 ### ### ###\n---\nResultado: A célula exibe '+351 912 345 678'"
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Ver '#####' numa célula.",
+          "code": "PROBLEMA: Uma célula com uma data longa ou um número grande exibe '#######'.\nSOLUÇÃO: Isto não é um erro! Significa que a coluna não é larga o suficiente. Faça duplo clique na borda direita do cabeçalho da coluna para ajustar automaticamente."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Qual é o atalho de teclado mais rápido para abrir o menu 'Formatar Células'?",
+          "options": ["Alt + 1", "Shift + F", "Ctrl + 1", "F2"],
+          "correctAnswer": "Ctrl + 1",
+          "feedback": "O atalho 'Ctrl + 1' abre a janela 'Formatar Células', que é o painel de controlo completo para todas as opções de formatação de número, alinhamento, tipo de letra, borda, preenchimento e proteção."
+        },
+        {
+          "question": "Se vir o número '45000' numa célula, o que pode ele representar se o formato correto for 'Data'?",
+          "options": ["Um valor monetário", "Uma data no ano de 2023", "Um código postal", "Um erro de fórmula"],
+          "correctAnswer": "Uma data no ano de 2023",
+          "feedback": "O Excel gere datas como números de série, contando os dias desde 01/01/1900. O número 45000, quando formatado como data, corresponde a 18 de março de 2023. A formatação apenas muda a forma como vemos o valor."
+        },
+        {
+          "question": "Como pode exibir um número como '007' numa célula sem que o Excel remova os zeros à esquerda?",
+          "options": ["Usar o formato de Contabilidade", "Formatar a célula como Texto antes de digitar", "Colocar um espaço antes do número", "Não é possível"],
+          "correctAnswer": "Formatar a célula como Texto antes de digitar",
+          "feedback": "Para manter zeros à esquerda (como em códigos postais ou números de identificação), deve primeiro formatar a célula como 'Texto'. Isto instrui o Excel a não interpretar o valor como um número e a não remover os zeros iniciais."
+        }
+      ],
+      "challenge": {
+        "description": "Dada uma lista de números, formate a primeira coluna para ter sempre duas casas decimais, a segunda como Moeda (€ com o símbolo à direita) e a terceira como Percentagem com uma casa decimal.",
+        "initialCode": "Coluna A: 123.456\nColuna B: 500\nColuna C: 0.8765",
+        "solution": "1. Selecione a coluna A > Ctrl+1 > Número > Posições decimais: 2.\n2. Selecione a coluna B > Ctrl+1 > Moeda > Símbolo: € (Português).\n3. Selecione a coluna C > Ctrl+1 > Percentagem > Posições decimais: 1."
+      }
+    },
+    {
+      "id": "2.2",
+      "title": "Cores, Gradientes e Bordas",
+      "illustration": "assets/images/modules/02/lessons/02-illust.svg",
+      "theory": "Se a formatação é o 'Photoshop das tabelas', então as cores, gradientes e bordas são os seus pincéis e canetas. Use-os para guiar o olhar do leitor, criar secções lógicas e dar vida a uma grelha de dados monótona, transformando-a num relatório claro e apelativo.",
+      "quickNote": "Use cores de forma consistente. Por exemplo, use sempre um tom de verde para valores positivos/bons e um tom de vermelho para negativos/maus. O nosso cérebro processa esta informação visual muito mais rápido do que lê os números.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Mudar a cor de fundo de uma linha de cabeçalho.",
+          "code": "1. Selecione as células do cabeçalho (ex: A1:C1).\n2. No separador 'Base', use o 'Balde de Tinta' para escolher um fundo azul-escuro.\n3. Use a 'Cor do Tipo de Letra' para mudar o texto para branco."
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Criar uma borda dupla por baixo de uma linha de totais.",
+          "code": "1. Selecione a célula ou linha de totais.\n2. No separador 'Base', clique na seta ao lado do ícone 'Bordas'.\n3. Escolha 'Borda Dupla Inferior'."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Usar demasiadas cores garridas ou bordas em todas as células.",
+          "code": "PROBLEMA: Tabelas com muitas cores e todas as bordas ativadas são confusas e cansativas de ler.\nBOA PRÁTICA: Use uma paleta de cores limitada (2-3 cores) e aplique bordas apenas para separar secções principais (cabeçalho, corpo, totais). Menos é mais."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Onde se encontram as opções de cor de preenchimento ('balde de tinta') e cor do tipo de letra?",
+          "options": ["No separador 'Inserir', grupo 'Gráficos'", "No separador 'Base', grupo 'Tipo de Letra'", "No separador 'Esquema de Página', grupo 'Temas'", "Clicando com o botão direito > Opções da Célula"],
+          "correctAnswer": "No separador 'Base', grupo 'Tipo de Letra'",
+          "feedback": "As opções de formatação mais comuns, como a cor de preenchimento (balde de tinta) e a cor do tipo de letra, estão localizadas no separador 'Base', dentro do grupo 'Tipo de Letra' para acesso rápido."
+        },
+        {
+          "question": "Qual é o objetivo principal de usar bordas numa tabela?",
+          "options": ["Tornar o ficheiro mais pesado", "Aumentar o número de células", "É puramente decorativo e sem função", "Separar e agrupar dados visualmente para facilitar a leitura"],
+          "correctAnswer": "Separar e agrupar dados visualmente para facilitar a leitura",
+          "feedback": "O uso de bordas tem um propósito funcional: criar uma estrutura visual que ajuda a separar cabeçalhos, totais e secções, guiando o olhar do leitor e tornando a tabela mais fácil de interpretar."
+        },
+        {
+          "question": "Uma boa prática de design ao usar cores num relatório é:",
+          "options": ["Usar uma cor diferente para cada linha para ser mais criativo", "Usar as cores mais brilhantes possíveis para chamar a atenção", "Usar uma paleta de cores limitada e com significado (ex: verde para positivo)", "Nunca usar cor, apenas tons de cinzento"],
+          "correctAnswer": "Usar uma paleta de cores limitada e com significado (ex: verde para positivo)",
+          "feedback": "Um design de relatório eficaz usa as cores com um propósito. Uma paleta limitada e consistente (ex: verde para valores positivos, vermelho para negativos) transmite informação de forma instantânea e profissional, ao contrário do uso excessivo de cores."
+        }
+      ],
+      "challenge": {
+        "description": "Crie um cabeçalho para uma tabela de 3 colunas. Centre o texto, coloque-o a negrito, mude a cor de fundo para um cinzento-escuro e a cor do texto para branco. Adicione uma borda inferior espessa para o separar dos dados.",
+        "initialCode": "A1: Cabeçalho 1 | B1: Cabeçalho 2 | C1: Cabeçalho 3",
+        "solution": "1. Selecione as células do cabeçalho. \n2. No separador 'Base', clique em 'Negrito' e 'Centrar'. \n3. Use o 'balde de tinta' para a cor de fundo e o 'A' com barra de cor para o texto. \n4. No menu de Bordas, escolha 'Borda Inferior Espessa'."
+      }
+    },
+    {
+      "id": "2.3",
+      "title": "Estilos de Tabela Pré-definidos",
+      "illustration": "assets/images/modules/02/lessons/03-illust.svg",
+      "theory": "Imagine ter um designer profissional a arrumar a sua tabela com um único clique. É isso que os 'Estilos de Tabela' fazem. Eles não só aplicam cores e bordas de forma consistente, como também adicionam super-poderes aos seus dados, como filtros, ordenação e totais automáticos.",
+      "quickNote": "Converta sempre os seus dados brutos numa Tabela oficial do Excel (atalho 'Ctrl + T') antes de começar a trabalhar. É o passo mais importante para se tornar eficiente e evitar muitos erros comuns.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Aplicar um estilo de tabela a um conjunto de dados.",
+          "code": "1. Selecione uma célula nos seus dados.\n2. Pressione Ctrl + T e confirme com Enter.\n3. Instantaneamente, os dados têm filtros e linhas coloridas alternadas."
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Ativar a 'Linha de Totais' numa tabela.",
+          "code": "1. Clique em qualquer célula da sua Tabela formatada.\n2. Aparecerá um novo separador: 'Design da Tabela'.\n3. Nesse separador, marque a caixa 'Linha de Totais'. Uma nova linha com totais aparece no final."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Adicionar uma nova linha de dados 'fora' da tabela.",
+          "code": "PROBLEMA: Insere novos dados na linha imediatamente abaixo da Tabela, mas a formatação não se atualiza.\nSOLUÇÃO: Comece a digitar na célula logo abaixo da Tabela. Ela expande-se automaticamente, herdando toda a formatação e fórmulas. Esta é uma das suas maiores vantagens."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Qual é o atalho para formatar um intervalo de dados como uma Tabela oficial do Excel?",
+          "options": ["Ctrl + F", "Alt + T", "Shift + Enter", "Ctrl + T"],
+          "correctAnswer": "Ctrl + T",
+          "feedback": "O atalho 'Ctrl + T' converte um intervalo de dados normal numa Tabela oficial do Excel. Esta ação adiciona funcionalidades como filtros, estilos e expansão automática, sendo um passo fundamental para trabalhar com dados de forma eficiente."
+        },
+        {
+          "question": "Qual das seguintes é uma vantagem de usar 'Formatar como Tabela'?",
+          "options": ["Filtros automáticos adicionados aos cabeçalhos", "A Tabela expande-se automaticamente para novos dados", "Estilos visuais fáceis de aplicar e mudar", "Todas as anteriores"],
+          "correctAnswer": "Todas as anteriores",
+          "feedback": "Formatar como Tabela oferece múltiplas vantagens: adiciona filtros aos cabeçalhos, aplica estilos visuais facilmente e, crucialmente, expande-se de forma automática para incluir novas linhas ou colunas, mantendo a formatação e as fórmulas consistentes."
+        },
+        {
+          "question": "Quando seleciona uma célula dentro de uma Tabela, que novo separador contextual aparece na Faixa de Opções?",
+          "options": ["O separador 'Dados da Tabela'", "O separador 'Formatação da Tabela'", "O separador 'Design da Tabela'", "Nenhum separador novo aparece"],
+          "correctAnswer": "O separador 'Design da Tabela'",
+          "feedback": "Quando uma célula dentro de uma Tabela está selecionada, o Excel mostra o separador contextual 'Design da Tabela' na Faixa de Opções. Este separador contém ferramentas exclusivas para gerir a Tabela."
+        }
+      ],
+      "challenge": {
+        "description": "Pegue numa lista simples de dados de vendas (Produto, Quantidade, Preço). Converta-a para uma Tabela oficial. Mude o estilo para um da sua preferência (por exemplo, um com tons de verde) e ative a Linha de Totais para mostrar a SOMA da coluna 'Quantidade'.",
+        "initialCode": "Produto | Quantidade | Preço\nMaçã | 100 | 1.5\nPera | 150 | 1.2\nLaranja | 200 | 0.8",
+        "solution": "1. Clique numa célula dos dados. \n2. Pressione 'Ctrl + T', e depois Enter. \n3. No novo separador 'Design da Tabela', escolha um estilo. \n4. No mesmo separador, marque a caixa 'Linha de Totais'. \n5. Clique na célula do total por baixo de 'Quantidade' e certifique-se que 'Soma' está selecionada."
+      }
+    },
+    {
+      "id": "2.4",
+      "title": "Formatação Condicional",
+      "illustration": "assets/images/modules/02/lessons/04-illust.svg",
+      "theory": "A Formatação Condicional é o 'detetive' do seu Excel. Você dá-lhe um conjunto de regras ('destaque a vermelho tudo o que for negativo', 'pinte a verde os 10 melhores valores') e ele patrulha os seus dados 24 horas por dia, aplicando a formatação automaticamente quando as condições são cumpridas.",
+      "quickNote": "Pode adicionar várias regras às mesmas células. Use 'Formatação Condicional > Gerir Regras' para definir a ordem de prioridade se houver conflitos entre elas.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Destacar todas as células com um valor superior a 1000.",
+          "code": "1. Selecione a lista de números de vendas.\n2. Vá a 'Base' > 'Formatação Condicional' > 'Realçar Regras das Células' > 'É Maior Do Que...'\n3. Insira 1000 e escolha o formato (ex: preenchimento verde)."
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Usar 'Barras de Dados' para visualizar rapidamente as vendas.",
+          "code": "1. Selecione a coluna com os valores de vendas.\n2. Vá a 'Formatação Condicional' > 'Barras de Dados'.\n3. Escolha um estilo de preenchimento (ex: gradiente azul).\nCada célula terá agora uma barra horizontal, criando um mini-gráfico."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "A regra aplica-se a um intervalo de células errado.",
+          "code": "PROBLEMA: Cria uma regra para A1:A10. Depois adiciona novos dados em A11, que não fica formatada.\nSOLUÇÃO: Formate os dados como uma Tabela (`Ctrl+T`) primeiro. Assim, a formatação condicional expande-se automaticamente para novas linhas."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Qual das seguintes opções é um tipo de Formatação Condicional pré-definida no Excel?",
+          "options": ["Barras de Dados", "Escalas de Cor", "Conjuntos de Ícones", "Todas as anteriores"],
+          "correctAnswer": "Todas as anteriores",
+          "feedback": "A Formatação Condicional inclui várias opções visuais prontas a usar, como 'Barras de Dados' (mini-gráficos de barras na célula), 'Escalas de Cor' (gradientes de cor) e 'Conjuntos de Ícones' (setas, semáforos, etc.)."
+        },
+        {
+          "question": "Se quiser destacar todos os valores duplicados numa coluna, que ferramenta usaria?",
+          "options": ["Filtro Automático", "Classificação de A a Z", "Formatação Condicional", "Procurar e Substituir"],
+          "correctAnswer": "Formatação Condicional",
+          "feedback": "A ferramenta mais direta para encontrar valores duplicados é a Formatação Condicional. Ela possui uma regra específica para realçar células que contenham valores duplicados, tornando a sua identificação visual e imediata."
+        },
+        {
+          "question": "Para ver, editar ou apagar todas as regras de formatação condicional numa folha de cálculo, deve ir a:",
+          "options": ["Formatação Condicional > Nova Regra...", "Formatação Condicional > Gerir Regras...", "Ctrl + 1 > separador Preenchimento", "Ficheiro > Opções"],
+          "correctAnswer": "Formatação Condicional > Gerir Regras...",
+          "feedback": "A opção 'Gerir Regras' no menu da Formatação Condicional abre um painel onde pode ver todas as regras aplicadas à seleção ou à folha, editar as suas prioridades, modificar ou apagar regras existentes."
+        }
+      ],
+      "challenge": {
+        "description": "Numa lista de notas de alunos (de 0 a 20), crie duas regras de formatação condicional: 1) Notas abaixo de 9.5 devem ter o texto da célula a vermelho. 2) Notas iguais ou superiores a 9.5 devem ter o texto da célula a verde.",
+        "initialCode": "15\n8\n19\n9.4\n10",
+        "solution": "1. Selecione as células com as notas. \n2. Vá a Formatação Condicional > Realçar Regras das Células > É Menor Do Que... > 9.5 > escolha 'Texto Vermelho'. \n3. Com as células ainda selecionadas, adicione uma nova regra: > É Maior ou Igual a... > 9.5 > escolha 'Verde com Texto Verde Escuro' (ou um formato personalizado)."
+      }
+    },
+    {
+      "id": "2.5",
+      "title": "Temas e Identidade Visual",
+      "illustration": "assets/images/modules/02/lessons/05-illust.svg",
+      "theory": "Pense nos Temas como um 'guarda-roupa' completo para o seu ficheiro Excel. Em vez de escolher a cor de cada peça (célula, gráfico, tabela), você escolhe um conjunto coordenado (o Tema) e o Excel aplica-o de forma consistente em todo o lado. Mudar o tema altera instantaneamente a aparência de tudo.",
+      "quickNote": "Crie um tema com as cores e tipos de letra da sua empresa e guarde-o. Assim, todos os seus relatórios terão uma identidade visual profissional e consistente com um só clique. Encontra esta opção em 'Esquema de Página > Temas > Guardar Tema Atual'.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Mudar o tema de um relatório.",
+          "code": "1. Vá ao separador 'Esquema de Página' > 'Temas'.\n2. Passe o rato por cima dos diferentes temas (ex: 'Verde').\n3. Verá uma pré-visualização ao vivo. Clique para aplicar.\nTodos os elementos do relatório que usam 'Cores do Tema' mudam instantaneamente."
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Personalizar as cores de um tema para corresponder a uma marca.",
+          "code": "1. Vá a 'Esquema de Página' > 'Cores' > 'Personalizar Cores...'\n2. Defina a cor 'Ênfase 1' como o código exato da cor da sua marca.\n3. Agora, sempre que usar a primeira cor da paleta, será a cor certa."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Usar cores 'manuais' (Cores Padrão) em vez das 'Cores do Tema'.",
+          "code": "PROBLEMA: Ao formatar, escolhe um tom de azul da paleta 'Cores Padrão' (na parte inferior do seletor de cores).\nCONSEQUÊNCIA: Ao mudar de tema, essa célula não se altera, porque a sua cor não estava ligada à paleta do tema.\nSOLUÇÃO: Use sempre as 'Cores do Tema' (as de cima) para garantir que os seus ficheiros são dinâmicos e fáceis de atualizar."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Em que separador da Faixa de Opções se encontram as opções de Temas?",
+          "options": ["Base", "Inserir", "Fórmulas", "Esquema de Página"],
+          "correctAnswer": "Esquema de Página",
+          "feedback": "Os Temas, que controlam a paleta de cores e os tipos de letra de todo o documento, encontram-se no separador 'Esquema de Página', pois afetam o design geral do seu trabalho."
+        },
+        {
+          "question": "Um Tema do Office controla principalmente quais elementos de design?",
+          "options": ["Tipos de Letra e Cores", "Fórmulas e Dados", "Macros e Ligações Externas", "Opções de Impressão"],
+          "correctAnswer": "Tipos de Letra e Cores",
+          "feedback": "Um Tema é um pacote de design que define dois elementos principais: a paleta de 'Cores do Tema' e o par de 'Tipos de Letra do Tema' (um para cabeçalhos, outro para o corpo). Mudar o tema altera estes elementos em todo o ficheiro."
+        },
+        {
+          "question": "Qual é a grande vantagem de usar 'Cores do Tema' em vez de 'Cores Padrão' ao formatar?",
+          "options": ["As 'Cores do Tema' são mais bonitas.", "A formatação atualiza-se automaticamente quando o tema do documento muda.", "As 'Cores Padrão' não podem ser usadas em gráficos.", "Não há nenhuma vantagem, são iguais."],
+          "correctAnswer": "A formatação atualiza-se automaticamente quando o tema do documento muda.",
+          "feedback": "Ao usar as 'Cores do Tema' (as que aparecem no topo do seletor de cores) em vez de 'Cores Padrão', a sua formatação fica ligada ao tema do documento. Se mudar de tema, todas essas cores atualizam-se automaticamente, permitindo um rebranding instantâneo."
+        }
+      ],
+      "challenge": {
+        "description": "Este é o Desafio Final do Módulo! Pegue numa tabela de vendas desformatada. Em menos de 3 minutos: 1. Converta-a para uma Tabela oficial. 2. Aplique um estilo de tabela 'Médio' à sua escolha. 3. Adicione Formatação Condicional de 'Barras de Dados' à coluna de valores de vendas. 4. Mude o Tema do documento para um diferente do padrão 'Office'.",
+        "initialCode": "Mês | Vendas\nJan | 1500\nFev | 2200\nMar | 1800\nAbr | 2500",
+        "solution": "1. Clique nos dados > Ctrl+T > Enter. \n2. Com a tabela selecionada, vá a 'Design da Tabela' e escolha um estilo médio. \n3. Selecione os valores das vendas > Formatação Condicional > Barras de Dados > escolha um preenchimento. \n4. Vá a 'Esquema de Página' > Temas > e escolha um tema como 'Retrospectiva' ou 'Circuito'."
+      }
+    }
+  ]
+}

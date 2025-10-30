@@ -1,0 +1,253 @@
+{
+  "id": "3",
+  "title": "Fórmulas Essenciais",
+  "bigIdea": "Lego de números",
+  "cover": "assets/images/modules/03/cover.svg",
+  "lessons": [
+    {
+      "id": "3.1",
+      "title": "SOMA / MÉDIA / CONTAR",
+      "illustration": "assets/images/modules/03/lessons/01-illust.svg",
+      "theory": "Se as fórmulas são receitas, estas três são os ingredientes base que usará sempre. São como as peças Lego mais fundamentais: SOMA junta tudo para lhe dar o total, MÉDIA diz-lhe o tamanho médio das suas peças, e CONTAR simplesmente diz-lhe quantas peças tem. Dominar estas três é o primeiro passo para qualquer análise.",
+      "quickNote": "Selecione um intervalo de células com números. Olhe para a Barra de Estado, no canto inferior direito do Excel. Verá a Soma, a Contagem e a Média desse intervalo calculadas automaticamente! É uma ótima forma de verificar os seus resultados rapidamente.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Calcular a despesa total de uma lista de compras.",
+          "code": "Dados: A1=5€, A2=10€, A3=7€\nFórmula: =SOMA(A1:A3)\nResultado: 22€"
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Apurar a nota média de um aluno.",
+          "code": "Notas: B1=15, B2=18, B3=12\nFórmula: =MÉDIA(B1:B3)\nResultado: 15"
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Contar itens numa lista que mistura texto e números.",
+          "code": "Dados em C1:C5: 'Maçã', 10, 'Pera', 20, (célula vazia)\n---\n=CONTAR(C1:C5) resulta em 2 (só conta números).\n=CONTARA(C1:C5) resulta em 4 (conta texto e números)."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Qual a função que deve usar para saber quantos valores numéricos existem num intervalo?",
+          "options": ["SOMA", "CONTAR", "CONTARA", "MÉDIA"],
+          "correctAnswer": "CONTAR",
+          "feedback": "A função `CONTAR` analisa um intervalo e devolve o número de células que contêm valores numéricos, ignorando texto e células vazias."
+        },
+        {
+          "question": "Se o intervalo A1:A4 contém os valores 10, 20, (célula vazia), 30, qual será o resultado de =MÉDIA(A1:A4)?",
+          "options": ["15", "20", "Erro", "25"],
+          "correctAnswer": "20",
+          "feedback": "A função `MÉDIA` ignora células vazias e de texto. Neste caso, ela soma 10, 20 e 30 (total 60) e divide por 3 (o número de células com valores numéricos), resultando em 20."
+        },
+        {
+          "question": "Para contar o número total de células preenchidas, independentemente de serem texto ou números, qual é a função correta?",
+          "options": ["CONTAR", "CONTAR.TUDO", "CONTARA", "SOMA.SE"],
+          "correctAnswer": "CONTARA",
+          "feedback": "Para contar todas as células que não estão vazias, incluindo texto e números, usa-se a função `CONTARA`. O 'A' extra significa 'Alfanumérico'."
+        }
+      ],
+      "challenge": {
+        "description": "Dada uma pequena lista de vendas diárias, calcule três métricas chave: o total de vendas (receita total), a venda média por dia, e o número de dias em que houve vendas.",
+        "initialCode": "Dia | Vendas\nSeg | 150€\nTer | 200€\nQua | (sem vendas)\nQui | 180€\nSex | 250€",
+        "solution": "Receita Total: =SOMA(B2:B6)\nVenda Média: =MÉDIA(B2:B6)\nDias com Vendas: =CONTAR(B2:B6)"
+      }
+    },
+    {
+      "id": "3.2",
+      "title": "MÁX / MÍN / CONTAR.SE",
+      "illustration": "assets/images/modules/03/lessons/02-illust.svg",
+      "theory": "Agora vamos usar peças Lego mais especializadas. MÁX e MÍN são como detetores que encontram instantaneamente a sua peça maior e a mais pequena. CONTAR.SE é uma peça inteligente: ela só conta as outras peças se cumprirem uma condição que você define, como 'contar apenas as peças vermelhas'.",
+      "quickNote": "O critério dentro da função CONTAR.SE deve estar sempre entre aspas. Por exemplo, para contar valores maiores que 100, o critério é `\">100\"`. Se o critério for o valor de outra célula (ex: B1), a sintaxe é `\">\"&B1`.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Encontrar a idade do colaborador mais velho.",
+          "code": "Dados: Uma lista de idades na coluna C.\nFórmula: =MÁX(C2:C50)\nResultado: A idade mais alta da lista."
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Contar o número de faturas 'Pagas'.",
+          "code": "Dados: Coluna D com estados: 'Paga', 'Pendente', 'Paga', 'Atrasada'.\nFórmula: =CONTAR.SE(D2:D100; \"Paga\")\nResultado: 2"
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Tentar encontrar o valor máximo de um produto específico sem usar a função certa.",
+          "code": "PROBLEMA: A fórmula =MÁX(B2:B20) dá-lhe a venda máxima de todos os produtos.\nLIMITAÇÃO: Para saber a venda máxima do produto 'Pera', precisa de uma função mais avançada como MÁX.SE. As funções MÁX e MÍN operam sobre todo o intervalo fornecido."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Qual a fórmula para contar quantas células no intervalo A1:A50 são exatamente iguais a 'Lisboa'?",
+          "options": ["=CONTAR.SE(A1:A50; Lisboa)", "=CONTAR(A1:A50; \"Lisboa\")", "=CONTAR.SE(A1:A50; \"Lisboa\")", "=CONTAR.SE(\"Lisboa\"; A1:A50)"],
+          "correctAnswer": "=CONTAR.SE(A1:A50; \"Lisboa\")",
+          "feedback": "A sintaxe da função `CONTAR.SE` requer dois argumentos: primeiro o intervalo a ser verificado (A1:A50) e, em segundo, o critério de contagem. Quando o critério é texto, deve estar entre aspas (\"Lisboa\")."
+        },
+        {
+          "question": "Para encontrar o segundo valor mais baixo numa lista, que função usaria?",
+          "options": ["MÍN", "MÍN.SE", "MENOR", "Nenhuma das anteriores"],
+          "correctAnswer": "MENOR",
+          "feedback": "A função `MÍN` devolve apenas o valor mais baixo. Para encontrar o 2º, 3º ou k-ésimo valor mais baixo, deve usar-se a função `MENOR(intervalo; k)`, onde 'k' é a posição desejada (ex: 2 para o segundo menor)."
+        },
+        {
+          "question": "Como se escreve o critério em CONTAR.SE para contar valores que NÃO são iguais a 10?",
+          "options": ["\"!=10\"", "\"NÃO 10\"", "\"<>10\"", "\"EXCETO 10\""],
+          "correctAnswer": "\"<>10\"",
+          "feedback": "No Excel, o operador lógico para 'diferente de' é `<>`. Em funções como `CONTAR.SE`, este operador deve ser incluído dentro das aspas juntamente com o valor, formando o critério `\"<>10\"`."
+        }
+      ],
+      "challenge": {
+        "description": "Dada uma lista de produtos e os seus preços, encontre o preço do produto mais caro (MÁX), o preço do mais barato (MÍN), e conte quantos produtos custam mais de 10€ (CONTAR.SE).",
+        "initialCode": "Produto | Preço\nLivro | 15€\nCaneta | 2€\nCaderno | 8€\nMochila | 25€",
+        "solution": "Mais caro: =MÁX(B2:B5)\nMais barato: =MÍN(B2:B5)\n> 10€: =CONTAR.SE(B2:B5; \">10\")"
+      }
+    },
+    {
+      "id": "3.3",
+      "title": "ARRED / ABS / HOJE",
+      "illustration": "assets/images/modules/03/lessons/03-illust.svg",
+      "theory": "Estas são as suas peças Lego 'funcionais'. A função ARRED é como uma lixa que molda os seus números para o número de casas decimais que desejar. ABS é um transformador que garante que um número é sempre positivo. E HOJE é uma peça mágica que se atualiza sozinha para mostrar sempre a data atual.",
+      "quickNote": "A função HOJE não precisa de nada dentro dos parênteses: escreve-se '=HOJE()'. Ela é 'volátil', o que significa que se recalcula sempre que a folha de cálculo é aberta ou alterada.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Arredondar um preço para duas casas decimais.",
+          "code": "Valor em A1: 19.99812€\nFórmula: =ARRED(A1; 2)\nResultado: 20.00€"
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Calcular o desvio de um valor em relação a uma meta, sempre como um número positivo.",
+          "code": "Meta: 100. Valor: 90. A diferença simples (90-100) é -10.\nFórmula: =ABS(90-100)\nResultado: 10"
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Confundir formatação de célula com a função ARRED.",
+          "code": "PROBLEMA: A célula A1 contém 2.558. Formata a célula para exibir '2.6'. Mas uma fórmula '=A1*2' ainda usa o valor original e resulta em 5.116.\nSOLUÇÃO: Usar '=ARRED(A1; 1)' numa nova célula (C1) muda o valor REAL para 2.6. Agora, '=C1*2' resulta em 5.2."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Qual o resultado da fórmula =ABS(-25)?",
+          "options": ["-25", "25", "0", "#VALOR!"],
+          "correctAnswer": "25",
+          "feedback": "A função `ABS` devolve o valor absoluto de um número, ou seja, a sua magnitude sem o sinal. O valor absoluto de -25 é 25."
+        },
+        {
+          "question": "Como se insere a data de hoje numa célula, de forma a que ela se atualize sempre que o ficheiro for aberto?",
+          "options": ["=DATA.DE.HOJE()", "=HOJE", "=AGORA()", "=HOJE()"],
+          "correctAnswer": "=HOJE()",
+          "feedback": "A função `HOJE()` insere a data atual e é volátil, o que significa que se atualiza sempre que o ficheiro é recalculado. A função `AGORA()` é similar, mas inclui também a hora atual."
+        },
+        {
+          "question": "Se a célula A1 tiver o valor 9.99, qual será o resultado de =ARRED(A1; 0)?",
+          "options": ["9", "9.9", "10", "9.0"],
+          "correctAnswer": "10",
+          "feedback": "A função `ARRED(número; num_dígitos)` arredonda um valor. Com `num_dígitos` igual a 0, ela arredonda para o número inteiro mais próximo. Como 9.99 está mais perto de 10 do que de 9, o resultado é 10."
+        }
+      ],
+      "challenge": {
+        "description": "Tem uma lista de saldos de contas, alguns positivos e outros negativos. Crie uma coluna ao lado que mostre o valor absoluto de cada saldo. Numa célula no topo da folha, insira a data do relatório usando a função HOJE.",
+        "initialCode": "Conta | Saldo\nA | 1500€\nB | -250€\nC | -75€\nD | 3200€",
+        "solution": "Data do Relatório (ex: célula D1): =HOJE()\nNa coluna 'Valor Absoluto' (célula C2): =ABS(B2) e arrastar para baixo."
+      }
+    },
+    {
+      "id": "3.4",
+      "title": "Referências Relativas vs. Absolutas",
+      "illustration": "assets/images/modules/03/lessons/04-illust.svg",
+      "theory": "Imagine que as referências de célula são coordenadas num mapa. Uma referência relativa (A1) é como dizer 'a célula que está duas colunas à esquerda'. Se se mover, essa instrução continua a apontar para 'duas colunas à esquerda'. Uma referência absoluta ($A$1) é como uma coordenada GPS. Não importa onde se move, ela aponta sempre para o mesmo local exato. O '$' é o que 'ancora' a coordenada.",
+      "quickNote": "Use a tecla F4 para alternar rapidamente entre os tipos de referência enquanto edita uma fórmula. Com o cursor sobre 'A1', F4 muda para '$A$1' (absoluta), depois 'A$1' (linha absoluta), depois '$A1' (coluna absoluta), e de volta para 'A1' (relativa).",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Arrastar uma fórmula de soma para baixo (referência relativa).",
+          "code": "Fórmula em C1: =A1+B1\n---\nAo arrastar para C2, a fórmula atualiza-se para: =A2+B2\nAo arrastar para C3, a fórmula atualiza-se para: =A3+B3"
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Calcular a comissão de vendas com uma taxa fixa (referência absoluta).",
+          "code": "Valores de vendas: Coluna A.\nTaxa de comissão (5%): Célula E1.\nFórmula em B1: =A1*$E$1\n---\nAo arrastar para baixo, a fórmula em B2 será =A2*$E$1. A referência a E1 fica 'ancorada'."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Esquecer o '$' e obter resultados errados.",
+          "code": "PROBLEMA: Usa a fórmula =A1*E1 e arrasta para baixo.\nA fórmula em B2 torna-se =A2*E2. Como E2 está vazia, o resultado é 0.\nSOLUÇÃO: Usar sempre referências absolutas ($E$1) para valores fixos."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Qual é a tecla de atalho para alternar entre os tipos de referência de célula?",
+          "options": ["F1", "F4", "Ctrl + $", "Alt + R"],
+          "correctAnswer": "F4",
+          "feedback": "Ao editar uma referência de célula numa fórmula, a tecla `F4` permite alternar entre os quatro tipos de referência: relativa (A1), absoluta ($A$1), mista de linha (A$1) e mista de coluna ($A1)."
+        },
+        {
+          "question": "Que tipo de referência é '$B5'?",
+          "options": ["Relativa", "Absoluta", "Mista (coluna absoluta, linha relativa)", "Mista (linha absoluta, coluna relativa)"],
+          "correctAnswer": "Mista (coluna absoluta, linha relativa)",
+          "feedback": "A referência `$B5` é mista. O cifrão ($) fixa a parte que se segue, neste caso a coluna 'B'. A linha '5', sem cifrão, permanece relativa e irá ajustar-se se a fórmula for copiada para cima ou para baixo."
+        },
+        {
+          "question": "Se copiar uma célula com a fórmula '=SOMA(A1:A5)' da célula B6 para a célula C7, qual será a nova fórmula?",
+          "options": ["=SOMA(A1:A5)", "=SOMA(B2:B6)", "=SOMA(A2:A6)", "=SOMA(B1:B5)"],
+          "correctAnswer": "=SOMA(B2:B6)",
+          "feedback": "Ao copiar uma fórmula com referências relativas, estas ajustam-se com base no movimento. Mover uma coluna para a direita (B->C) e uma linha para baixo (6->7) faz com que as referências dentro da fórmula também se movam uma coluna para a direita (A->B) e uma linha para baixo (1->2 e 5->6)."
+        }
+      ],
+      "challenge": {
+        "description": "Tem uma lista de preços em Euros na Coluna A. Na célula C1, tem a taxa de câmbio para Dólares (ex: 1.08). Crie uma fórmula na Coluna B que converta cada preço em Euros para Dólares, garantindo que pode arrastar a fórmula para baixo e ela funcionará para todos os preços.",
+        "initialCode": "Preço (€) | Taxa Câmbio (C1): 1.08\n100\n150\n220\n80",
+        "solution": "Na célula B2, escreva a fórmula '=A2*$C$1' e depois arraste-a para as restantes células da coluna B."
+      }
+    },
+    {
+      "id": "3.5",
+      "title": "Erros Comuns (#DIV/0!, #VALOR!)",
+      "illustration": "assets/images/modules/03/lessons/05-illust.svg",
+      "theory": "Por vezes, a sua construção de Lego não funciona como esperado e o Excel dá-lhe uma mensagem de erro. Pense nestes erros como o manual de instruções a dizer-lhe qual foi o problema. '#DIV/0!' significa que tentou dividir uma peça por zero, o que é impossível. '#VALOR!' significa que tentou somar uma peça de número com uma peça de texto. Aprender a ler estes erros é fundamental para corrigir as suas fórmulas.",
+      "quickNote": "A função SEERRO é a sua rede de segurança. Pode 'embrulhar' a sua fórmula nela, como: '=SEERRO(A1/B1; \"Dados inválidos\")'. Se A1/B1 funcionar, obtém o resultado. Se der um erro (ex: se B1 for 0), a célula mostrará 'Dados inválidos' em vez de um erro feio.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Erro de Divisão por Zero (#DIV/0!).",
+          "code": "Cenário: A fórmula é =10/A1 e a célula A1 está vazia ou contém 0.\nResultado: #DIV/0!"
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Erro de Valor (#VALOR!).",
+          "code": "Cenário: A fórmula é =A1+A2. A1 contém 100 e A2 contém o texto 'nenhum'.\nResultado: #VALOR! (não se pode somar um número com texto)."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Erro de Nome (#NOME?).",
+          "code": "Cenário: Escreve a fórmula =SOM(A1:A5) para somar um intervalo.\nResultado: #NOME? (o nome da função está escrito incorretamente, o correto seria SOMA)."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "O erro '#REF!' aparece tipicamente quando...",
+          "options": ["Uma fórmula contém texto inválido", "Uma fórmula divide por zero", "Uma fórmula refere-se a uma célula que foi eliminada", "O nome da função está errado"],
+          "correctAnswer": "Uma fórmula refere-se a uma célula que foi eliminada",
+          "feedback": "O erro `#REF!` surge quando uma referência de célula numa fórmula se torna inválida. A causa mais comum é a eliminação da linha ou coluna à qual a fórmula se referia."
+        },
+        {
+          "question": "Está a arrastar uma fórmula de PROCV e algumas células mostram '#N/D'. O que significa este erro?",
+          "options": ["A fórmula está errada", "Os dados da tabela estão errados", "O valor que está a procurar não foi encontrado na lista", "A coluna é demasiado estreita"],
+          "correctAnswer": "O valor que está a procurar não foi encontrado na lista",
+          "feedback": "O erro `#N/D` (Não Disponível) é o resultado padrão de funções de pesquisa (como PROCV ou CORRESP) quando o valor procurado não é encontrado no intervalo de pesquisa."
+        },
+        {
+          "question": "Qual a função que pode usar para substituir uma mensagem de erro por um texto mais amigável ou por um valor como 0?",
+          "options": ["SE", "ERRO.TIPO", "VALIDAR", "SEERRO"],
+          "correctAnswer": "SEERRO",
+          "feedback": "A função `SEERRO` permite intercetar qualquer tipo de erro. A sua sintaxe é `SEERRO(cálculo; valor_se_erro)`. Se o 'cálculo' resultar num erro, a função devolve o 'valor_se_erro'; caso contrário, devolve o resultado normal do cálculo."
+        }
+      ],
+      "challenge": {
+        "description": "Este é o Desafio Final do Módulo! Construa um pequeno painel de KPIs a partir de uma lista de vendas. A lista contém alguns dados em falta. O seu desafio é calcular os KPIs e usar a função SEERRO para garantir que, mesmo com erros nos dados (como uma divisão por zero), o seu painel exibe '0' ou uma mensagem clara em vez de um erro.",
+        "initialCode": "Vendas | Unidades\n1500€ | 10\n2200€ | (vazio)\n1800€ | 8\n'N/A' | 5",
+        "solution": "KPI 'Venda Média por Unidade': =SEERRO(SOMA(A2:A5)/SOMA(B2:B5); 0)\nKPI 'Total Vendas': =SOMA(A2:A5) (a SOMA ignora texto, pelo que não dá erro)\n...e assim por diante para outros KPIs."
+      }
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "id": "6",
+  "title": "Gráficos & Dashboards",
+  "bigIdea": "TV de dados",
+  "cover": "assets/images/modules/06/cover.svg",
+  "lessons": [
+    {
+      "id": "6.1",
+      "title": "Gráfico de colunas vs. de barras",
+      "illustration": "assets/images/modules/06/lessons/01-illust.svg",
+      "theory": "Pense nos gráficos como os diferentes canais da sua 'TV de dados'. O gráfico de colunas é o seu canal de notícias do tempo, perfeito para mostrar a evolução de algo ao longo de períodos (ex: vendas por mês). O gráfico de barras é o seu canal de competições desportivas, ideal para comparar participantes (ex: vendas por produto), especialmente se os nomes forem longos.",
+      "quickNote": "Selecione os seus dados e pressione 'Alt + F1'. O Excel criará instantaneamente um gráfico de colunas padrão numa nova folha. É o atalho mais rápido para começar a visualizar.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Visualizar vendas trimestrais com um Gráfico de Colunas.",
+          "code": "1. Selecione a tabela com trimestres e valores de vendas.\n2. Vá a 'Inserir' > 'Gráficos' e escolha 'Colunas Agrupadas'.\n3. O gráfico mostra a progressão ao longo do ano."
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Comparar as vendas de 5 vendedores com um Gráfico de Barras.",
+          "code": "1. Selecione a lista de vendedores e os seus totais de vendas.\n2. Vá a 'Inserir' > 'Gráficos' e escolha 'Barras Agrupadas'.\n3. Os nomes dos vendedores ficam no eixo vertical, fáceis de ler, e a comparação é imediata."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Usar um gráfico de colunas com demasiadas categorias.",
+          "code": "PROBLEMA: Tentar mostrar as vendas de 30 produtos diferentes num gráfico de colunas.\nCONSEQUÊNCIA: O gráfico fica ilegível, com as colunas esmagadas e as etiquetas sobrepostas.\nSOLUÇÃO: Um gráfico de barras é muito mais eficaz, pois o eixo vertical tem mais espaço."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Para comparar o desempenho de 10 categorias de produtos com nomes longos, qual é o tipo de gráfico mais indicado?",
+          "options": ["Gráfico de Colunas", "Gráfico de Linhas", "Gráfico de Barras", "Gráfico de Pizza"],
+          "correctAnswer": "Gráfico de Barras",
+          "feedback": "O gráfico de barras é ideal para comparar categorias com nomes longos, pois as etiquetas são dispostas no eixo vertical (Y), onde há mais espaço para texto, evitando sobreposição e garantindo a legibilidade."
+        },
+        {
+          "question": "Qual é a principal finalidade de um gráfico de colunas?",
+          "options": ["Mostrar a percentagem de um total", "Comparar valores entre categorias distintas", "Mostrar a tendência de dados ao longo do tempo ou de uma sequência ordenada", "Mostrar a correlação entre duas variáveis"],
+          "correctAnswer": "Mostrar a tendência de dados ao longo do tempo ou de uma sequência ordenada",
+          "feedback": "A grande força do gráfico de colunas é mostrar a evolução de uma métrica ao longo de uma sequência ordenada, como meses, trimestres ou anos, tornando as tendências temporais fáceis de identificar."
+        },
+        {
+          "question": "Qual o atalho para criar um gráfico padrão a partir de dados selecionados?",
+          "options": ["Ctrl + G", "Alt + C", "Shift + F1", "Alt + F1"],
+          "correctAnswer": "Alt + F1",
+          "feedback": "O atalho 'Alt + F1' cria instantaneamente um gráfico de colunas (o tipo padrão) numa nova folha de cálculo com base nos dados selecionados, sendo a forma mais rápida de iniciar uma visualização."
+        }
+      ],
+      "challenge": {
+        "description": "Crie um gráfico de barras que compare a população de quatro cidades. Ordene o gráfico do maior para o menor para facilitar a leitura.",
+        "initialCode": "Cidade | População\nLisboa | 545.000\nPorto | 231.000\nBraga | 193.000\nFaro | 67.000",
+        "solution": "1. Selecione os dados. \n2. Vá a 'Inserir' > 'Gráficos' e escolha um gráfico de barras 2D. \n3. Para ordenar, volte aos dados, clique com o botão direito na coluna da população e escolha 'Ordenar > Do Maior ao Menor'. O gráfico atualizar-se-á automaticamente."
+      }
+    },
+    {
+      "id": "6.2",
+      "title": "Gráfico de linhas com tendência",
+      "illustration": "assets/images/modules/06/lessons/02-illust.svg",
+      "theory": "O gráfico de linhas é o 'eletrocardiograma' dos seus dados. Ele mostra o 'pulso' do seu negócio ou de qualquer métrica ao longo do tempo, ligando os pontos para revelar subidas, descidas e padrões. Adicionar uma 'Linha de Tendência' é como pedir a um especialista para traçar a trajetória futura mais provável, com base no histórico.",
+      "quickNote": "Pode adicionar várias séries de dados (várias linhas) ao mesmo gráfico para comparar a evolução de diferentes produtos ou métricas. Basta garantir que os dados estão formatados corretamente na sua tabela de origem.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Mostrar a evolução da temperatura ao longo de uma semana.",
+          "code": "1. Crie uma tabela com os dias da semana e a temperatura máxima de cada dia.\n2. Selecione os dados e vá a 'Inserir' > 'Gráficos' > 'Linhas'."
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Analisar a evolução do número de visitantes de um website ao longo de 12 meses e adicionar uma tendência.",
+          "code": "1. Crie um gráfico de linhas com os dados.\n2. Clique com o botão direito na linha do gráfico > 'Adicionar Linha de Tendência'.\n3. Uma linha reta indicará se o tráfego geral está a crescer, a diminuir ou estagnado."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Usar um gráfico de linhas para dados não sequenciais.",
+          "code": "PROBLEMA: Tentar criar um gráfico de linhas para comparar as vendas de diferentes vendedores.\nCONSEQUÊNCIA: O gráfico liga os pontos dos vendedores, o que não tem qualquer significado. A linha implica uma continuidade que não existe entre 'Ana' e 'Bruno'.\nSOLUÇÃO: Para esta comparação, um gráfico de barras é o correto."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Para que tipo de dados é um gráfico de linhas mais adequado?",
+          "options": ["Para comparar diferentes categorias num único ponto no tempo", "Para mostrar a distribuição de dados", "Para mostrar a relação de uma parte com o todo", "Para visualizar uma tendência ou evolução de dados ao longo de um período contínuo"],
+          "correctAnswer": "Para visualizar uma tendência ou evolução de dados ao longo de um período contínuo",
+          "feedback": "Um gráfico de linhas é a ferramenta ideal para mostrar dados ao longo do tempo ou de outra sequência contínua. A linha que conecta os pontos de dados torna as tendências, padrões e flutuações facilmente visíveis."
+        },
+        {
+          "question": "O que é uma 'Linha de Tendência' num gráfico?",
+          "options": ["Uma linha que liga todos os pontos de dados", "Uma linha que representa a média de todos os valores", "Uma linha gerada estatisticamente que mostra a direção geral dos dados", "Uma linha decorativa para tornar o gráfico mais bonito"],
+          "correctAnswer": "Uma linha gerada estatisticamente que mostra a direção geral dos dados",
+          "feedback": "Uma Linha de Tendência é um cálculo estatístico (regressão) que mostra a direção geral dos dados, suavizando as flutuações. É usada para identificar se a tendência de longo prazo é de crescimento, declínio ou estabilidade."
+        },
+        {
+          "question": "Como pode adicionar uma Linha de Tendência a uma série de dados num gráfico?",
+          "options": ["No separador 'Inserir'", "Clicando com o botão direito na série de dados (a linha) e escolhendo 'Adicionar Linha de Tendência'", "Usando a função =TENDÊNCIA() numa célula", "É preciso desenhá-la manualmente"],
+          "correctAnswer": "Clicando com o botão direito na série de dados (a linha) e escolhendo 'Adicionar Linha de Tendência'",
+          "feedback": "A forma mais direta de adicionar uma Linha de Tendência é através do menu de contexto. Clicar com o botão direito na linha de dados desejada abre um menu com a opção para a adicionar e formatar."
+        }
+      ],
+      "challenge": {
+        "description": "Crie um gráfico de linhas para visualizar a evolução do lucro mensal de uma empresa durante o primeiro semestre. Adicione uma linha de tendência para avaliar o crescimento.",
+        "initialCode": "Mês | Lucro\nJan | 1.200€\nFev | 1.500€\nMar | 1.400€\nAbr | 1.800€\nMai | 2.100€\nJun | 2.000€",
+        "solution": "1. Selecione os dados. \n2. Vá a 'Inserir' e escolha um gráfico de linhas. \n3. Clique com o botão direito na linha do gráfico. \n4. Selecione 'Adicionar Linha de Tendência...'. \n5. Mantenha a opção 'Linear' e feche o painel."
+      }
+    },
+    {
+      "id": "6.3",
+      "title": "Pizza e donut (quando usar)",
+      "illustration": "assets/images/modules/06/lessons/03-illust.svg",
+      "theory": "Os gráficos de pizza e de donut são o canal de culinária da sua TV de dados. São perfeitos para mostrar como uma receita (o seu total de 100%) é dividida pelos seus ingredientes (as categorias). A regra de ouro é: se a 'pizza' tiver mais de 5 ou 6 fatias, ninguém vai conseguir distinguir os sabores. Use-os apenas para mostrar a composição de um todo com poucas partes.",
+      "quickNote": "O gráfico de donut é muitas vezes preferível ao de pizza. O buraco no meio pode ser usado para exibir o valor total ou a métrica principal, tornando-o mais informativo.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Mostrar a percentagem de respostas 'Sim', 'Não', 'Talvez' numa sondagem.",
+          "code": "1. Crie uma tabela com as três categorias e as suas contagens.\n2. Selecione os dados e vá a 'Inserir' > 'Gráficos' > 'Pizza'.\n3. O gráfico mostra claramente a proporção de cada resposta."
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Visualizar a repartição das fontes de tráfego de um website.",
+          "code": "Dados: Orgânico (50%), Direto (30%), Social (15%), Outros (5%).\nGráfico: Um gráfico de donut de 4 fatias. No meio, pode inserir uma caixa de texto com o número total de visitantes, dando contexto."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Usar um gráfico de pizza para comparar as vendas de 10 produtos.",
+          "code": "PROBLEMA: Um gráfico de pizza com 10 fatias, muitas de tamanho semelhante, é visualmente confuso e impossível de comparar com precisão.\nSOLUÇÃO: Um gráfico de barras é infinitamente melhor para esta comparação de categorias."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Qual é a principal função de um gráfico de pizza?",
+          "options": ["Mostrar a evolução ao longo do tempo", "Comparar valores entre muitas categorias", "Mostrar a proporção de diferentes partes que compõem um total (100%)", "Mostrar a relação entre duas variáveis numéricas"],
+          "correctAnswer": "Mostrar a proporção de diferentes partes que compõem um total (100%)",
+          "feedback": "Os gráficos de pizza e donut são especificamente desenhados para um propósito: mostrar a composição de um todo, ou seja, como diferentes categorias contribuem para um total de 100%."
+        },
+        {
+          "question": "Como regra geral, qual é o número máximo de categorias (fatias) que deve ter num gráfico de pizza para que ele seja eficaz?",
+          "options": ["3", "5-6", "10", "Não há limite"],
+          "correctAnswer": "5-6",
+          "feedback": "Para que um gráfico de pizza seja legível, deve ter poucas fatias (idealmente 5 ou menos). Com muitas fatias, torna-se difícil para o olho humano comparar os ângulos, e um gráfico de barras seria mais apropriado."
+        },
+        {
+          "question": "Por que motivo muitos especialistas em visualização de dados recomendam evitar gráficos de pizza em 3D?",
+          "options": ["Porque são mais difíceis de criar", "Porque a perspetiva 3D distorce o tamanho aparente das fatias, enganando o leitor", "Porque ocupam mais espaço no ecrã", "Porque não permitem mostrar etiquetas de dados"],
+          "correctAnswer": "Porque a perspetiva 3D distorce o tamanho aparente das fatias, enganando o leitor",
+          "feedback": "O efeito de perspetiva nos gráficos 3D distorce a percepção dos tamanhos. As fatias mais próximas parecem maiores do que são, e as mais distantes parecem menores, o que compromete a precisão da visualização de dados."
+        }
+      ],
+      "challenge": {
+        "description": "Crie um gráfico de donut para mostrar a repartição do seu orçamento mensal. Adicione etiquetas de dados que mostrem a percentagem de cada categoria.",
+        "initialCode": "Categoria | Valor\nRenda | 800€\nAlimentação | 400€\nTransporte | 150€\nLazer | 250€",
+        "solution": "1. Selecione os dados. \n2. Vá a 'Inserir' > 'Gráficos' e, no ícone de Pizza, escolha 'Donut'. \n3. Clique no botão '+' ao lado do gráfico (ou clique com o botão direito) e ative as 'Etiquetas de Dados'. \n4. Clique novamente nas etiquetas para as formatar e mostrar a percentagem."
+      }
+    },
+    {
+      "id": "6.4",
+      "title": "Gráfico combinação (coluna + linha)",
+      "illustration": "assets/images/modules/06/lessons/04-illust.svg",
+      "theory": "Este é o seu canal de 'notícias em ecrã dividido'. Um gráfico de combinação permite-lhe transmitir duas histórias diferentes, mas relacionadas, ao mesmo tempo. É perfeito quando quer comparar uma métrica de volume (como vendas em euros) com uma métrica de rácio (como a margem de lucro em %), que têm escalas totalmente diferentes.",
+      "quickNote": "A chave para um bom gráfico de combinação é o 'Eixo Secundário'. Ao colocar uma das séries de dados neste eixo, está a dar-lhe a sua própria escala à direita do gráfico, permitindo que ambas as séries sejam visualizadas de forma clara.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Mostrar a precipitação (colunas) e a temperatura média (linha) por mês.",
+          "code": "1. Selecione os dados (Mês, Precipitação, Temperatura).\n2. Vá a 'Inserir' > 'Gráficos' > 'Combinação'.\n3. Defina 'Temperatura' para ser uma Linha no 'Eixo Secundário'."
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Analisar as vendas mensais (colunas) e a percentagem de crescimento em relação ao mês anterior (linha).",
+          "code": "O gráfico mostra o volume de vendas e, ao mesmo tempo, a linha mostra a 'velocidade' do crescimento, ajudando a identificar meses de aceleração ou abrandamento."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Esquecer de ativar o Eixo Secundário.",
+          "code": "PROBLEMA: Cria um gráfico para Vendas (ex: 50.000€) e Margem (ex: 15%), mas ambos usam o mesmo eixo de 0 a 60.000€.\nCONSEQUÊNCIA: A linha da margem aparece esmagada na base do gráfico, parecendo uma linha reta em zero.\nSOLUÇÃO: Ative sempre o 'Eixo Secundário' para a métrica com a escala menor."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Quando é que um gráfico de combinação é mais útil?",
+          "options": ["Quando tem apenas uma série de dados para mostrar", "Quando quer comparar duas ou mais séries de dados que têm escalas de valor muito diferentes", "Quando quer mostrar a percentagem do total", "Quando quer comparar muitas categorias com nomes longos"],
+          "correctAnswer": "Quando quer comparar duas ou mais séries de dados que têm escalas de valor muito diferentes",
+          "feedback": "Um gráfico de combinação é a solução ideal quando se pretende visualizar duas métricas com unidades ou magnitudes muito diferentes (ex: milhares de euros e percentagens) no mesmo gráfico."
+        },
+        {
+          "question": "O que é o 'Eixo Secundário' num gráfico de combinação?",
+          "options": ["Um segundo título para o gráfico", "Um eixo vertical adicional no lado direito do gráfico, com a sua própria escala", "Uma linha de tendência para a segunda série de dados", "Uma legenda alternativa"],
+          "correctAnswer": "Um eixo vertical adicional no lado direito do gráfico, com a sua própria escala",
+          "feedback": "O Eixo Secundário é um eixo de valor (Y) adicional, localizado no lado direito do gráfico. Ele fornece uma escala independente para uma das séries de dados, permitindo que ambas sejam representadas de forma clara."
+        },
+        {
+          "question": "Como se cria um gráfico de combinação no Excel?",
+          "options": ["É preciso desenhar dois gráficos e sobrepô-los manualmente", "Vá a 'Inserir' > 'Gráficos' e escolha a opção 'Combinação'", "É uma opção dentro da formatação de um gráfico de colunas normal", "As opções B e C estão corretas"],
+          "correctAnswer": "As opções B e C estão corretas",
+          "feedback": "Pode criar um gráfico de combinação diretamente a partir de 'Inserir' > 'Gráfico de Combinação', ou pode começar com um gráfico normal, clicar com o botão direito numa série e usar 'Alterar Tipo de Gráfico de Séries' para a modificar."
+        }
+      ],
+      "challenge": {
+        "description": "Crie um gráfico de combinação que mostre o número de unidades vendidas por mês (colunas) e a classificação de satisfação do cliente nesse mês, de 1 a 5 (linha).",
+        "initialCode": "Mês | Unidades Vendidas | Satisfação (1-5)\nJan | 150 | 4.1\nFev | 180 | 4.3\nMar | 220 | 4.2\nAbr | 200 | 3.8",
+        "solution": "1. Selecione todos os dados. \n2. Vá a 'Inserir' > 'Gráficos' > 'Combinação'. \n3. O Excel geralmente sugere a configuração correta, mas confirme: 'Unidades Vendidas' como 'Colunas Agrupadas' no eixo principal e 'Satisfação' como 'Linha' no eixo secundário. \n4. Clique em OK."
+      }
+    },
+    {
+      "id": "6.5",
+      "title": "Mini-gráficos (sparklines)",
+      "illustration": "assets/images/modules/06/lessons/05-illust.svg",
+      "theory": "Os mini-gráficos, ou sparklines, são a 'notícia de última hora' da sua TV de dados. São gráficos minúsculos que vivem dentro de uma única célula, mostrando uma tendência de forma super compacta. São perfeitos para dashboards e tabelas onde quer mostrar o panorama geral (o número total) e, ao mesmo tempo, a pequena história de como esse número evoluiu, sem ocupar espaço.",
+      "quickNote": "Pode formatar os mini-gráficos para destacar pontos importantes, como o ponto mais alto, o mais baixo, ou valores negativos. Isto adiciona uma camada extra de análise visual instantânea.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Mostrar a tendência de vendas dos últimos 4 trimestres.",
+          "code": "Dados: Células A1 a D1 com as vendas.\n1. Selecione a célula de destino (ex: E1).\n2. Vá a 'Inserir' > 'Mini-gráficos' > 'Linha'.\n3. No 'Intervalo de Dados', selecione A1:D1. A célula E1 agora mostra um pequeno gráfico de linha."
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Criar um mini-gráfico de Ganhos/Perdas para o desempenho mensal.",
+          "code": "1. Selecione a célula de destino.\n2. Escolha o tipo de mini-gráfico 'Ganhos/Perdas'.\n3. Ele mostra apenas se o valor é positivo (uma barra para cima) ou negativo (uma barra para baixo), ignorando a magnitude."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Os mini-gráficos de linha não são comparáveis por defeito.",
+          "code": "PROBLEMA: Cada mini-gráfico ajusta a sua escala ao seu próprio máximo e mínimo, o que pode ser enganador.\nSOLUÇÃO: Selecione todos, vá ao separador 'Mini-gráfico' > 'Eixo' e defina as opções 'Mínimo' e 'Máximo' como 'O mesmo para todos os mini-gráficos'."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Onde é que um mini-gráfico é exibido?",
+          "options": ["Numa nova folha de cálculo", "Numa janela pop-up", "Dentro de uma única célula", "Por cima da grelha do Excel"],
+          "correctAnswer": "Dentro de uma única célula",
+          "feedback": "A característica que define os mini-gráficos (sparklines) é que são gráficos completos que se inserem no fundo de uma única célula, permitindo visualizar tendências diretamente ao lado dos dados."
+        },
+        {
+          "question": "Quais são os três tipos de mini-gráficos disponíveis no Excel?",
+          "options": ["Linha, Coluna, Pizza", "Barra, Área, Dispersão", "Linha, Coluna, Ganhos/Perdas", "Linha, Tabela, Tendência"],
+          "correctAnswer": "Linha, Coluna, Ganhos/Perdas",
+          "feedback": "O Excel oferece três tipos de mini-gráficos: 'Linha' (para tendências), 'Coluna' (para comparações de magnitude) e 'Ganhos/Perdas' (para visualizar dados positivos vs. negativos)."
+        },
+        {
+          "question": "Para garantir que vários mini-gráficos numa coluna são comparáveis entre si, que definição de eixo deve usar?",
+          "options": ["Definir o eixo como automático para cada um", "Mudar a cor dos mini-gráficos", "Definir os valores mínimo e máximo do eixo como 'O mesmo para todos os mini-gráficos'", "Não é possível torná-los comparáveis"],
+          "correctAnswer": "Definir os valores mínimo e máximo do eixo como 'O mesmo para todos os mini-gráficos'",
+          "feedback": "Por defeito, a escala de cada mini-gráfico é independente. Para uma comparação visual justa, é crucial selecionar o grupo de mini-gráficos e, no separador 'Eixo', definir uma escala mínima e máxima comum a todos."
+        }
+      ],
+      "challenge": {
+        "description": "Este é o Desafio Final do Módulo! Construa um dashboard de 4 quadros que caiba na vista de uma página A4 paisagem. Use um conjunto de dados de vendas por Mês, Região e Categoria. O dashboard deve ter: 1) Um gráfico de colunas de Vendas por Mês. 2) Um gráfico de barras de Vendas por Região. 3) Um gráfico de pizza de Vendas por Categoria. 4) Uma tabela-resumo com as vendas totais de cada Região e um mini-gráfico de linha ao lado de cada uma, mostrando a tendência mensal.",
+        "initialCode": "Dados de vendas com colunas: Mês, Região, Categoria, Vendas",
+        "solution": "1. Crie uma Tabela Dinâmica e, a partir dela, crie os três Gráficos Dinâmicos (Vendas por Mês, por Região, por Categoria). \n2. Organize os três gráficos na parte superior da folha. \n3. Crie uma pequena tabela-resumo manualmente ou com fórmulas. \n4. Para cada região na tabela-resumo, insira um mini-gráfico de linha na célula ao lado, usando os dados mensais dessa região como fonte. \n5. Adicione Segmentação de Dados para filtrar todo o dashboard."
+      }
+    }
+  ]
+}

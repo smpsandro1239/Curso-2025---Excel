@@ -1,0 +1,253 @@
+{
+  "id": "4",
+  "title": "Lógica & Condicionais",
+  "bigIdea": "Juiz de dados",
+  "cover": "assets/images/modules/04/cover.svg",
+  "lessons": [
+    {
+      "id": "4.1",
+      "title": "SE simples (aprovado/reprovado)",
+      "illustration": "assets/images/modules/04/lessons/01-illust.svg",
+      "theory": "A função SE é o 'juiz' do Excel. Ela faz uma pergunta de 'sim' ou 'não' (o teste lógico) e emite um de dois veredictos: um resultado se a resposta for verdadeira, e outro se for falsa. É a base para que as suas folhas de cálculo tomem decisões automáticas.",
+      "quickNote": "Qualquer valor pode ser usado no teste lógico. Pode testar se uma célula é maior que um número (A1>10), se é igual a um texto (B1=\"Sim\"), ou até mesmo se está vazia (C1=\"\").",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Verificar se um valor de vendas atingiu a meta.",
+          "code": "Meta em A1: 1000. Vendas em B1: 1200.\nFórmula: =SE(B1>=A1; \"Meta Atingida\"; \"Abaixo da Meta\")\nResultado: \"Meta Atingida\""
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Classificar um aluno como 'Aprovado' ou 'Reprovado'.",
+          "code": "Nota do aluno em C5: 8. Nota mínima para aprovação: 9.5.\nFórmula: =SE(C5>=9.5; \"Aprovado\"; \"Reprovado\")\nResultado: \"Reprovado\""
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Esquecer as aspas para o resultado em texto.",
+          "code": "PROBLEMA: A fórmula =SE(A1>10; Atingido; Não Atingido) devolve um erro #NOME?.\nSOLUÇÃO: O Excel pensa que 'Atingido' é o nome de uma função. O texto deve estar entre aspas: =SE(A1>10; \"Atingido\"; \"Não Atingido\")"
+        }
+      ],
+      "quiz": [
+        {
+          "question": "A função SE tem três argumentos. Qual é a ordem correta?",
+          "options": ["Valor_se_falso; Teste_lógico; Valor_se_verdadeiro", "Teste_lógico; Valor_se_verdadeiro; Valor_se_falso", "Valor_se_verdadeiro; Valor_se_falso; Teste_lógico", "Teste_lógico; Valor_se_falso; Valor_se_verdadeiro"],
+          "correctAnswer": "Teste_lógico; Valor_se_verdadeiro; Valor_se_falso",
+          "feedback": "A sintaxe da função SE é =SE(teste_lógico; valor_se_verdadeiro; valor_se_falso). O Excel primeiro avalia a condição, e depois devolve um de dois resultados possíveis."
+        },
+        {
+          "question": "Se A1=15, qual o resultado de =SE(A1<10; \"Correto\"; 100)?",
+          "options": ["15", "Correto", "100", "FALSO"],
+          "correctAnswer": "100",
+          "feedback": "O teste lógico é 'A1<10'. Como A1 é 15, a condição 15<10 é FALSA. Portanto, a função SE devolve o seu terceiro argumento, o 'valor_se_falso', que neste caso é 100."
+        },
+        {
+          "question": "Como se testa se a célula B2 está vazia?",
+          "options": ["=SE(B2=VAZIO; ...)", "=SE(B2=\"\"; ...)", "=SE(É.VAZIA(B2); ...)", "As opções B e C estão corretas"],
+          "correctAnswer": "As opções B e C estão corretas",
+          "feedback": "Para testar se uma célula está vazia, pode-se compará-la com duas aspas seguidas (B2=\"\"), que representam uma cadeia de texto vazia, ou usar a função específica para isso, É.VAZIA(B2)."
+        }
+      ],
+      "challenge": {
+        "description": "Crie uma verificação de stock. Numa lista de produtos, se a quantidade em stock (Coluna B) for inferior a 20, a célula ao lado (Coluna C) deve exibir a mensagem \"Repor Stock\". Caso contrário, deve exibir \"OK\".",
+        "initialCode": "Produto | Quantidade\nCanetas | 50\nCadernos| 15\nBorrachas | 150",
+        "solution": "Na célula C2, insira a fórmula '=SE(B2<20; \"Repor Stock\"; \"OK\")' e arraste para baixo."
+      }
+    },
+    {
+      "id": "4.2",
+      "title": "SE aninhado (notas por escalões)",
+      "illustration": "assets/images/modules/04/lessons/02-illust.svg",
+      "theory": "Um SE aninhado é como um painel de juízes. O caso (o seu dado) é apresentado ao primeiro juiz (o primeiro SE). Se ele não conseguir dar um veredicto final (se a condição for falsa), o caso passa para o próximo juiz na hierarquia (o segundo SE), e assim por diante, até que uma condição seja satisfeita.",
+      "quickNote": "As versões mais recentes do Excel introduziram a função SE.S (IFS em inglês), que simplifica múltiplos SEs aninhados. A sintaxe é =SE.S(teste1; valor1; teste2; valor2; ...). No entanto, é crucial aprender o SE aninhado, pois é universalmente compatível.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Classificar um número como 'Positivo', 'Negativo' ou 'Zero'.",
+          "code": "Célula A1 contém: -5\nFórmula: =SE(A1>0; \"Positivo\"; SE(A1<0; \"Negativo\"; \"Zero\"))\nResultado: \"Negativo\""
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Atribuir escalões de notas a alunos.",
+          "code": "Nota em B2: 16\nFórmula: =SE(B2>=18; \"Excelente\"; SE(B2>=14; \"Bom\"; SE(B2>=9.5; \"Suficiente\"; \"Insuficiente\")))\nResultado: \"Bom\""
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Ordem errada das condições.",
+          "code": "PROBLEMA: A fórmula =SE(B2>=9.5; \"Suficiente\"; SE(B2>=14; \"Bom\"; ...)) para a nota 16 devolve 'Suficiente'.\nMOTIVO: A primeira condição (16>=9.5) é verdadeira, então o Excel para aí.\nSOLUÇÃO: Ordene do mais específico para o mais geral (ex: do maior para o menor)."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Numa fórmula de SE aninhado para classificar valores, por que motivo a ordem dos testes é tão importante?",
+          "options": ["Para a fórmula ser mais curta", "Porque o Excel para na primeira condição VERDADEIRA que encontra", "Não é importante, a ordem é indiferente", "Para evitar o erro #VALOR!"],
+          "correctAnswer": "Porque o Excel para na primeira condição VERDADEIRA que encontra",
+          "feedback": "Num SE aninhado, o Excel avalia as condições pela ordem em que estão escritas. Assim que encontra a primeira condição que é VERDADEIRA, devolve o valor correspondente e ignora todos os testes restantes."
+        },
+        {
+          "question": "Qual é a função mais moderna que pode substituir múltiplos SEs aninhados?",
+          "options": ["SE.MÚLTIPLO", "SE.AVANÇADO", "SE.S", "SE.TESTE"],
+          "correctAnswer": "SE.S",
+          "feedback": "A função SE.S (ou IFS em inglês) foi introduzida nas versões mais recentes do Excel para simplificar múltiplos testes condicionais, evitando a complexidade e os parênteses múltiplos de um SE aninhado."
+        },
+        {
+          "question": "Quantos SEs pode aninhar numa única fórmula nas versões modernas do Excel?",
+          "options": ["Até 3", "Até 7", "Até 15", "Até 64"],
+          "correctAnswer": "Até 64",
+          "feedback": "As versões modernas do Excel permitem aninhar até 64 funções SE. No entanto, por questões de legibilidade e performance, se a lógica é muito complexa, alternativas como SE.S ou tabelas de consulta são preferíveis."
+        }
+      ],
+      "challenge": {
+        "description": "Classifique o desempenho de vendas com base no valor vendido. Vendas > 5000€ é 'Ouro', vendas > 2000€ é 'Prata', e tudo o resto é 'Bronze'.",
+        "initialCode": "Vendedor | Vendas\nAna | 6500€\nBruno | 2100€\nCarla | 1800€",
+        "solution": "Na célula C2, insira '=SE(B2>5000; \"Ouro\"; SE(B2>2000; \"Prata\"; \"Bronze\"))' e arraste para baixo."
+      }
+    },
+    {
+      "id": "4.3",
+      "title": "E / OU dentro de SE",
+      "illustration": "assets/images/modules/04/lessons/03-illust.svg",
+      "theory": "As funções E e OU são os 'assessores' do juiz SE. O assessor 'E' é muito rigoroso: só diz 'verdadeiro' ao juiz se TODAS as provas (condições) forem verdadeiras. O assessor 'OU' é mais flexível: basta que UMA das provas seja verdadeira para ele dizer 'verdadeiro'. O juiz SE baseia então o seu veredicto no parecer destes assessores.",
+      "quickNote": "As funções E e OU, usadas sozinhas numa célula, devolvem apenas os valores lógicos VERDADEIRO ou FALSO. Elas mostram o seu verdadeiro poder quando são usadas dentro do primeiro argumento (o teste lógico) de uma função SE.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Verificar se um número está entre 10 e 20 (função E).",
+          "code": "Célula A1 contém: 15\nFórmula: =SE(E(A1>10; A1<20); \"Dentro do intervalo\"; \"Fora\")\nResultado: \"Dentro do intervalo\""
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Conceder um bónus se as vendas forem > 10000€ OU se o cliente for 'VIP' (função OU).",
+          "code": "Vendas em A2: 9000€. Categoria em B2: 'VIP'.\nFórmula: =SE(OU(A2>10000; B2=\"VIP\"); \"Conceder Bónus\"; \"Sem Bónus\")\nResultado: \"Conceder Bónus\""
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Tentar escrever a lógica de forma coloquial.",
+          "code": "PROBLEMA: Escrever =SE(A1>10 E B1<5; ...) resulta num erro.\nSOLUÇÃO: A sintaxe do Excel exige que as condições estejam dentro da função E: =SE(E(A1>10; B1<5); ...)"
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Para que a função E(cond1; cond2; ...) devolva VERDADEIRO, o que tem de acontecer?",
+          "options": ["Pelo menos uma condição tem de ser verdadeira", "Nenhuma condição pode ser falsa", "Todas as condições têm de ser verdadeiras", "A primeira condição tem de ser verdadeira"],
+          "correctAnswer": "Todas as condições têm de ser verdadeiras",
+          "feedback": "A função E devolve VERDADEIRO apenas se todas as condições dentro dela forem verdadeiras. Se uma ou mais forem falsas, o resultado será FALSO."
+        },
+        {
+          "question": "Qual a fórmula para verificar se a célula A1 contém 'Sim' OU se a célula B1 é maior que 100?",
+          "options": ["=SE(A1=\"Sim\" OU B1>100; ...)", "=SE(OU(A1=\"Sim\"; B1>100); ...)", "=SE(OU(A1=\"Sim\" E B1>100); ...)", "=SE.OU(A1=\"Sim\"; B1>100; ...)"],
+          "correctAnswer": "=SE(OU(A1=\"Sim\"; B1>100); ...)",
+          "feedback": "A sintaxe correta para múltiplos testes lógicos dentro de um SE é usar as funções E ou OU. Neste caso, a função OU verifica as duas condições e devolve VERDADEIRO se pelo menos uma for satisfeita."
+        },
+        {
+          "question": "A função OU(A1>10; A1>20) para A1=25 devolve VERDADEIRO. Porquê?",
+          "options": ["Porque ambas as condições são verdadeiras", "Porque a primeira condição é verdadeira", "Porque a segunda condição é verdadeira", "Todas as anteriores estão corretas"],
+          "correctAnswer": "Todas as anteriores estão corretas",
+          "feedback": "A função OU devolve VERDADEIRO se pelo menos uma das suas condições for verdadeira. Neste caso, como 25>10 e 25>20, ambas são verdadeiras, mas bastaria uma delas para o resultado ser VERDADEIRO."
+        }
+      ],
+      "challenge": {
+        "description": "Determine se um candidato está qualificado para uma entrevista. Ele precisa de ter mais de 3 anos de experiência E de saber 'Excel' OU 'Power BI'.",
+        "initialCode": "Candidato|Experiência|Skill 1|Skill 2\nTiago|5|Excel|Word\nJoana|2|Python|Power BI\nRita|4|Word|Power BI",
+        "solution": "Na célula D2, insira '=SE(E(B2>3; OU(C2=\"Excel\"; C2=\"Power BI\")); \"Qualificado\"; \"Não Qualificado\")' e arraste. (Nota: esta é uma solução simplificada, uma análise real seria mais complexa)."
+      }
+    },
+    {
+      "id": "4.4",
+      "title": "ÍNDICE + CORRESP (busca lateral)",
+      "illustration": "assets/images/modules/04/lessons/04-illust.svg",
+      "theory": "Esta dupla é o sistema de arquivamento de elite do Excel. Pense nele assim: 'CORRESP' é o bibliotecário que lhe diz em que prateleira (número da linha) está o livro que procura. 'ÍNDICE' é o assistente que vai a essa prateleira (e a uma coluna específica, se necessário) e lhe traz o livro (o valor da célula). Juntos, são mais flexíveis e poderosos do que a popular função PROCV, pois conseguem 'procurar para a esquerda'.",
+      "quickNote": "O último argumento da função CORRESP é crucial. Use '0' para uma correspondência exata. Use '1' ou '-1' apenas se a sua lista estiver ordenada e quiser encontrar o valor mais próximo. Em 99% dos casos, vai querer usar '0'.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Procurar o preço de um produto.",
+          "code": "Dados: Coluna A com produtos, Coluna B com preços.\nObjetivo: Encontrar o preço da 'Pera'.\nFórmula: =ÍNDICE(B:B; CORRESP(\"Pera\"; A:A; 0))\nExplicação: CORRESP encontra a posição da 'Pera' na coluna A, e ÍNDICE devolve o valor nessa mesma posição da coluna B."
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Procurar um NIF a partir de um nome de cliente (o NIF está numa coluna à esquerda do nome).",
+          "code": "Dados: Coluna A com NIFs, Coluna C com Nomes.\nObjetivo: Encontrar o NIF do 'Cliente X'.\nFórmula: =ÍNDICE(A:A; CORRESP(\"Cliente X\"; C:C; 0))\nIsto funciona perfeitamente, ao contrário da PROCV."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Não usar o '0' para correspondência exata na função CORRESP.",
+          "code": "PROBLEMA: A sua lista de produtos não está por ordem alfabética e usa =CORRESP(\"Pera\"; A:A) sem o '; 0' no final.\nCONSEQUÊNCIA: A função pode devolver um erro #N/D ou, pior, a posição de um produto errado.\nSOLUÇÃO: Use sempre '; 0' no final para garantir uma correspondência exata."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "O que é que a função CORRESP devolve?",
+          "options": ["O valor de uma célula", "Um valor VERDADEIRO ou FALSO", "A posição numérica de um item num intervalo", "Uma referência a uma célula"],
+          "correctAnswer": "A posição numérica de um item num intervalo",
+          "feedback": "A função CORRESP procura um item num intervalo e devolve a sua posição relativa (ex: 3º item da lista), não o valor em si. É este número que a função ÍNDICE utiliza."
+        },
+        {
+          "question": "Qual é a principal vantagem da combinação ÍNDICE + CORRESP sobre a função PROCV?",
+          "options": ["É mais curta de escrever", "Consegue procurar valores em colunas à esquerda da coluna de pesquisa", "É mais rápida em folhas de cálculo pequenas", "Usa menos memória"],
+          "correctAnswer": "Consegue procurar valores em colunas à esquerda da coluna de pesquisa",
+          "feedback": "A grande vantagem de ÍNDICE + CORRESP é a sua flexibilidade. Ao contrário da PROCV, que só procura na primeira coluna e devolve valores à direita, esta combinação permite procurar numa coluna e devolver o valor correspondente de qualquer outra coluna, incluindo as que estão à esquerda."
+        },
+        {
+          "question": "Na fórmula =ÍNDICE(A1:C10; 3; 2), que valor será devolvido?",
+          "options": ["O valor na célula C2", "O valor na célula B3", "O valor na célula A3", "O valor na célula C3"],
+          "correctAnswer": "O valor na célula B3",
+          "feedback": "A função ÍNDICE devolve o valor na intersecção de uma linha e coluna dentro de um intervalo. Neste caso, procura na 3ª linha e na 2ª coluna do intervalo A1:C10, o que corresponde à célula B3."
+        }
+      ],
+      "challenge": {
+        "description": "Tem uma tabela com 'ID do Funcionário', 'Nome' e 'Departamento'. Numa outra célula, um utilizador insere um ID de funcionário. Crie uma fórmula que devolva o Nome correspondente a esse ID.",
+        "initialCode": "ID | Nome | Dept.\n101 | Ana | Vendas\n102 | Bruno | IT\n103 | Carla | Mktg\n\nID a procurar: 102",
+        "solution": "Assumindo que os IDs estão em A2:A4, os Nomes em B2:B4, e o ID a procurar em E2, a fórmula seria: '=ÍNDICE(B2:B4; CORRESP(E2; A2:A4; 0))'. O resultado seria 'Bruno'."
+      }
+    },
+    {
+      "id": "4.5",
+      "title": "SEERRO para mensagens amigáveis",
+      "illustration": "assets/images/modules/04/lessons/05-illust.svg",
+      "theory": "A função SEERRO é a 'equipa de relações públicas' dos seus relatórios. Ela antecipa qualquer erro que uma fórmula possa gerar (#N/D, #VALOR!, #DIV/0!) e, em vez de mostrar essa mensagem técnica e feia, substitui-a por uma alternativa elegante que você define, como 'Não encontrado', '0', ou uma célula em branco. Isto torna os seus dashboards muito mais profissionais e fáceis de usar.",
+      "quickNote": "Uma prática comum é usar SEERRO para devolver uma célula em branco (\"\") em caso de erro. Isto é útil em tabelas e gráficos, pois evita que zeros ou textos de erro sejam representados visualmente, mantendo o design limpo.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Evitar um erro de divisão por zero.",
+          "code": "Fórmula original: =A1/B1 (devolve #DIV/0! se B1 for 0)\nFórmula com SEERRO: =SEERRO(A1/B1; 0)\nResultado: Devolve o valor 0, que é mais útil para cálculos posteriores."
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Tratar procuras sem sucesso com ÍNDICE + CORRESP.",
+          "code": "Fórmula original: =ÍNDICE(...) (devolve #N/D se não encontrar)\nFórmula com SEERRO: =SEERRO(ÍNDICE(...); \"Cliente não encontrado\")\nResultado: Exibe uma mensagem clara e amigável."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Mascarar erros que deveriam ser corrigidos.",
+          "code": "PROBLEMA: A fórmula =SEERRO(SOMA(A1:A5); \"Erro\") é usada. Se em A2 estiver texto em vez de um número, a SOMA daria #VALOR!, e o SEERRO mostraria 'Erro'.\nCONSEQUÊNCIA: O SEERRO está a esconder um erro de inserção de dados que deveria ser corrigido na origem. Use SEERRO para erros esperados, não para mascarar problemas nos dados."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "A função SEERRO interceta qual tipo de erro?",
+          "options": ["Apenas o erro #N/D", "Apenas os erros #VALOR! e #DIV/0!", "Qualquer erro de fórmula (ex: #N/D, #VALOR!, #REF!, #NOME?)", "Não interceta erros, apenas formata a célula"],
+          "correctAnswer": "Qualquer erro de fórmula (ex: #N/D, #VALOR!, #REF!, #NOME?)",
+          "feedback": "A função SEERRO é uma função genérica que interceta qualquer tipo de erro de fórmula, tornando-a muito versátil para o tratamento de exceções."
+        },
+        {
+          "question": "Quantos argumentos tem a função SEERRO?",
+          "options": ["Um", "Dois", "Três", "Quatro"],
+          "correctAnswer": "Dois",
+          "feedback": "A função SEERRO tem dois argumentos: 1) o valor ou fórmula a avaliar; 2) o valor a devolver se o primeiro argumento resultar num erro."
+        },
+        {
+          "question": "Quando é que o uso de SEERRO pode ser considerado uma má prática?",
+          "options": ["Quando o relatório é para um cliente", "Quando a fórmula é muito longa", "Quando está a esconder problemas com os dados de origem que deveriam ser corrigidos", "Nunca, é sempre uma boa prática"],
+          "correctAnswer": "Quando está a esconder problemas com os dados de origem que deveriam ser corrigidos",
+          "feedback": "SEERRO deve ser usado para gerir erros esperados (ex: uma pesquisa não encontrar resultado). Usá-lo para mascarar erros causados por dados de má qualidade é uma má prática, pois impede a correção do problema na sua origem."
+        }
+      ],
+      "challenge": {
+        "description": "Este é o Desafio Final do Módulo! Crie um classificador de crédito automático. Dadas as condições: Aprovado se Score > 750 E Rácio Dívida/Rendimento < 30%. Negado se Score < 600. Nos outros casos, 'Pede Análise'. Use SEs aninhados e a função E para construir esta lógica.",
+        "initialCode": "Cliente|Score|Dívida Anual|Rendimento Anual\nJosé|780|15000|60000\nMaria|650|25000|50000\nPaulo|550|10000|40000",
+        "solution": "Na célula E2: '=SE(B2<600; \"Negado\"; SE(E(B2>750; C2/D2<0.3); \"Aprovado\"; \"Pede Análise\"))'.\nBónus: =SEERRO(SE(...); \"Dados Inválidos\") para tratar possíveis erros de dados."
+      }
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "id": "5",
+  "title": "Tabelas Dinâmicas",
+  "bigIdea": "Caleidoscópio de dados",
+  "cover": "assets/images/modules/05/cover.svg",
+  "lessons": [
+    {
+      "id": "5.1",
+      "title": "Criar tabela dinâmica em 30 s",
+      "illustration": "assets/images/modules/05/lessons/01-illust.svg",
+      "theory": "A Tabela Dinâmica é como um caleidoscópio. Pega nos seus dados brutos, desorganizados, e com um simples 'rodar', permite-lhe ver os mesmos dados de inúmeras perspetivas, criando resumos e padrões instantaneamente, sem escrever uma única fórmula. É a ferramenta mais rápida para transformar dados em conhecimento.",
+      "quickNote": "Antes de criar uma Tabela Dinâmica, certifique-se de que os seus dados estão limpos: sem linhas ou colunas totalmente em branco e com um cabeçalho único para cada coluna. A melhor prática é formatar os dados como uma Tabela oficial ('Ctrl + T') primeiro.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Criar a primeira Tabela Dinâmica.",
+          "code": "1. Clique numa célula da sua tabela de dados.\n2. Vá ao separador 'Inserir' > 'Tabela Dinâmica'.\n3. Confirme o intervalo e clique OK.\n4. Uma Tabela Dinâmica em branco é criada numa nova folha."
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Fazer um resumo rápido de vendas por produto.",
+          "code": "1. Com a Tabela Dinâmica criada, olhe para o painel 'Campos da Tabela Dinâmica' à direita.\n2. Arraste o campo 'Produto' para a área 'Linhas'.\n3. Arraste o campo 'Vendas' para a área 'Valores'.\n4. O resumo aparece instantaneamente."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "A Tabela Dinâmica não atualiza quando os dados de origem mudam.",
+          "code": "PROBLEMA: Altera um valor na sua tabela de dados original, mas a Tabela Dinâmica permanece inalterada.\nSOLUÇÃO: Clique com o botão direito na Tabela Dinâmica e escolha 'Atualizar' (ou use o atalho Alt+F5)."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Qual é o primeiro passo altamente recomendado antes de criar uma Tabela Dinâmica?",
+          "options": ["Ordenar os dados por ordem alfabética", "Formatar os dados como Tabela oficial (Ctrl+T)", "Colocar todos os números a negrito", "Copiar os dados para o Word"],
+          "correctAnswer": "Formatar os dados como Tabela oficial (Ctrl+T)",
+          "feedback": "Formatar os dados como Tabela (Ctrl+T) é a melhor prática. Isto garante que a Tabela Dinâmica reconhece automaticamente novas linhas de dados quando é atualizada, tornando a sua análise dinâmica."
+        },
+        {
+          "question": "Em que separador da Faixa de Opções se encontra o botão para inserir uma Tabela Dinâmica?",
+          "options": ["Base", "Fórmulas", "Dados", "Inserir"],
+          "correctAnswer": "Inserir",
+          "feedback": "A Tabela Dinâmica é considerada um objeto que se insere na folha de cálculo, tal como um gráfico ou uma imagem. Por isso, a opção encontra-se no separador 'Inserir'."
+        },
+        {
+          "question": "Se adicionar uma nova linha de vendas aos seus dados de origem, o que tem de fazer para que a Tabela Dinâmica a inclua?",
+          "options": ["Nada, é automático", "Apagar e recriar a Tabela Dinâmica", "Clicar em 'Atualizar' na Tabela Dinâmica", "Guardar e reabrir o ficheiro"],
+          "correctAnswer": "Clicar em 'Atualizar' na Tabela Dinâmica",
+          "feedback": "As Tabelas Dinâmicas não se atualizam em tempo real. É necessário acionar uma atualização (clique direito > Atualizar, ou no separador 'Dados' > 'Atualizar Tudo') para que ela releia os dados de origem e mostre as alterações."
+        }
+      ],
+      "challenge": {
+        "description": "Dada uma pequena lista de vendas (Data, Vendedor, Valor), insira uma Tabela Dinâmica numa nova folha de cálculo para começar a sua análise.",
+        "initialCode": "Data | Vendedor | Valor\n01/01 | Ana | 100\n01/01 | Bruno | 150\n02/01 | Ana | 200",
+        "solution": "1. Clique numa célula dos dados. \n2. Vá ao separador 'Inserir' e clique em 'Tabela Dinâmica'. \n3. Na janela que aparece, confirme que o intervalo está correto e que a Tabela será criada numa 'Nova Folha de Cálculo'. \n4. Clique em OK."
+      }
+    },
+    {
+      "id": "5.2",
+      "title": "Arrastar campos (linhas, colunas, valores)",
+      "illustration": "assets/images/modules/05/lessons/02-illust.svg",
+      "theory": "O painel de campos da Tabela Dinâmica é o seu estúdio de DJ. Os campos (os cabeçalhos das suas colunas) são os discos. As quatro áreas (Filtros, Colunas, Linhas, Valores) são os pratos. Ao arrastar e misturar os 'discos' nos 'pratos', você cria um novo 'remix' dos seus dados, respondendo a diferentes perguntas a cada segundo.",
+      "quickNote": "A área 'Valores' é tipicamente para campos numéricos. O Excel irá, por defeito, somá-los (Soma de...). Se arrastar um campo de texto, como 'Nome do Cliente', o Excel irá contá-lo (Contagem de...), o que é útil para saber quantos clientes compraram, por exemplo.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Ver vendas totais por Vendedor.",
+          "code": "1. Arraste o campo 'Vendedor' para a área 'Linhas'.\n2. Arraste o campo 'Valor' para a área 'Valores'.\nResultado: A tabela lista cada vendedor e o seu total de vendas."
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Criar uma matriz de vendas: Produto vs. Região.",
+          "code": "1. Arraste 'Produto' para 'Linhas'.\n2. Arraste 'Região' para 'Colunas'.\n3. Arraste 'Vendas' para 'Valores'.\nResultado: Uma tabela de dupla entrada que cruza os dados."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Arrastar um campo de data para a área de Valores.",
+          "code": "PROBLEMA: Arrastar 'Data da Fatura' para a área 'Valores' resulta num número gigante e sem sentido (a soma dos números de série das datas).\nSOLUÇÃO: A área 'Valores' deve conter dados que fazem sentido agregar (somar, contar). Use datas nas áreas de Linhas, Colunas ou Filtros."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Para que serve a área 'Linhas' do painel de campos?",
+          "options": ["Para filtrar toda a tabela", "Para criar os cabeçalhos das colunas do seu resumo", "Para fazer os cálculos matemáticos", "Para criar os cabeçalhos das linhas do seu resumo"],
+          "correctAnswer": "Para criar os cabeçalhos das linhas do seu resumo",
+          "feedback": "Os campos colocados na área 'Linhas' criam as categorias no eixo vertical da Tabela Dinâmica, ou seja, os cabeçalhos de cada linha do seu relatório de resumo."
+        },
+        {
+          "question": "Se arrastar um campo de texto (ex: Nomes) para a área 'Valores', que cálculo o Excel fará por defeito?",
+          "options": ["Soma", "Média", "Contagem", "Erro"],
+          "correctAnswer": "Contagem",
+          "feedback": "Como não é possível realizar operações matemáticas com texto, o Excel assume que a sua intenção é contar o número de ocorrências, pelo que aplica a função de Contagem por defeito."
+        },
+        {
+          "question": "Para criar uma tabela de dupla entrada (matriz), que duas áreas do painel de campos precisa de usar para os seus eixos?",
+          "options": ["Linhas e Valores", "Valores e Filtros", "Linhas e Colunas", "Colunas e Filtros"],
+          "correctAnswer": "Linhas e Colunas",
+          "feedback": "Uma matriz, ou tabela de dupla entrada, é criada usando a área 'Linhas' para o eixo vertical e a área 'Colunas' para o eixo horizontal. A área 'Valores' preenche as intersecções."
+        }
+      ],
+      "challenge": {
+        "description": "A partir de uma Tabela Dinâmica, crie um relatório que mostre o total de vendas por Vendedor (linhas) e por Categoria de Produto (colunas).",
+        "initialCode": "Vendedor | Categoria | Vendas\nAna | Tech | 500\nBruno | Mobiliário | 300\nAna | Mobiliário | 200",
+        "solution": "1. Arraste 'Vendedor' para a área 'Linhas'. \n2. Arraste 'Categoria' para a área 'Colunas'. \n3. Arraste 'Vendas' para a área 'Valores'."
+      }
+    },
+    {
+      "id": "5.3",
+      "title": "Filtros de segmentação",
+      "illustration": "assets/images/modules/05/lessons/03-illust.svg",
+      "theory": "A Segmentação de Dados (Slicers) são filtros com estilo. Em vez de usar as listas pendentes aborrecidas nos cabeçalhos, a segmentação cria botões grandes e interativos que lhe permitem focar-se numa 'fatia' específica dos seus dados. São como o controlo remoto do seu caleidoscópio, permitindo-lhe mudar a vista com um clique e criar dashboards dinâmicos.",
+      "quickNote": "Pode ligar uma única segmentação a MÚLTIPLAS Tabelas Dinâmicas. Clique com o botão direito na segmentação > 'Ligações de Relatório' e selecione todas as tabelas que quer controlar. Esta é a base para criar dashboards interativos.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Adicionar uma segmentação por Região.",
+          "code": "1. Selecione a sua Tabela Dinâmica.\n2. Vá ao separador 'Análise de Tabela Dinâmica' > 'Inserir Segmentação de Dados'.\n3. Escolha 'Região' e clique OK.\n4. Uma caixa com botões ('Norte', 'Sul', etc.) aparece. Clicar num botão filtra a tabela."
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Usar uma Linha de Tempo (um tipo especial de segmentação para datas).",
+          "code": "1. Selecione a sua Tabela Dinâmica.\n2. Vá a 'Análise de Tabela Dinâmica' > 'Inserir Linha de Tempo'.\n3. Se tiver um campo de data, ele aparecerá. Selecione-o.\n4. Agora pode filtrar por ano, trimestre ou mês com uma barra de navegação visual."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "A segmentação mostra itens que já não existem nos dados.",
+          "code": "PROBLEMA: Elimina um produto dos dados de origem, mas o botão desse produto ainda aparece na segmentação (acinzentado).\nSOLUÇÃO: Clique com o botão direito na segmentação > 'Definições da Segmentação de Dados' > desmarque 'Mostrar itens eliminados da origem de dados'."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Onde encontra a opção para inserir uma Segmentação de Dados?",
+          "options": ["No separador 'Dados'", "No separador contextual 'Análise de Tabela Dinâmica'", "No separador 'Inserir'", "Clicando com o botão direito numa célula"],
+          "correctAnswer": "No separador contextual 'Análise de Tabela Dinâmica'",
+          "feedback": "Ao selecionar uma Tabela Dinâmica, o separador contextual 'Análise de Tabela Dinâmica' aparece na Faixa de Opções. É aí que se encontram as ferramentas específicas como a Segmentação de Dados."
+        },
+        {
+          "question": "Uma Segmentação de Dados pode controlar mais do que uma Tabela Dinâmica?",
+          "options": ["Não, cada segmentação controla apenas uma tabela", "Sim, através da opção 'Ligações de Relatório'", "Sim, mas apenas se estiverem na mesma folha", "Apenas se controlar Gráficos Dinâmicos"],
+          "correctAnswer": "Sim, através da opção 'Ligações de Relatório'",
+          "feedback": "Sim, esta é uma das suas características mais poderosas para dashboards. Clicando com o botão direito na segmentação, a opção 'Ligações de Relatório' permite selecionar a que Tabelas (e Gráficos) Dinâmicos ela se deve aplicar."
+        },
+        {
+          "question": "Qual é o nome do filtro especial, tipo segmentação, desenhado para trabalhar com campos de data?",
+          "options": ["Segmentação de Datas", "Filtro de Calendário", "Linha de Tempo", "Painel de Datas"],
+          "correctAnswer": "Linha de Tempo",
+          "feedback": "A 'Linha de Tempo' é uma ferramenta visual de filtragem, similar a uma segmentação, mas concebida especificamente para campos de data, permitindo filtrar facilmente por anos, trimestres, meses ou dias."
+        }
+      ],
+      "challenge": {
+        "description": "Adicione uma Segmentação de Dados por 'Categoria' a uma Tabela Dinâmica de vendas. Mude o estilo da segmentação (no separador 'Segmentação') para ter 2 colunas de botões e uma cor que combine com a sua tabela.",
+        "initialCode": "Tabela Dinâmica de vendas por produto",
+        "solution": "1. Selecione a Tabela. \n2. Vá a 'Análise de Tabela Dinâmica' > 'Inserir Segmentação de Dados' > selecione 'Categoria'. \n3. Com a nova segmentação selecionada, vá ao separador 'Segmentação'. \n4. Mude o valor em 'Colunas' para 2. \n5. Escolha um estilo de cor diferente na galeria."
+      }
+    },
+    {
+      "id": "5.4",
+      "title": "Agrupar datas (mês, trimestre)",
+      "illustration": "assets/images/modules/05/lessons/04-illust.svg",
+      "theory": "O Excel é muito inteligente com datas. Ele entende que dias pertencem a meses, meses a trimestres, e trimestres a anos. A função 'Agrupar' do seu caleidoscópio permite-lhe juntar automaticamente os seus dados de transações diárias em blocos de tempo maiores, revelando tendências sazonais e de longo prazo com apenas alguns cliques.",
+      "quickNote": "Este agrupamento automático só funciona se a sua coluna de datas não tiver células em branco ou com texto. Todos os valores têm de ser datas válidas que o Excel reconheça. Limpar os dados é sempre o primeiro passo.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Agrupar vendas diárias por Mês.",
+          "code": "1. Numa Tabela Dinâmica com datas nas linhas, clique com o botão direito numa data.\n2. Escolha 'Agrupar'.\n3. Selecione 'Meses' e 'Anos' e clique OK.\n4. A tabela agora mostra um resumo de vendas por ano e mês."
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Agrupar idades de clientes em faixas etárias.",
+          "code": "1. Numa Tabela Dinâmica com idades, clique com o botão direito numa idade e escolha 'Agrupar'.\n2. Defina 'Começar em:' 18, 'Terminar em:' 70, e 'Por:' 10.\n3. O Excel cria automaticamente grupos como '18-27', '28-37', etc."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Tentar agrupar uma coluna que o Excel não reconhece como data ou número.",
+          "code": "PROBLEMA: A sua coluna de datas tem texto, como 'data a confirmar'.\nCONSEQUÊNCIA: Ao clicar com o botão direito, a opção 'Agrupar' está desativada ou devolve um erro.\nSOLUÇÃO: É preciso limpar os dados de origem primeiro, garantindo que são todas datas válidas."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Que ação simples inicia o processo de agrupamento de datas numa Tabela Dinâmica?",
+          "options": ["Ir ao separador 'Dados'", "Clicar duas vezes no cabeçalho", "Clicar com o botão direito numa data na área das linhas/colunas e escolher 'Agrupar'", "Usar uma fórmula"],
+          "correctAnswer": "Clicar com o botão direito numa data na área das linhas/colunas e escolher 'Agrupar'",
+          "feedback": "A funcionalidade de agrupamento é acedida através do menu de contexto. Clicar com o botão direito num campo de data ou número dentro da Tabela Dinâmica revela a opção 'Agrupar'."
+        },
+        {
+          "question": "Além de datas, que outro tipo de dados pode ser agrupado numa Tabela Dinâmica para criar faixas?",
+          "options": ["Texto", "Dados numéricos", "Valores lógicos (VERDADEIRO/FALSO)", "Não é possível agrupar outros tipos"],
+          "correctAnswer": "Dados numéricos",
+          "feedback": "A funcionalidade de agrupamento também se aplica a campos numéricos, permitindo criar faixas ou intervalos (ex: agrupar idades em décadas, preços em escalões)."
+        },
+        {
+          "question": "O que acontece se a sua coluna de datas tiver uma única célula em branco no meio?",
+          "options": ["O agrupamento funciona, mas ignora essa célula", "O Excel pede para preencher a célula", "O agrupamento falha com um erro", "O agrupamento funciona para os dados antes e depois da célula em branco"],
+          "correctAnswer": "O agrupamento falha com um erro",
+          "feedback": "Para que o agrupamento automático funcione, o campo (seja de data ou número) não pode conter células em branco ou com texto. O Excel precisa de um conjunto contínuo de dados válidos para conseguir criar os grupos."
+        }
+      ],
+      "challenge": {
+        "description": "A partir de uma lista de vendas com datas específicas ao longo de um ano, agrupe os dados para mostrar o total de vendas por Trimestre.",
+        "initialCode": "Data | Vendas\n15/01/2023 | 500\n20/03/2023 | 600\n10/05/2023 | 700\n05/08/2023 | 800",
+        "solution": "1. Crie uma Tabela Dinâmica com 'Data' nas Linhas e 'Vendas' nos Valores. \n2. Clique com o botão direito em qualquer data na nova tabela. \n3. Escolha 'Agrupar'. \n4. Na janela de agrupamento, desmarque todas as opções exceto 'Trimestres' e 'Anos'. Clique em OK."
+      }
+    },
+    {
+      "id": "5.5",
+      "title": "Formato de valor & % do total",
+      "illustration": "assets/images/modules/05/lessons/05-illust.svg",
+      "theory": "A última volta no caleidoscópio é mudar a forma como os números são exibidos. Em vez de apenas somas, pode querer ver a média, ou, mais importante, ver um valor como uma percentagem de um total. Isto ajuda a contextualizar os números, respondendo a perguntas como 'Qual a contribuição deste produto para as vendas totais?' sem precisar de cálculos manuais.",
+      "quickNote": "Arraste o mesmo campo (ex: 'Vendas') para a área de Valores VÁRIAS VEZES. Pode ter a 'Soma de Vendas' e, ao lado, a '% de Vendas' na mesma Tabela Dinâmica, mostrando o valor absoluto e o relativo em simultâneo.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Formatar os valores como Moeda.",
+          "code": "1. Clique com o botão direito num valor da sua Tabela Dinâmica.\n2. Escolha 'Formato do Número...'\n3. Selecione 'Moeda' e clique OK."
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Mostrar vendas por produto como uma percentagem do total geral.",
+          "code": "1. Clique com o botão direito num valor.\n2. Escolha 'Mostrar Valores Como' > '% do Total Geral'.\n3. Agora vê a contribuição de cada produto para o total."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Confundir '% do Total da Coluna' com '% do Total da Linha'.",
+          "code": "Cenário: Produtos nas linhas, regiões nas colunas.\nObjetivo: Contribuição de cada produto para o total da sua região.\nSOLUÇÃO: Use 'Mostrar Valores Como' > '% do Total da Coluna'.\nSe usar '% do Total da Linha', verá a distribuição de um produto pelas várias regiões."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Para mudar a forma como um valor é calculado (ex: de Soma para Média), onde deve clicar?",
+          "options": ["No separador 'Fórmulas'", "Clicar na seta do campo na área 'Valores' > 'Definições do Campo de Valor'", "Clicar com o botão direito na célula > Formatar Células", "No menu 'Dados'"],
+          "correctAnswer": "Clicar na seta do campo na área 'Valores' > 'Definições do Campo de Valor'",
+          "feedback": "O painel 'Definições do Campo de Valor' é o centro de controlo para os cálculos da área 'Valores'. Permite alterar a função de agregação (Soma, Contagem, Média, etc.) e também aceder às opções de 'Mostrar Valores Como'."
+        },
+        {
+          "question": "Qual a opção em 'Mostrar Valores Como' que usaria para ver o crescimento de vendas de um mês para o outro?",
+          "options": ["Total Acumulado Em...", "'% do Total Geral'", "'% da Diferença De...'", "Classificar"],
+          "correctAnswer": "'% da Diferença De...'",
+          "feedback": "A opção '% da Diferença De...' calcula a variação percentual de um item em relação ao item anterior (ex: um mês em relação ao anterior), sendo ideal para análises de crescimento e tendências."
+        },
+        {
+          "question": "É possível ter o valor absoluto e a percentagem do total para o mesmo campo na mesma Tabela Dinâmica?",
+          "options": ["Não, só é possível um cálculo por campo", "Sim, arrastando o campo para a área de Valores duas vezes", "Sim, mas requer uma fórmula complexa", "Apenas em Gráficos Dinâmicos"],
+          "correctAnswer": "Sim, arrastando o campo para a área de Valores duas vezes",
+          "feedback": "Sim, pode arrastar o mesmo campo para a área 'Valores' múltiplas vezes. Depois, pode configurar cada instância de forma diferente: uma como soma, outra como '% do Total Geral', etc., enriquecendo a sua análise."
+        }
+      ],
+      "challenge": {
+        "description": "Este é o Desafio Final do Módulo! Crie um dashboard interativo. A partir de uma lista de vendas (Data, Região, Vendedor, Produto, Vendas), crie UMA Tabela Dinâmica que mostre as vendas por Região (linhas) e por Mês (colunas). Adicione Segmentação de Dados para 'Vendedor' e 'Produto' para filtrar o relatório. Formate os valores como Moeda.",
+        "initialCode": "Data | Região | Vendedor | Produto | Vendas\n(Várias linhas de dados)",
+        "solution": "1. Crie uma Tabela Dinâmica. \n2. Arraste 'Região' para 'Linhas'. \n3. Arraste 'Data' para 'Colunas' (e agrupe por Meses se necessário). \n4. Arraste 'Vendas' para 'Valores' e formate como Moeda. \n5. Selecione a tabela e vá a 'Análise de Tabela Dinâmica' > 'Inserir Segmentação de Dados', e escolha 'Vendedor' e 'Produto'. \n6. Organize os elementos na folha."
+      }
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "id": "7",
+  "title": "Colaboração & Automização",
+  "bigIdea": "Central de comando",
+  "cover": "assets/images/modules/07/cover.svg",
+  "lessons": [
+    {
+      "id": "7.1",
+      "title": "Comentários e @menções",
+      "illustration": "assets/images/modules/07/lessons/01-illust.svg",
+      "theory": "Na sua central de comando, a comunicação é chave. Os comentários são o sistema de intercomunicação do Excel: permitem-lhe deixar notas, fazer perguntas e ter conversas sobre dados específicos sem nunca alterar o conteúdo da célula. Usar uma '@menção' é como chamar um colega específico pelo altifalante, garantindo que ele recebe uma notificação.",
+      "quickNote": "Pode ver todos os comentários de uma folha de cálculo de uma só vez indo ao separador 'Rever' e clicando em 'Mostrar Comentários'. Isto abre um painel que lista todas as conversas ativas.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Adicionar um comentário a uma célula.",
+          "code": "1. Clique com o botão direito na célula A1.\n2. Escolha 'Novo Comentário'.\n3. Escreva 'Pode confirmar este valor?' e publique.\n4. A célula fica marcada com um indicador roxo."
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Responder a um comentário e mencionar alguém.",
+          "code": "1. Abra o comentário existente.\n2. Escreva a sua resposta, incluindo '@nome_do_colega'.\n3. O colega mencionado recebe uma notificação por e-mail."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Confundir Comentários (modernos) com Notas (legado).",
+          "code": "PROBLEMA: Se clicar em 'Nova Nota', cria uma caixa amarela estática (sistema antigo), que não permite conversas ou menções.\nSOLUÇÃO: Para colaboração, use sempre 'Novo Comentário'."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Qual é a principal vantagem de usar '@menções' num comentário?",
+          "options": ["Muda a cor do comentário", "Envia uma notificação por e-mail à pessoa mencionada", "Aumenta o tamanho do tipo de letra", "Bloqueia a célula para edição"],
+          "correctAnswer": "Envia uma notificação por e-mail à pessoa mencionada",
+          "feedback": "A funcionalidade de @menção está integrada com o ecossistema Microsoft 365. Ao mencionar alguém, o sistema envia uma notificação por e-mail a essa pessoa com uma ligação direta para o comentário, assegurando que a questão é vista."
+        },
+        {
+          "question": "O que acontece quando 'Resolve' uma conversa num comentário?",
+          "options": ["O comentário é permanentemente apagado", "O comentário fica oculto, mas pode ser reaberto", "O texto do comentário é copiado para a célula", "O ficheiro é guardado automaticamente"],
+          "correctAnswer": "O comentário fica oculto, mas pode ser reaberto",
+          "feedback": "Resolver uma conversa não a apaga. A conversa é marcada como concluída e fica oculta para não poluir a interface, mas pode ser reaberta a qualquer momento a partir do painel de comentários para consulta do histórico."
+        },
+        {
+          "question": "Para que servem as 'Notas' (o sistema antigo de caixas amarelas)?",
+          "options": ["São melhores para conversas longas", "Permitem formatação de texto avançada", "São úteis para anotações estáticas que não requerem resposta, como explicar o que uma fórmula faz", "Foram completamente substituídas e já não existem"],
+          "correctAnswer": "São úteis para anotações estáticas que não requerem resposta, como explicar o que uma fórmula faz",
+          "feedback": "As Notas (antigos comentários) são para anotações estáticas e informativas. São ideais para documentar uma célula ou explicar um cálculo, funcionando como um 'post-it' digital que não espera uma resposta."
+        }
+      ],
+      "challenge": {
+        "description": "Numa folha de orçamento partilhada, adicione um comentário à célula da despesa 'Marketing', perguntando por que motivo o valor deste mês está tão acima da média. Marque a conversa como resolvida depois de receber uma resposta imaginária.",
+        "initialCode": "Despesa | Valor\nVendas | 1.200€\nMarketing | 3.500€\nRH | 800€",
+        "solution": "1. Clique com o botão direito na célula com '3.500€'. \n2. Escolha 'Novo Comentário'. \n3. Escreva a sua pergunta. \n4. Para resolver, clique nos três pontos no canto do comentário e selecione 'Resolver thread'."
+      }
+    },
+    {
+      "id": "7.2",
+      "title": "Proteger abas e células",
+      "illustration": "assets/images/modules/07/lessons/02-illust.svg",
+      "theory": "Numa central de comando, nem todos podem aceder a todos os botões. Proteger folhas e células é como trancar as portas das salas críticas e colocar capas protetoras sobre os botões que não devem ser tocados. Garante que os utilizadores só podem inserir dados onde é suposto, prevenindo a destruição acidental de fórmulas e relatórios.",
+      "quickNote": "Por defeito, TODAS as células numa folha do Excel estão no estado 'Bloqueado'. A proteção só tem efeito depois de ir ao separador 'Rever' e clicar em 'Proteger Folha'. O truque é desbloquear as células de input ANTES de proteger a folha.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Proteger uma folha de cálculo inteira contra qualquer alteração.",
+          "code": "1. Vá ao separador 'Rever' > 'Proteger Folha'.\n2. Defina uma palavra-passe (opcional) e clique em OK.\n3. Ninguém pode alterar nada na folha."
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Proteger as fórmulas, mas permitir a introdução de dados.",
+          "code": "1. Selecione as células de input (onde o utilizador deve escrever).\n2. Pressione 'Ctrl + 1' > separador 'Proteção' e desmarque 'Bloqueado'.\n3. Vá a 'Rever' > 'Proteger Folha'.\n4. Agora, o utilizador só consegue escrever nas células que desbloqueou."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Esquecer-se da palavra-passe.",
+          "code": "PROBLEMA: Protege uma folha com uma palavra-passe complexa e não a anota.\nCONSEQUÊNCIA: Não consegue desproteger a folha para fazer alterações. A proteção do Excel não é para segurança de topo, mas esquecer a palavra-passe é muito inconveniente."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Qual é o estado de proteção padrão de uma célula nova no Excel?",
+          "options": ["Desbloqueado", "Oculto", "Bloqueado", "Só de Leitura"],
+          "correctAnswer": "Bloqueado",
+          "feedback": "Por defeito, todas as células têm a propriedade 'Bloqueado' ativada. No entanto, este bloqueio só se torna efetivo quando o comando 'Proteger Folha' é ativado."
+        },
+        {
+          "question": "Em que separador se encontra o comando 'Proteger Folha'?",
+          "options": ["Dados", "Ficheiro", "Base", "Rever"],
+          "correctAnswer": "Rever",
+          "feedback": "As funcionalidades relacionadas com a revisão, verificação e proteção do conteúdo da folha de cálculo, como comentários e proteção, estão agrupadas no separador 'Rever'."
+        },
+        {
+          "question": "Qual é a principal finalidade de proteger uma folha de cálculo?",
+          "options": ["Impedir que hackers acedam aos dados", "Aumentar a velocidade de cálculo das fórmulas", "Prevenir alterações acidentais por parte dos utilizadores", "Reduzir o tamanho do ficheiro"],
+          "correctAnswer": "Prevenir alterações acidentais por parte dos utilizadores",
+          "feedback": "A proteção de folha destina-se a salvaguardar a integridade de um relatório ou modelo, impedindo que utilizadores (incluindo nós próprios) alterem ou apaguem fórmulas e estruturas importantes por acidente."
+        }
+      ],
+      "challenge": {
+        "description": "Tem um modelo de fatura. Desbloqueie as células onde o utilizador deve inserir o nome do cliente, os itens e as quantidades. De seguida, proteja a folha para que as fórmulas de cálculo, o logótipo e a formatação não possam ser alterados.",
+        "initialCode": "Modelo de fatura com células de input e células de cálculo.",
+        "solution": "1. Selecione todas as células de input (ex: nome do cliente, descrição dos itens, etc.) mantendo a tecla Ctrl pressionada. \n2. Pressione 'Ctrl + 1', vá ao separador 'Proteção' e desmarque 'Bloqueado'. Clique em OK. \n3. Vá ao separador 'Rever' > 'Proteger Folha' e clique em OK."
+      }
+    },
+    {
+      "id": "7.3",
+      "title": "Gravar macro simples (formatação)",
+      "illustration": "assets/images/modules/07/lessons/03-illust.svg",
+      "theory": "Uma macro é um robot assistente na sua central de comando. Em vez de fazer uma sequência de tarefas repetitivas manualmente, você faz uma vez, enquanto o 'Gravador de Macros' observa e anota cada passo. Depois, pode atribuir essa gravação a um botão que, quando pressionado, executa toda a sequência de tarefas instantaneamente.",
+      "quickNote": "Para usar macros, precisa de ativar o separador 'Programador'. Vá a 'Ficheiro' > 'Opções' > 'Personalizar Faixa de Opções' e marque a caixa 'Programador'.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Gravar uma macro que aplica um formato de cabeçalho (negrito, fundo cinzento).",
+          "code": "1. Vá ao separador 'Programador' > 'Gravar Macro'.\n2. Aplique a formatação desejada (negrito, fundo cinzento).\n3. Clique em 'Parar Gravação'.\n4. Agora pode executar essa macro para aplicar o mesmo estilo instantaneamente."
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Atribuir uma macro a um botão numa folha de cálculo.",
+          "code": "1. Vá a 'Inserir' > 'Ilustrações' > 'Formas' e desenhe um 'botão'.\n2. Clique com o botão direito na forma > 'Atribuir Macro...'\n3. Selecione a macro que gravou. Agora, clicar na forma executa a ação."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Guardar o ficheiro como .xlsx e perder as macros.",
+          "code": "PROBLEMA: Gravou macros úteis e guarda o ficheiro no formato padrão (.xlsx).\nCONSEQUÊNCIA: O Excel remove todo o código de macro ao guardar.\nSOLUÇÃO: Tem de usar 'Guardar Como' e escolher o tipo 'Pasta de Trabalho Com Permissão para Macros do Excel (*.xlsm)'."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Qual o formato de ficheiro que deve usar para guardar uma pasta de trabalho que contém macros?",
+          "options": [".xlsx", ".xlsm", ".csv", ".xltx"],
+          "correctAnswer": ".xlsm",
+          "feedback": "Para que o código VBA de uma macro seja guardado, o ficheiro tem de ter o formato '.xlsm' (Excel Macro-Enabled Workbook). O formato padrão '.xlsx' não suporta macros."
+        },
+        {
+          "question": "O Gravador de Macros grava o quê?",
+          "options": ["Apenas movimentos do rato", "Apenas o tempo que demora a fazer uma tarefa", "A sequência de ações e comandos que executa no Excel", "Apenas texto que digita"],
+          "correctAnswer": "A sequência de ações e comandos que executa no Excel",
+          "feedback": "O gravador de macros traduz as suas ações (cliques em botões, seleções, formatações) em código VBA (Visual Basic for Applications), que pode ser depois executado para repetir essas mesmas ações."
+        },
+        {
+          "question": "O que faz a opção 'Usar Referências Relativas' no Gravador de Macros?",
+          "options": ["Grava a macro mais depressa", "Permite que a macro funcione a partir da célula ativa, em vez de funcionar sempre nas mesmas células exatas (ex: A1)", "Torna a macro mais segura", "Reduz o tamanho do ficheiro"],
+          "correctAnswer": "Permite que a macro funcione a partir da célula ativa, em vez de funcionar sempre nas mesmas células exatas (ex: A1)",
+          "feedback": "Com as referências relativas ativadas, a macro age em relação à célula atualmente selecionada. Se estiver desativada (padrão), a macro irá agir sempre nas células exatas que foram selecionadas durante a gravação (referências absolutas)."
+        }
+      ],
+      "challenge": {
+        "description": "Grave uma macro que limpa o conteúdo de um formulário. A macro deve selecionar o intervalo de células de input (ex: B2:B10) e apagar o seu conteúdo, deixando o formulário pronto para ser preenchido novamente.",
+        "initialCode": "Formulário com dados preenchidos.",
+        "solution": "1. Ative o separador 'Programador'. \n2. Clique em 'Gravar Macro', dê-lhe um nome (ex: 'LimparFormulario'). \n3. Selecione o intervalo B2:B10. \n4. Pressione a tecla 'Delete'. \n5. Clique em 'Parar Gravação'. \n6. (Opcional) Atribua a macro a um botão 'Limpar'."
+      }
+    },
+    {
+      "id": "7.4",
+      "title": "Power Query – importar CSV",
+      "illustration": "assets/images/modules/07/lessons/04-illust.svg",
+      "theory": "O Power Query é a sala de triagem e descontaminação da sua central de comando. Em vez de trazer dados 'sujos' diretamente para a sua base, o Power Query interceta-os na fronteira. Permite-lhe limpá-los, moldá-los e transformá-los seguindo um conjunto de regras que define uma vez. Depois, apenas os dados perfeitos e estruturados têm permissão para entrar na sua folha de cálculo.",
+      "quickNote": "Cada passo de transformação que aplica no editor do Power Query é gravado numa lista. Pode voltar atrás, editar ou apagar qualquer passo sem afetar os outros. É um processo de limpeza de dados não-destrutivo.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Importar dados de um ficheiro CSV.",
+          "code": "1. Vá a 'Dados' > 'Obter Dados' > 'De Ficheiro' > 'De Texto/CSV'.\n2. Selecione o ficheiro. O Power Query abre uma janela de pré-visualização.\n3. Clique em 'Carregar' e os dados aparecem numa nova folha como uma Tabela."
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Remover colunas e filtrar linhas antes de carregar.",
+          "code": "1. Na janela de pré-visualização da importação, clique em 'Transformar Dados'.\n2. No editor do Power Query, selecione as colunas indesejadas e remova-as.\n3. Use o filtro na coluna de data para manter apenas certos anos.\n4. Clique em 'Fechar e Carregar'."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Fazer alterações manuais na tabela de destino no Excel.",
+          "code": "PROBLEMA: Importou os dados com o Power Query. Depois, na tabela do Excel, apaga manualmente algumas linhas.\nCONSEQUÊNCIA: Na próxima vez que clicar em 'Atualizar', as suas alterações manuais são descartadas.\nSOLUÇÃO: Todas as limpezas devem ser feitas no editor do Power Query."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Qual é a principal vantagem do Power Query em comparação com copiar e colar dados manualmente?",
+          "options": ["É mais rápido para uma única importação", "Preserva a formatação original do ficheiro de origem", "O processo de limpeza e transformação é gravado e pode ser repetido automaticamente com um clique em 'Atualizar'", "Usa menos memória do computador"],
+          "correctAnswer": "O processo de limpeza e transformação é gravado e pode ser repetido automaticamente com um clique em 'Atualizar'",
+          "feedback": "A grande força do Power Query é a automação. Os passos de limpeza e transformação são gravados numa consulta que pode ser atualizada com um único clique, repetindo todo o processo em novos dados de forma consistente."
+        },
+        {
+          "question": "As transformações que faz no editor do Power Query alteram o seu ficheiro de origem (ex: o CSV)?",
+          "options": ["Sim, guarda as alterações no ficheiro original", "Não, o Power Query apenas lê o ficheiro de origem e aplica as transformações numa pré-visualização", "Apenas se clicar no botão 'Guardar'", "Depende da opção selecionada"],
+          "correctAnswer": "Não, o Power Query apenas lê o ficheiro de origem e aplica as transformações numa pré-visualização",
+          "feedback": "O Power Query funciona de forma não-destrutiva. Ele lê os dados da fonte original, mas todas as transformações são aplicadas numa camada separada. O ficheiro de origem nunca é modificado."
+        },
+        {
+          "question": "Em que separador da Faixa de Opções se encontra o conjunto de ferramentas do Power Query?",
+          "options": ["Base", "Inserir", "Programador", "Dados"],
+          "correctAnswer": "Dados",
+          "feedback": "Todas as funcionalidades relacionadas com a obtenção e transformação de dados, incluindo o Power Query, estão centralizadas no separador 'Dados' da Faixa de Opções."
+        }
+      ],
+      "challenge": {
+        "description": "Importe um ficheiro CSV que tem uma coluna 'Nome Completo'. Use o editor do Power Query para dividir essa coluna em duas: 'Nome Próprio' e 'Apelido', usando o espaço como delimitador. Carregue o resultado final para uma nova folha.",
+        "initialCode": "Ficheiro CSV com coluna 'Nome Completo':\n'Ana Silva'\n'Bruno Costa'\n'Carla Mendes'",
+        "solution": "1. Inicie a importação do CSV e clique em 'Transformar Dados'. \n2. No editor do Power Query, selecione a coluna 'Nome Completo'. \n3. Vá ao separador 'Transformar' > 'Dividir Coluna' > 'Por Delimitador'. \n4. Escolha 'Espaço' como delimitador e clique em OK. \n5. Renomeie as novas colunas. \n6. Clique em 'Fechar e Carregar'."
+      }
+    },
+    {
+      "id": "7.5",
+      "title": "Agendamento e Partilha OneDrive",
+      "illustration": "assets/images/modules/07/lessons/05-illust.svg",
+      "theory": "A verdadeira automação na sua central de comando acontece quando os relatórios se atualizam e se distribuem sozinhos. Ao guardar os seus ficheiros e as suas fontes de dados na nuvem (OneDrive, SharePoint), pode configurar o Excel para se atualizar automaticamente a intervalos regulares e garantir que toda a equipa está sempre a ver a versão mais recente dos dados, em qualquer dispositivo.",
+      "quickNote": "A coautoria em tempo real é uma das maiores vantagens de trabalhar na nuvem. Se guardar um ficheiro no OneDrive e o partilhar, pode ver os cursores dos seus colegas a moverem-se e a editarem o ficheiro ao mesmo tempo que você.",
+      "examples": [
+        {
+          "title": "Exemplo 1 – O Básico",
+          "description": "Partilhar um ficheiro para visualização.",
+          "code": "1. Guarde o seu ficheiro no OneDrive.\n2. No Excel, clique no botão 'Partilhar' (canto superior direito).\n3. Insira o e-mail do colega e escolha as permissões (ex: 'Pode ver')."
+        },
+        {
+          "title": "Exemplo 2 – O Caso Comum",
+          "description": "Configurar uma consulta do Power Query para atualizar ao abrir o ficheiro.",
+          "code": "1. Vá a 'Dados' > 'Consultas e Ligações'.\n2. Clique com o botão direito na sua consulta > 'Propriedades...'\n3. Marque a caixa 'Atualizar ao abrir o ficheiro'."
+        },
+        {
+          "title": "Exemplo 3 – A Armadilha",
+          "description": "Partilhar um ficheiro que se liga a um ficheiro de origem no seu disco local (C:).",
+          "code": "PROBLEMA: O seu relatório importa um CSV de 'C:\\Users\\...\\dados.csv'.\nCONSEQUÊNCIA: Quando partilha o ficheiro, o seu colega recebe um erro ao atualizar, porque não tem acesso a esse caminho.\nSOLUÇÃO: As fontes de dados também devem estar num local partilhado (como o OneDrive)."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "O que é necessário para que a coautoria (edição em simultâneo por várias pessoas) funcione?",
+          "options": ["O ficheiro tem de estar guardado como .xlsm", "O ficheiro tem de estar guardado numa localização na nuvem como OneDrive ou SharePoint", "Todos os utilizadores têm de ter a mesma versão do Excel", "A proteção de folha tem de estar ativa"],
+          "correctAnswer": "O ficheiro tem de estar guardado numa localização na nuvem como OneDrive ou SharePoint",
+          "feedback": "A coautoria em tempo real é uma funcionalidade da nuvem. O ficheiro precisa de estar alojado no OneDrive ou SharePoint para que o serviço possa sincronizar as alterações de múltiplos utilizadores em tempo real."
+        },
+        {
+          "question": "Qual é a forma mais fiável de garantir que uma equipa inteira consegue atualizar uma consulta do Power Query?",
+          "options": ["Enviar o ficheiro de origem por e-mail a todos", "Guardar tanto o ficheiro do relatório como o ficheiro de origem numa pasta partilhada no OneDrive ou SharePoint", "Dar a todos acesso remoto ao seu computador", "Copiar os dados para dentro do próprio ficheiro do relatório"],
+          "correctAnswer": "Guardar tanto o ficheiro do relatório como o ficheiro de origem numa pasta partilhada no OneDrive ou SharePoint",
+          "feedback": "Para que uma consulta do Power Query seja atualizável por várias pessoas, tanto o ficheiro Excel como a fonte de dados (ex: o CSV) devem estar numa localização partilhada e acessível a todos, como uma pasta no OneDrive."
+        },
+        {
+          "question": "No Excel para a Web, pode configurar uma atualização agendada de dados que ocorre mesmo que ninguém abra o ficheiro?",
+          "options": ["Não, o ficheiro tem de ser aberto para atualizar", "Sim, nas definições de atualização da pasta de trabalho, pode definir uma atualização periódica (ex: diária)", "Sim, mas requer código VBA complexo", "Apenas se tiver o Power BI"],
+          "correctAnswer": "Sim, nas definições de atualização da pasta de trabalho, pode definir uma atualização periódica (ex: diária)",
+          "feedback": "O Excel para a Web, para ficheiros alojados no OneDrive/SharePoint, permite configurar uma atualização agendada (ex: a cada hora, diariamente), garantindo que os dados estão sempre atualizados sem intervenção manual."
+        }
+      ],
+      "challenge": {
+        "description": "Este é o Desafio Final do Curso! Automatize um relatório semanal. O cenário: tem um ficheiro CSV ('dados_semana.csv') que é substituído todas as semanas numa pasta do OneDrive. O seu desafio é criar um ficheiro de relatório que, com um único clique em 'Atualizar Tudo', importa e limpa os dados do novo CSV via Power Query e atualiza uma Tabela Dinâmica e um Gráfico Dinâmico que resumem as vendas.",
+        "initialCode": "1. Ficheiro 'dados_semana.csv' numa pasta OneDrive.\n2. Ficheiro 'relatorio.xlsx' em branco.",
+        "solution": "1. No 'relatorio.xlsx', use 'Dados' > 'Obter Dados' para se ligar ao 'dados_semana.csv' no OneDrive. \n2. No Power Query, faça as limpezas necessárias e carregue os dados para uma folha. \n3. Crie uma Tabela Dinâmica e um Gráfico Dinâmico baseados na tabela de dados importada. \n4. Guarde o relatório. Agora, quando o CSV for substituído, basta abrir o relatório e ir a 'Dados' > 'Atualizar Tudo'."
+      }
+    }
+  ]
+}
