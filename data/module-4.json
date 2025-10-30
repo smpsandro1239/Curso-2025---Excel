@@ -126,50 +126,61 @@
       "id": "4.3",
       "title": "E / OU dentro de SE",
       "illustration": "assets/images/modules/04/lessons/03-illust.svg",
-      "theory": "As funções E e OU são os 'assessores' do juiz SE. O assessor 'E' é muito rigoroso: só diz 'verdadeiro' ao juiz se TODAS as provas (condições) forem verdadeiras. O assessor 'OU' é mais flexível: basta que UMA das provas seja verdadeira para ele dizer 'verdadeiro'. O juiz SE baseia então o seu veredicto no parecer destes assessores.",
-      "quickNote": "As funções E e OU, usadas sozinhas numa célula, devolvem apenas os valores lógicos VERDADEIRO ou FALSO. Elas mostram o seu verdadeiro poder quando são usadas dentro do primeiro argumento (o teste lógico) de uma função SE.",
+      "illustrationAlt": "Função SE do Excel com E(Experiência>3; OU(Skill=\"Excel\"; Skill=\"Power BI\")) a devolver VERDADEIRO. Excel IF with AND(Experience>3, OR(Skill=\"Excel\", Skill=\"Power BI\")) returning TRUE.",
+      "theory": "As funções E (AND) e OU (OR) são os 'assessores' do juiz SE. O assessor 'E' (AND) é muito rigoroso: só diz 'verdadeiro' ao juiz se TODAS as provas (condições) forem verdadeiras. O assessor 'OU' (OR) é mais flexível: basta que UMA das provas seja verdadeira para ele dizer 'verdadeiro'. O juiz SE baseia então o seu veredicto no parecer destes assessores.",
+      "quickNote": "As funções E (AND) e OU (OR), usadas sozinhas numa célula, devolvem apenas os valores lógicos VERDADEIRO ou FALSO. Elas mostram o seu verdadeiro poder quando são usadas dentro do primeiro argumento (o teste lógico) de uma função SE. Ambas aceitam até 255 condições. Dica de teclado (Windows): Alt+M, I, A (para E) e Alt+M, I, O (para OU).",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
-          "description": "Verificar se um número está entre 10 e 20 (função E).",
+          "description": "Verificar se um número está entre 10 e 20 (função E (AND)).",
           "code": "Célula A1 contém: 15\nFórmula: =SE(E(A1>10; A1<20); \"Dentro do intervalo\"; \"Fora\")\nResultado: \"Dentro do intervalo\""
         },
         {
           "title": "Exemplo 2 – O Caso Comum",
-          "description": "Conceder um bónus se as vendas forem > 10000€ OU se o cliente for 'VIP' (função OU).",
+          "description": "Conceder um bónus se as vendas forem > 10000€ OU se o cliente for 'VIP' (função OU (OR)).",
           "code": "Vendas em A2: 9000€. Categoria em B2: 'VIP'.\nFórmula: =SE(OU(A2>10000; B2=\"VIP\"); \"Conceder Bónus\"; \"Sem Bónus\")\nResultado: \"Conceder Bónus\""
         },
         {
           "title": "Exemplo 3 – A Armadilha",
           "description": "Tentar escrever a lógica de forma coloquial.",
-          "code": "PROBLEMA: Escrever =SE(A1>10 E B1<5; ...) resulta num erro.\nSOLUÇÃO: A sintaxe do Excel exige que as condições estejam dentro da função E: =SE(E(A1>10; B1<5); ...)"
+          "code": "PROBLEMA: Escrever =SE(A1>10 E B1<5; ...) resulta num erro.\nSOLUÇÃO: A sintaxe do Excel exige que as condições estejam dentro da função E (AND): =SE(E(A1>10; B1<5); ...)"
         }
       ],
       "quiz": [
         {
-          "question": "Para que a função E(cond1; cond2; ...) devolva VERDADEIRO, o que tem de acontecer?",
+          "question": "Para que a função E (AND)(cond1; cond2; ...) devolva VERDADEIRO, o que tem de acontecer?",
           "options": ["Pelo menos uma condição tem de ser verdadeira", "Nenhuma condição pode ser falsa", "Todas as condições têm de ser verdadeiras", "A primeira condição tem de ser verdadeira"],
           "correctAnswer": "Todas as condições têm de ser verdadeiras",
-          "feedback": "A função E devolve VERDADEIRO apenas se todas as condições dentro dela forem verdadeiras. Se uma ou mais forem falsas, o resultado será FALSO."
+          "feedback": "A função E (AND) devolve VERDADEIRO apenas se todas as condições dentro dela forem verdadeiras. Se uma ou mais forem falsas, o resultado será FALSO."
         },
         {
-          "question": "Qual a fórmula para verificar se a célula A1 contém 'Sim' OU se a célula B1 é maior que 100?",
+          "question": "Qual a fórmula para verificar se a célula A1 contém 'Sim' OU (OR) se a célula B1 é maior que 100?",
           "options": ["=SE(A1=\"Sim\" OU B1>100; ...)", "=SE(OU(A1=\"Sim\"; B1>100); ...)", "=SE(OU(A1=\"Sim\" E B1>100); ...)", "=SE.OU(A1=\"Sim\"; B1>100; ...)"],
           "correctAnswer": "=SE(OU(A1=\"Sim\"; B1>100); ...)",
-          "feedback": "A sintaxe correta para múltiplos testes lógicos dentro de um SE é usar as funções E ou OU. Neste caso, a função OU verifica as duas condições e devolve VERDADEIRO se pelo menos uma for satisfeita."
+          "feedback": "A sintaxe correta para múltiplos testes lógicos dentro de um SE é usar as funções E (AND) ou OU (OR). Neste caso, a função OU (OR) verifica as duas condições e devolve VERDADEIRO se pelo menos uma for satisfeita."
         },
         {
-          "question": "A função OU(A1>10; A1>20) para A1=25 devolve VERDADEIRO. Porquê?",
+          "question": "A função OU (OR)(A1>10; A1>20) para A1=25 devolve VERDADEIRO. Porquê?",
           "options": ["Porque ambas as condições são verdadeiras", "Porque a primeira condição é verdadeira", "Porque a segunda condição é verdadeira", "Todas as anteriores estão corretas"],
           "correctAnswer": "Todas as anteriores estão corretas",
-          "feedback": "A função OU devolve VERDADEIRO se pelo menos uma das suas condições for verdadeira. Neste caso, como 25>10 e 25>20, ambas são verdadeiras, mas bastaria uma delas para o resultado ser VERDADEIRO."
+          "feedback": "A função OU (OR) devolve VERDADEIRO se pelo menos uma das suas condições for verdadeira. Neste caso, como 25>10 e 25>20, ambas são verdadeiras, mas bastaria uma delas para o resultado ser VERDADEIRO."
         }
       ],
       "challenge": {
-        "description": "Determine se um candidato está qualificado para uma entrevista. Ele precisa de ter mais de 3 anos de experiência E de saber 'Excel' OU 'Power BI'.",
+        "description": "Determine se um candidato está qualificado para uma entrevista. A regra é: qualificado se a experiência for superior a 5 anos (independentemente das skills), OU se a experiência for superior a 3 anos E (AND) souber 'Excel' OU (OR) 'Power BI'.",
         "initialCode": "Candidato|Experiência|Skill 1|Skill 2\nTiago|5|Excel|Word\nJoana|2|Python|Power BI\nRita|4|Word|Power BI",
-        "solution": "Na célula D2, insira '=SE(E(B2>3; OU(C2=\"Excel\"; C2=\"Power BI\")); \"Qualificado\"; \"Não Qualificado\")' e arraste. (Nota: esta é uma solução simplificada, uma análise real seria mais complexa)."
-      }
+        "solution": "Na célula de resultado (ex: E2), insira a fórmula: '=SE(OU(B2>5; E(B2>3; OU(C2=\"Excel\"; C2=\"Power BI\"; D2=\"Excel\"; D2=\"Power BI\"))); \"Qualificado\"; \"Não Qualificado\")' e arraste."
+      },
+      "glossary": [
+        { "word": "E / AND", "def": "Devolve VERDADEIRO apenas se TODAS as condições forem verdadeiras." },
+        { "word": "OU / OR", "def": "Devolve VERDADEIRO se PELO MENOS UMA condição for verdadeira." },
+        { "word": "SE / IF", "def": "Função que usa o resultado de E/OU para decidir." },
+        { "word": "Argumento / Argument", "def": "Cada condição dentro de E ou OU." },
+        { "word": "255 Condições / 255 Conditions", "def": "Limite máximo de testes lógicos nas funções E e OU." },
+        { "word": "Prioridade / Precedence", "def": "A ordem pela qual o Excel avalia as condições, geralmente da esquerda para a direita dentro da função." },
+        { "word": "VERDADEIRO / TRUE", "def": "Valor lógico que indica que uma condição é verdadeira." },
+        { "word": "FALSO / FALSE", "def": "Valor lógico que indica que uma condição é falsa." }
+      ]
     },
     {
       "id": "4.4",
