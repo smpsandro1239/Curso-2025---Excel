@@ -69,18 +69,18 @@
       "title": "Arrastar campos (linhas, colunas, valores)",
       "illustration": "assets/images/modules/05/lessons/02-illust.svg",
       "illustrationAlt": "Excel PivotTable with Product in Rows, Region in Columns, and Sales in Values. Tabela Dinâmica do Excel com Produto em Linhas, Região em Colunas e Vendas em Valores.",
-      "theory": "O painel de campos da Tabela Dinâmica é o seu estúdio de DJ. Os campos (os cabeçalhos das suas colunas) são os discos. As quatro áreas (Filtros (Filters), Colunas (Columns), Linhas (Rows), Valores (Values)) são os pratos. Ao arrastar e misturar os 'discos' nos 'pratos', você cria um novo 'remix' dos seus dados, respondendo a diferentes perguntas a cada segundo.",
+      "theory": "O painel de campos da Tabela Dinâmica é o seu estúdio de DJ. Os campos (os cabeçalhos das suas colunas) são os discos. As quatro áreas (Filtros, Colunas, Linhas, Valores) são os pratos. Ao arrastar e misturar os 'discos' nos 'pratos', você cria um novo 'remix' dos seus dados, respondendo a diferentes perguntas a cada segundo.",
       "quickNote": "A área 'Valores' é tipicamente para campos numéricos. O Excel irá, por defeito, somá-los (Soma de...). Se arrastar um campo de texto, como 'Nome do Cliente', o Excel irá contá-lo (Contagem de...), o que é útil para saber quantos clientes compraram, por exemplo. Dica de teclado (Win): use Alt+JT+L para mostrar/ocultar o Painel de Campos.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
           "description": "Ver vendas totais por Vendedor.",
-          "code": "1. Arraste o campo 'Vendedor' para a área 'Linhas'.\n2. Arraste o campo 'Valor' para a área 'Valores'.\nResultado: A tabela lista cada vendedor e o seu total de vendas."
+          "code": "1. Arraste o campo 'Vendedor' para a área 'Linhas (Rows)'.\n2. Arraste o campo 'Valor' para a área 'Valores (Values)'.\nResultado: A tabela lista cada vendedor e o seu total de vendas."
         },
         {
           "title": "Exemplo 2 – O Caso Comum",
           "description": "Criar uma matriz de vendas: Produto vs. Região.",
-          "code": "1. Arraste 'Produto' para 'Linhas'.\n2. Arraste 'Região' para 'Colunas'.\n3. Arraste 'Vendas' para 'Valores'.\nResultado: Uma tabela de dupla entrada que cruza os dados."
+          "code": "1. Arraste 'Produto' para 'Linhas (Rows)'.\n2. Arraste 'Região' para 'Colunas (Columns)'.\n3. Arraste 'Vendas' para 'Valores (Values)'.\nResultado: Uma tabela de dupla entrada que cruza os dados."
         },
         {
           "title": "Exemplo 3 – A Armadilha",
@@ -128,18 +128,19 @@
       "id": "5.3",
       "title": "Filtros de segmentação",
       "illustration": "assets/images/modules/05/lessons/03-illust.svg",
+      "illustrationAlt": "Excel Slicer with Region buttons and Timeline for months. Segmentação de Dados do Excel com botões para Região e Linha de Tempo para meses.",
       "theory": "A Segmentação de Dados (Slicers) são filtros com estilo. Em vez de usar as listas pendentes aborrecidas nos cabeçalhos, a segmentação cria botões grandes e interativos que lhe permitem focar-se numa 'fatia' específica dos seus dados. São como o controlo remoto do seu caleidoscópio, permitindo-lhe mudar a vista com um clique e criar dashboards dinâmicos.",
-      "quickNote": "Pode ligar uma única segmentação a MÚLTIPLAS Tabelas Dinâmicas. Clique com o botão direito na segmentação > 'Ligações de Relatório' e selecione todas as tabelas que quer controlar. Esta é a base para criar dashboards interativos.",
+      "quickNote": "Pode ligar uma única segmentação a MÚLTIPLAS Tabelas Dinâmicas (clique direito > 'Ligações de Relatório'). Esta é a base para dashboards interativos. Dica de teclado (Win): use Alt+JT+S para inserir uma segmentação rapidamente.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
           "description": "Adicionar uma segmentação por Região.",
-          "code": "1. Selecione a sua Tabela Dinâmica.\n2. Vá ao separador 'Análise de Tabela Dinâmica' > 'Inserir Segmentação de Dados'.\n3. Escolha 'Região' e clique OK.\n4. Uma caixa com botões ('Norte', 'Sul', etc.) aparece. Clicar num botão filtra a tabela."
+          "code": "1. Selecione a sua Tabela Dinâmica.\n2. Vá ao separador 'Análise de Tabela Dinâmica (PivotTable Analyze)' > 'Inserir Segmentação de Dados (Insert Slicer)'.\n3. Escolha 'Região' e clique OK.\n4. Uma caixa com botões ('Norte', 'Sul', etc.) aparece. Clicar num botão filtra a tabela."
         },
         {
           "title": "Exemplo 2 – O Caso Comum",
-          "description": "Usar uma Linha de Tempo (um tipo especial de segmentação para datas).",
-          "code": "1. Selecione a sua Tabela Dinâmica.\n2. Vá a 'Análise de Tabela Dinâmica' > 'Inserir Linha de Tempo'.\n3. Se tiver um campo de data, ele aparecerá. Selecione-o.\n4. Agora pode filtrar por ano, trimestre ou mês com uma barra de navegação visual."
+          "description": "Usar uma Linha de Tempo (Timeline) (um tipo especial de segmentação para datas).",
+          "code": "1. Selecione a sua Tabela Dinâmica.\n2. Vá a 'Análise de Tabela Dinâmica (PivotTable Analyze)' > 'Inserir Linha de Tempo (Timeline)'.\n3. Se tiver um campo de data, ele aparecerá. Selecione-o.\n4. Agora pode filtrar por ano, trimestre ou mês com uma barra de navegação visual."
         },
         {
           "title": "Exemplo 3 – A Armadilha",
@@ -168,10 +169,20 @@
         }
       ],
       "challenge": {
-        "description": "Adicione uma Segmentação de Dados por 'Categoria' a uma Tabela Dinâmica de vendas. Mude o estilo da segmentação (no separador 'Segmentação') para ter 2 colunas de botões e uma cor que combine com a sua tabela.",
+        "description": "Adicione uma Segmentação de Dados por 'Categoria' a uma Tabela Dinâmica de vendas. Mude o estilo da segmentação (no separador 'Segmentação') para ter 2 colunas de botões e uma cor que combine com a sua tabela (dica de alto contraste: use 'Estilo de Segmentação de Dados Claro 1'). Bónus: Crie uma Linha de Tempo (Timeline) e ligue-a à mesma Tabela Dinâmica.",
         "initialCode": "Tabela Dinâmica de vendas por produto",
-        "solution": "1. Selecione a Tabela. \n2. Vá a 'Análise de Tabela Dinâmica' > 'Inserir Segmentação de Dados' > selecione 'Categoria'. \n3. Com a nova segmentação selecionada, vá ao separador 'Segmentação'. \n4. Mude o valor em 'Colunas' para 2. \n5. Escolha um estilo de cor diferente na galeria."
-      }
+        "solution": "1. Selecione a Tabela. \n2. Vá a 'Análise de Tabela Dinâmica' > 'Inserir Segmentação de Dados' > selecione 'Categoria'. \n3. Com a nova segmentação selecionada, vá ao separador 'Segmentação'. \n4. Mude o valor em 'Colunas' para 2. \n5. Escolha um estilo de cor diferente na galeria.\nBónus:\n1. Selecione a Tabela novamente.\n2. Vá a 'Análise de Tabela Dinâmica' > 'Inserir Linha de Tempo (Timeline)'.\n3. Selecione o campo de data e clique OK."
+      },
+      "glossary": [
+        { "word": "Segmentação de Dados / Slicer", "def": "Botões visuais para filtrar TD." },
+        { "word": "Linha de Tempo / Timeline", "def": "Segmentação especial para campos de data." },
+        { "word": "Análise de Tabela Dinâmica / PivotTable Analyze", "def": "Separador contextual onde se insere segmentação." },
+        { "word": "Ligações de Relatório / Report Connections", "def": "Liga uma segmentação a múltiplas TD." },
+        { "word": "Mostrar Itens Eliminados / Show Items Deleted", "def": "Opção que mantém ou remove botões sem dados." },
+        { "word": "Alt + JT + S", "def": "Atalho para inserir segmentação (Win)." },
+        { "word": "Estilo / Style", "def": "Formato visual dos botões (cores, colunas)." },
+        { "word": "Filtro / Filter", "def": "Acção de seleccionar ou desseleccionar botões." }
+      ]
     },
     {
       "id": "5.4",
