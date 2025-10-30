@@ -15,18 +15,17 @@ const Sidebar: React.FC<SidebarProps> = ({ course }) => {
 
   useEffect(() => {
     const pathParts = location.pathname.split('/');
-    // Path is /modules/:moduleId/lessons/:lessonId
     if (pathParts[1] === 'modules' && pathParts[2]) {
       const currentModuleId = pathParts[2];
-      if (!openModules.has(currentModuleId)) {
-        setOpenModules(prev => {
-          const newSet = new Set(prev);
-          newSet.add(currentModuleId);
-          return newSet;
-        });
-      }
+      setOpenModules(prev => {
+        const newSet = new Set(prev);
+        newSet.add(currentModuleId);
+        return newSet;
+      });
+    } else {
+      setOpenModules(new Set());
     }
-  }, [location.pathname, openModules]);
+  }, [location.pathname]);
 
   const toggleModule = (moduleId: string) => {
     setOpenModules(prev => {
@@ -40,14 +39,14 @@ const Sidebar: React.FC<SidebarProps> = ({ course }) => {
     });
   };
 
-  const activeLinkClass = 'bg-green/10 text-green';
-  const inactiveLinkClass = 'text-slate hover:bg-green/5 hover:text-lightest-slate';
+  const activeLinkClass = 'bg-emerald-100 text-emerald-600 dark:bg-green/10 dark:text-green';
+  const inactiveLinkClass = 'text-slate-600 hover:bg-emerald-50/50 hover:text-slate-900 dark:text-slate dark:hover:bg-green/5 dark:hover:text-lightest-slate';
 
   return (
-    <div className="h-full flex flex-col text-lightest-slate p-4">
+    <div className="h-full flex flex-col text-slate-800 dark:text-lightest-slate p-4 border-r border-slate-200 dark:border-lightest-navy/20">
         <div className="flex justify-between items-center mb-6 px-2">
-            <h1 className="text-2xl font-bold text-green">{course.title}</h1>
-            <button onClick={toggleTheme} className="p-2 rounded-full text-slate hover:bg-green/10 hover:text-green hidden md:block">
+            <h1 className="text-2xl font-bold text-emerald-600 dark:text-green">{course.title}</h1>
+            <button onClick={toggleTheme} className="p-2 rounded-full text-slate-600 dark:text-slate hover:bg-emerald-100 dark:hover:bg-green/10 hover:text-emerald-600 dark:hover:text-green hidden md:block">
                 {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </button>
         </div>
@@ -57,13 +56,13 @@ const Sidebar: React.FC<SidebarProps> = ({ course }) => {
             <li key={module.id} className="mb-4">
               <button 
                 onClick={() => toggleModule(module.id)} 
-                className="w-full flex justify-between items-center text-left p-2 rounded-md font-bold text-lg text-light-slate hover:bg-lightest-navy/50"
+                className="w-full flex justify-between items-center text-left p-2 rounded-md font-bold text-lg text-slate-700 dark:text-light-slate hover:bg-slate-200 dark:hover:bg-lightest-navy/50"
               >
                 <span>{module.id}. {module.title}</span>
                 {openModules.has(module.id) ? <ChevronDown size={20} /> : <ChevronRight size={20} />}
               </button>
               {openModules.has(module.id) && (
-                <ul className="mt-2 pl-4 border-l-2 border-lightest-navy/20">
+                <ul className="mt-2 pl-4 border-l-2 border-slate-200 dark:border-lightest-navy/20">
                   {module.lessons.map((lesson) => (
                     <li key={lesson.id}>
                       <NavLink
@@ -83,7 +82,7 @@ const Sidebar: React.FC<SidebarProps> = ({ course }) => {
           ))}
         </ul>
       </nav>
-      <footer className="mt-auto text-center text-xs text-slate p-2">
+      <footer className="mt-auto text-center text-xs text-slate-500 dark:text-slate p-2">
         <p>Sandro Pereira © 2025</p>
       </footer>
     </div>
