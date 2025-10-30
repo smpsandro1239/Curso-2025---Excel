@@ -64,3 +64,5 @@ O código está organizado da seguinte forma:
 ## ✒️ Autoria & Conteúdo
 
 Todo o conteúdo pedagógico do curso foi meticulosamente revisto e estruturado para proporcionar a melhor experiência de aprendizagem em português de Portugal.
+
+Este projeto foi idealizado e desenvolvido com dedicação por **Sandro Pereira © 2025**.
