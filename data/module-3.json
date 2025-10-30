@@ -67,8 +67,9 @@
       "id": "3.2",
       "title": "MÁX / MÍN / CONTAR.SE",
       "illustration": "assets/images/modules/03/lessons/02-illust.svg",
+      "illustrationAlt": "Tabela Excel a mostrar MÁX=25€, MÍN=2€, CONTAR.SE>10=2. Excel table showing MAX=25€, MIN=2€, COUNTIF>10=2.",
       "theory": "Agora vamos usar peças Lego mais especializadas. MÁX e MÍN são como detetores que encontram instantaneamente a sua peça maior e a mais pequena. CONTAR.SE é uma peça inteligente: ela só conta as outras peças se cumprirem uma condição que você define, como 'contar apenas as peças vermelhas'.",
-      "quickNote": "O critério dentro da função CONTAR.SE deve estar sempre entre aspas. Por exemplo, para contar valores maiores que 100, o critério é `\">100\"`. Se o critério for o valor de outra célula (ex: B1), a sintaxe é `\">\"&B1`.",
+      "quickNote": "O critério em CONTAR.SE deve estar sempre entre aspas (ex: \">100\"). Não inclua símbolos monetários; use apenas o valor numérico. Dica de teclado (Windows): insira as funções rapidamente com Alt+M, U, X (MÁX), Alt+M, U, N (MÍN) ou Alt+M, U, I (CONTAR.SE).",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
@@ -83,19 +84,19 @@
         {
           "title": "Exemplo 3 – A Armadilha",
           "description": "Tentar encontrar o valor máximo de um produto específico sem usar a função certa.",
-          "code": "PROBLEMA: A fórmula =MÁX(B2:B20) dá-lhe a venda máxima de todos os produtos.\nLIMITAÇÃO: Para saber a venda máxima do produto 'Pera', precisa de uma função mais avançada como MÁX.SE. As funções MÁX e MÍN operam sobre todo o intervalo fornecido."
+          "code": "PROBLEMA: A fórmula =MÁX(B2:B20) dá-lhe a venda máxima de todos os produtos.\nLIMITAÇÃO: Para saber a venda máxima do produto 'Pera', precisa de uma função mais avançada como MÁX.SE.S. As funções MÁX e MÍN operam sobre todo o intervalo fornecido."
         }
       ],
       "quiz": [
         {
           "question": "Qual a fórmula para contar quantas células no intervalo A1:A50 são exatamente iguais a 'Lisboa'?",
-          "options": ["=CONTAR.SE(A1:A50; Lisboa)", "=CONTAR(A1:A50; \"Lisboa\")", "=CONTAR.SE(A1:A50; \"Lisboa\")", "=CONTAR.SE(\"Lisboa\"; A1:A50)"],
+          "options": ["=CONTAR.SE(A1:A50; Lisboa)", "=CONTAR(A1:A50; \"Lisboa\")", "=CONTAR.SE(A1:A50; \"Lisboa\")", "=CONTAR.SE(A1:A50 = \"Lisboa\")"],
           "correctAnswer": "=CONTAR.SE(A1:A50; \"Lisboa\")",
           "feedback": "A sintaxe da função `CONTAR.SE` requer dois argumentos: primeiro o intervalo a ser verificado (A1:A50) e, em segundo, o critério de contagem. Quando o critério é texto, deve estar entre aspas (\"Lisboa\")."
         },
         {
           "question": "Para encontrar o segundo valor mais baixo numa lista, que função usaria?",
-          "options": ["MÍN", "MÍN.SE", "MENOR", "Nenhuma das anteriores"],
+          "options": ["MÍN", "MÍN.SE.S", "MENOR", "Nenhuma das anteriores"],
           "correctAnswer": "MENOR",
           "feedback": "A função `MÍN` devolve apenas o valor mais baixo. Para encontrar o 2º, 3º ou k-ésimo valor mais baixo, deve usar-se a função `MENOR(intervalo; k)`, onde 'k' é a posição desejada (ex: 2 para o segundo menor)."
         },
@@ -107,10 +108,20 @@
         }
       ],
       "challenge": {
-        "description": "Dada uma lista de produtos e os seus preços, encontre o preço do produto mais caro (MÁX), o preço do mais barato (MÍN), e conte quantos produtos custam mais de 10€ (CONTAR.SE).",
+        "description": "Dada uma lista de produtos e os seus preços, encontre o preço do produto mais caro (MÁX), o mais barato (MÍN), e conte quantos produtos custam mais de 10€ (CONTAR.SE). Bónus: Usando a mesma lógica, conte quantos produtos custam entre 10€ e 20€ (inclusive).",
         "initialCode": "Produto | Preço\nLivro | 15€\nCaneta | 2€\nCaderno | 8€\nMochila | 25€",
-        "solution": "Mais caro: =MÁX(B2:B5)\nMais barato: =MÍN(B2:B5)\n> 10€: =CONTAR.SE(B2:B5; \">10\")"
-      }
+        "solution": "Mais caro: =MÁX(B2:B5)\nMais barato: =MÍN(B2:B5)\n> 10€: =CONTAR.SE(B2:B5; \">10\")\nBónus (10€-20€): =CONTAR.SE(B2:B5; \">=10\") - CONTAR.SE(B2:B5; \">20\")"
+      },
+      "glossary": [
+        { "word": "MÁX / MAX", "def": "Devolve o maior valor numérico do intervalo." },
+        { "word": "MÍN / MIN", "def": "Devolve o menor valor numérico do intervalo." },
+        { "word": "CONTAR.SE / COUNTIF", "def": "Conta células que cumpram um único critério." },
+        { "word": "Critério / Criterion", "def": "A condição usada para a contagem, que deve estar entre aspas (ex: \">10\" ou \"Paga\")." },
+        { "word": "Operador <> / Operator <>", "def": "O operador lógico que significa 'diferente de' em fórmulas do Excel." },
+        { "word": "MENOR / SMALL", "def": "Devolve o k-ésimo menor valor de um conjunto de dados (ex: MENOR(intervalo; 2) para o segundo menor)." },
+        { "word": "MÁX.SE.S / MAXIFS", "def": "Devolve o valor máximo num intervalo que cumpre uma ou mais condições (disponível no Excel 2019 e Microsoft 365)." },
+        { "word": "Símbolo Monetário / Currency Symbol", "def": "Não deve ser incluído no critério numérico de uma função (ex: use \">10\", não \">10€\")." }
+      ]
     },
     {
       "id": "3.3",
