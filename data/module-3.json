@@ -245,8 +245,9 @@
       "id": "3.5",
       "title": "Erros Comuns (#DIV/0!, #VALOR!)",
       "illustration": "assets/images/modules/03/lessons/05-illust.svg",
+      "illustrationAlt": "Excel sheet showing #DIV/0!, #VALUE! and IFERROR wrapping a division. Folha de Excel a mostrar erros #DIV/0!, #VALOR! e a função SEERRO a tratar uma divisão.",
       "theory": "Por vezes, a sua construção de Lego não funciona como esperado e o Excel dá-lhe uma mensagem de erro. Pense nestes erros como o manual de instruções a dizer-lhe qual foi o problema. '#DIV/0!' significa que tentou dividir uma peça por zero, o que é impossível. '#VALOR!' significa que tentou somar uma peça de número com uma peça de texto. Aprender a ler estes erros é fundamental para corrigir as suas fórmulas.",
-      "quickNote": "A função SEERRO é a sua rede de segurança. Pode 'embrulhar' a sua fórmula nela, como: '=SEERRO(A1/B1; \"Dados inválidos\")'. Se A1/B1 funcionar, obtém o resultado. Se der um erro (ex: se B1 for 0), a célula mostrará 'Dados inválidos' em vez de um erro feio.",
+      "quickNote": "A função SEERRO (IFERROR em EN) é a sua rede de segurança. Pode 'embrulhar' a sua fórmula nela, como: '=SEERRO(A1/B1; \"Dados inválidos\")'. Se A1/B1 funcionar, obtém o resultado. Se der um erro, a célula mostrará 'Dados inválidos'. Dica de teclado (Win): Alt+M, E, E.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
@@ -272,10 +273,10 @@
           "feedback": "O erro `#REF!` surge quando uma referência de célula numa fórmula se torna inválida. A causa mais comum é a eliminação da linha ou coluna à qual a fórmula se referia."
         },
         {
-          "question": "Está a arrastar uma fórmula de PROCV e algumas células mostram '#N/D'. O que significa este erro?",
+          "question": "Está a arrastar uma fórmula de PROCV e algumas células mostram '#N/D' (#N/A). O que significa este erro?",
           "options": ["A fórmula está errada", "Os dados da tabela estão errados", "O valor que está a procurar não foi encontrado na lista", "A coluna é demasiado estreita"],
           "correctAnswer": "O valor que está a procurar não foi encontrado na lista",
-          "feedback": "O erro `#N/D` (Não Disponível) é o resultado padrão de funções de pesquisa (como PROCV ou CORRESP) quando o valor procurado não é encontrado no intervalo de pesquisa."
+          "feedback": "O erro `#N/D` (#N/A) (Não Disponível / Not Available) é o resultado padrão de funções de pesquisa (como PROCV ou CORRESP) quando o valor procurado não é encontrado no intervalo de pesquisa."
         },
         {
           "question": "Qual a função que pode usar para substituir uma mensagem de erro por um texto mais amigável ou por um valor como 0?",
@@ -285,10 +286,20 @@
         }
       ],
       "challenge": {
-        "description": "Este é o Desafio Final do Módulo! Construa um pequeno painel de KPIs a partir de uma lista de vendas. A lista contém alguns dados em falta. O seu desafio é calcular os KPIs e usar a função SEERRO para garantir que, mesmo com erros nos dados (como uma divisão por zero), o seu painel exibe '0' ou uma mensagem clara em vez de um erro.",
-        "initialCode": "Vendas | Unidades\n1500€ | 10\n2200€ | (vazio)\n1800€ | 8\n'N/A' | 5",
-        "solution": "KPI 'Venda Média por Unidade': =SEERRO(SOMA(A2:A5)/SOMA(B2:B5); 0)\nKPI 'Total Vendas': =SOMA(A2:A5) (a SOMA ignora texto, pelo que não dá erro)\n...e assim por diante para outros KPIs."
-      }
+        "description": "Crie uma fórmula para calcular Vendas por Unidade. A fórmula deve devolver ‘Sem Dados’ se a célula de Unidades for texto ou estiver vazia. Caso contrário, deve realizar o cálculo (Vendas / Unidades).",
+        "initialCode": "Vendas (A2) | Unidades (B2)\n1000 | 20\n1500 | (vazio)\n1200 | 'texto'",
+        "solution": "Na célula C2, insira a fórmula: =SE(OU(ÉTEXTO(B2);ÉCÉL.VAZIA(B2));\"Sem Dados\";A2/B2)"
+      },
+      "glossary": [
+        { "word": "#DIV/0! / #DIV/0!", "def": "Divisão por zero ou denominador vazio." },
+        { "word": "#VALOR! / #VALUE!", "def": "Tipo de dados inválido (ex: texto em operação numérica)." },
+        { "word": "#NOME? / #NAME?", "def": "Excel não reconhece o texto (função mal escrita)." },
+        { "word": "#REF! / #REF!", "def": "Referência inválida (célula apagada ou coluna eliminada)." },
+        { "word": "#N/D / #N/A", "def": "Valor não disponível (ex: PROCV não encontra chave)." },
+        { "word": "SEERRO / IFERROR", "def": "Devolve valor alternativo se a fórmula gerar erro." },
+        { "word": "ERRO.TIPO / ERROR.TYPE", "def": "Devolve código numérico do tipo de erro." },
+        { "word": "Volátil / Volatile", "def": "Funções que recalculam sempre (ex: HOJE, AGORA)." }
+      ]
     }
   ]
 }
