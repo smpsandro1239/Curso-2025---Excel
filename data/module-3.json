@@ -127,8 +127,9 @@
       "id": "3.3",
       "title": "ARRED / ABS / HOJE",
       "illustration": "assets/images/modules/03/lessons/03-illust.svg",
+      "illustrationAlt": "Excel a mostrar ABS(-250) = 250 e HOJE() = 25-06-2025. Excel showing ABS(-250) = 250 and TODAY() = 2025-06-25.",
       "theory": "Estas são as suas peças Lego 'funcionais'. A função ARRED é como uma lixa que molda os seus números para o número de casas decimais que desejar. ABS é um transformador que garante que um número é sempre positivo. E HOJE é uma peça mágica que se atualiza sozinha para mostrar sempre a data atual.",
-      "quickNote": "A função HOJE não precisa de nada dentro dos parênteses: escreve-se '=HOJE()'. Ela é 'volátil', o que significa que se recalcula sempre que a folha de cálculo é aberta ou alterada.",
+      "quickNote": "A função HOJE não precisa de nada dentro dos parênteses: escreve-se '=HOJE()'. É 'volátil' (recalcula sempre que a folha é alterada). Lembre-se: a formatação é apenas visual; a função ARRED altera o valor real. Atalhos (Win): Alt+M, U, R (ARRED), Alt+M, U, B (ABS), Alt+M, U, H (HOJE).",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
@@ -155,9 +156,9 @@
         },
         {
           "question": "Como se insere a data de hoje numa célula, de forma a que ela se atualize sempre que o ficheiro for aberto?",
-          "options": ["=DATA.DE.HOJE()", "=HOJE", "=AGORA()", "=HOJE()"],
+          "options": ["=AGORA()", "=HOJE", "=DATA.ATUAL()", "=HOJE()"],
           "correctAnswer": "=HOJE()",
-          "feedback": "A função `HOJE()` insere a data atual e é volátil, o que significa que se atualiza sempre que o ficheiro é recalculado. A função `AGORA()` é similar, mas inclui também a hora atual."
+          "feedback": "A função `HOJE()` insere a data atual e é volátil, o que significa que se atualiza sempre que o ficheiro é recalculado. É crucial incluir os parênteses, mesmo que vazios; `=HOJE` resultaria num erro #NOME?. A função `AGORA()` é similar, mas inclui também a hora atual."
         },
         {
           "question": "Se a célula A1 tiver o valor 9.99, qual será o resultado de =ARRED(A1; 0)?",
@@ -167,10 +168,19 @@
         }
       ],
       "challenge": {
-        "description": "Tem uma lista de saldos de contas, alguns positivos e outros negativos. Crie uma coluna ao lado que mostre o valor absoluto de cada saldo. Numa célula no topo da folha, insira a data do relatório usando a função HOJE.",
-        "initialCode": "Conta | Saldo\nA | 1500€\nB | -250€\nC | -75€\nD | 3200€",
-        "solution": "Data do Relatório (ex: célula D1): =HOJE()\nNa coluna 'Valor Absoluto' (célula C2): =ABS(B2) e arrastar para baixo."
-      }
+        "description": "Tem uma lista de saldos de contas, alguns positivos e outros negativos. Crie uma coluna ao lado que mostre o valor absoluto de cada saldo. Numa célula no topo da folha, insira a data do relatório usando a função HOJE. Bónus: Noutra célula, calcule quantos dias faltam para uma data de evento futura (ex: '25-12-2025'), mostrando o resultado como um número positivo.",
+        "initialCode": "Conta | Saldo | Data Evento (E1): 25-12-2025\nA | 1500€\nB | -250€\nC | -75€\nD | 3200€",
+        "solution": "Data do Relatório (ex: célula D1): =HOJE()\nNa coluna 'Valor Absoluto' (célula C2): =ABS(B2) e arrastar para baixo.\nBónus (ex: em F1): =ABS(E1-HOJE())"
+      },
+      "glossary": [
+        { "word": "ARRED / ROUND", "def": "Arredonda para o número de casas decimais indicado." },
+        { "word": "ABS / ABS", "def": "Devolve o valor absoluto (sempre positivo)." },
+        { "word": "HOJE / TODAY", "def": "Devolve a data actual; função volátil." },
+        { "word": "Função Volátil / Volatile Function", "def": "Recalcula sempre que a folha é aberta ou alterada." },
+        { "word": "Casas Decimais / Decimal Places", "def": "Número de dígitos após a vírgula." },
+        { "word": "Valor Real / Actual Value", "def": "Número armazenado na célula, independentemente da formatação visual." },
+        { "word": "#NOME? / #NAME?", "def": "Erro quando o Excel não reconhece o texto da função (ex: nome mal escrito ou falta de parênteses)." }
+      ]
     },
     {
       "id": "3.4",
