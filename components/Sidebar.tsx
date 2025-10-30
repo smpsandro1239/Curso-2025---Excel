@@ -68,6 +68,9 @@ const Sidebar: React.FC<SidebarProps> = ({ course }) => {
           ))}
         </ul>
       </nav>
+      <footer className="mt-auto text-center text-xs text-slate p-2">
+        <p>Sandro Pereira © 2025</p>
+      </footer>
     </div>
   );
 };
