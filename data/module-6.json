@@ -1,3 +1,4 @@
+
 {
   "id": "6",
   "title": "Gráficos & Dashboards",
@@ -246,8 +247,9 @@
       "id": "6.5",
       "title": "Mini-gráficos (sparklines)",
       "illustration": "assets/images/modules/06/lessons/05-illust.svg",
+      "illustrationAlt": "Excel sheet with sparklines in column E showing monthly trend for each region. Folha de cálculo do Excel com mini-gráficos na coluna E a mostrar a tendência mensal para cada região.",
       "theory": "Os mini-gráficos, ou sparklines, são a 'notícia de última hora' da sua TV de dados. São gráficos minúsculos que vivem dentro de uma única célula, mostrando uma tendência de forma super compacta. São perfeitos para dashboards e tabelas onde quer mostrar o panorama geral (o número total) e, ao mesmo tempo, a pequena história de como esse número evoluiu, sem ocupar espaço.",
-      "quickNote": "Pode formatar os mini-gráficos para destacar pontos importantes, como o ponto mais alto, o mais baixo, ou valores negativos. Isto adiciona uma camada extra de análise visual instantânea.",
+      "quickNote": "Pode formatar os mini-gráficos para destacar pontos importantes, como o ponto mais alto, o mais baixo, ou valores negativos. Dica de teclado (Win): use Alt+N, M, L para Linha, Alt+N, M, C para Coluna, ou Alt+N, M, W para Ganhos/Perdas.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
@@ -286,10 +288,21 @@
         }
       ],
       "challenge": {
-        "description": "Este é o Desafio Final do Módulo! Construa um dashboard de 4 quadros que caiba na vista de uma página A4 paisagem. Use um conjunto de dados de vendas por Mês, Região e Categoria. O dashboard deve ter: 1) Um gráfico de colunas de Vendas por Mês. 2) Um gráfico de barras de Vendas por Região. 3) Um gráfico de pizza de Vendas por Categoria. 4) Uma tabela-resumo com as vendas totais de cada Região e um mini-gráfico de linha ao lado de cada uma, mostrando a tendência mensal.",
-        "initialCode": "Dados de vendas com colunas: Mês, Região, Categoria, Vendas",
-        "solution": "1. Crie uma Tabela Dinâmica e, a partir dela, crie os três Gráficos Dinâmicos (Vendas por Mês, por Região, por Categoria). \n2. Organize os três gráficos na parte superior da folha. \n3. Crie uma pequena tabela-resumo manualmente ou com fórmulas. \n4. Para cada região na tabela-resumo, insira um mini-gráfico de linha na célula ao lado, usando os dados mensais dessa região como fonte. \n5. Adicione Segmentação de Dados para filtrar todo o dashboard."
-      }
+        "description": "Dada uma tabela com vendas mensais por região, crie um mini-gráfico de linha para cada região na coluna ao lado. Garanta que os eixos são comparáveis entre si. Bónus: Formate os mini-gráficos para destacar o ponto mais alto (pico) e o ponto mais baixo (vale) com marcadores coloridos.",
+        "initialCode": "Região | Jan | Fev | Mar | Abr\nNorte | 120 | 150 | 130 | 180\nSul | 200 | 180 | 220 | 210\nCentro | 90 | 100 | 110 | 95",
+        "solution": "1. Selecione a célula de destino (ex: F2). \n2. Vá a 'Inserir' > 'Mini-gráficos' > 'Linha' (Atalho: Alt+N, M, L). \n3. No 'Intervalo de Dados', selecione B2:E2 e clique OK. \n4. Arraste a alça de preenchimento para as outras regiões. \n5. Com os mini-gráficos selecionados, vá ao separador 'Mini-gráfico' > 'Eixo' e defina o Mínimo e Máximo como 'O mesmo para todos os mini-gráficos'. \nBónus: No separador 'Mini-gráfico', marque as caixas 'Ponto Alto' e 'Ponto Baixo'."
+      },
+      "glossary": [
+        { "word": "Mini-gráfico / Sparkline", "def": "Gráfico miniatura dentro de uma célula." },
+        { "word": "Linha / Line", "def": "Liga pontos ao longo do intervalo." },
+        { "word": "Coluna / Column", "def": "Barras verticais dentro da célula." },
+        { "word": "Ganhos/Perdas / Win/Loss", "def": "Barras positivas/negativas apenas." },
+        { "word": "Eixo / Axis", "def": "Escala interna do mini-gráfico." },
+        { "word": "O mesmo para todos / Same for All", "def": "Força escala comum entre vários mini-gráficos." },
+        { "word": "Alt + N + M + L", "def": "Atalho para inserir um mini-gráfico de linha (Win)." },
+        { "word": "Dashboard / Dashboard", "def": "Um relatório visual compacto, frequentemente composto por vários gráficos e tabelas." },
+        { "word": "Célula / Cell", "def": "O local onde o mini-gráfico é desenhado." }
+      ]
     }
   ]
 }
