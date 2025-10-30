@@ -186,8 +186,9 @@
       "id": "3.4",
       "title": "Referências Relativas vs. Absolutas",
       "illustration": "assets/images/modules/03/lessons/04-illust.svg",
+      "illustrationAlt": "Excel a mostrar referências relativas vs. absolutas: $C$1 está fixa enquanto A1 se move. Excel showing relative vs absolute references: $C$1 locked while A1 moves.",
       "theory": "Imagine que as referências de célula são coordenadas num mapa. Uma referência relativa (A1) é como dizer 'a célula que está duas colunas à esquerda'. Se se mover, essa instrução continua a apontar para 'duas colunas à esquerda'. Uma referência absoluta ($A$1) é como uma coordenada GPS. Não importa onde se move, ela aponta sempre para o mesmo local exato. O '$' é o que 'ancora' a coordenada.",
-      "quickNote": "Use a tecla F4 para alternar rapidamente entre os tipos de referência enquanto edita uma fórmula. Com o cursor sobre 'A1', F4 muda para '$A$1' (absoluta), depois 'A$1' (linha absoluta), depois '$A1' (coluna absoluta), e de volta para 'A1' (relativa).",
+      "quickNote": "Use a tecla F4 (ou ⌘ + T no Mac) para alternar rapidamente entre os tipos de referência enquanto edita uma fórmula. Com o cursor sobre 'A1', pressionar F4 muda para '$A$1' (absoluta), depois 'A$1' (linha absoluta), '$A1' (coluna absoluta), e de volta para 'A1' (relativa).",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
@@ -210,7 +211,7 @@
           "question": "Qual é a tecla de atalho para alternar entre os tipos de referência de célula?",
           "options": ["F1", "F4", "Ctrl + $", "Alt + R"],
           "correctAnswer": "F4",
-          "feedback": "Ao editar uma referência de célula numa fórmula, a tecla `F4` permite alternar entre os quatro tipos de referência: relativa (A1), absoluta ($A$1), mista de linha (A$1) e mista de coluna ($A1)."
+          "feedback": "Ao editar uma referência de célula numa fórmula, a tecla `F4` (ou ⌘ + T no Mac) permite alternar entre os quatro tipos de referência: relativa (A1), absoluta ($A$1), mista de linha (A$1) e mista de coluna ($A1)."
         },
         {
           "question": "Que tipo de referência é '$B5'?",
@@ -226,10 +227,19 @@
         }
       ],
       "challenge": {
-        "description": "Tem uma lista de preços em Euros na Coluna A. Na célula C1, tem a taxa de câmbio para Dólares (ex: 1.08). Crie uma fórmula na Coluna B que converta cada preço em Euros para Dólares, garantindo que pode arrastar a fórmula para baixo e ela funcionará para todos os preços.",
+        "description": "Tem uma lista de preços em Euros na Coluna A. Na célula C1, tem a taxa de câmbio para Dólares (ex: 1.08). Crie uma fórmula na Coluna B que converta cada preço em Euros para Dólares, garantindo que pode arrastar a fórmula para baixo e ela funcionará para todos os preços. (Dica: evite usar símbolos monetários na célula da taxa de câmbio). Bónus: Crie uma tabela de multiplicação onde a fórmula na primeira célula usa referências mistas para que possa ser arrastada para preencher toda a tabela.",
         "initialCode": "Preço (€) | Taxa Câmbio (C1): 1.08\n100\n150\n220\n80",
-        "solution": "Na célula B2, escreva a fórmula '=A2*$C$1' e depois arraste-a para as restantes células da coluna B."
-      }
+        "solution": "Na célula B2, escreva a fórmula '=A2*$C$1' e depois arraste-a para as restantes células da coluna B.\nBónus: Para uma tabela de multiplicação com números de 1 a 5 na linha 1 (B1:F1) e na coluna A (A2:A6), a fórmula em B2 seria '=$A2*B$1'. Esta fórmula pode ser arrastada para preencher toda a tabela."
+      },
+      "glossary": [
+        { "word": "Referência Relativa / Relative Reference", "def": "Ajusta-se quando se copia (A1 → B2)." },
+        { "word": "Referência Absoluta / Absolute Reference", "def": "Não muda quando se copia ($A$1)." },
+        { "word": "Referência Mista / Mixed Reference", "def": "Apenas linha OU coluna é fixa (A$1 ou $A1)." },
+        { "word": "F4 (Mac: ⌘ + T)", "def": "Atalho para alternar tipos de referência." },
+        { "word": "Deslocamento / Offset", "def": "Diferença de linhas e colunas ao copiar." },
+        { "word": "Âncora / Anchor", "def": "O símbolo $ que “trava” a coordenada." },
+        { "word": "Arrastar e Preencher / Drag Fill", "def": "Arrastar a alça de preenchimento de uma célula para replicar fórmulas ou dados." }
+      ]
     },
     {
       "id": "3.5",
