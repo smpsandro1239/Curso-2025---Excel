@@ -8,8 +8,9 @@
       "id": "3.1",
       "title": "SOMA / MÉDIA / CONTAR",
       "illustration": "assets/images/modules/03/lessons/01-illust.svg",
-      "theory": "Se as fórmulas são receitas, estas três são os ingredientes base que usará sempre. São como as peças Lego mais fundamentais: SOMA junta tudo para lhe dar o total, MÉDIA diz-lhe o tamanho médio das suas peças, e CONTAR simplesmente diz-lhe quantas peças tem. Dominar estas três é o primeiro passo para qualquer análise.",
-      "quickNote": "Selecione um intervalo de células com números. Olhe para a Barra de Estado, no canto inferior direito do Excel. Verá a Soma, a Contagem e a Média desse intervalo calculadas automaticamente! É uma ótima forma de verificar os seus resultados rapidamente.",
+      "illustrationAlt": "Excel Status Bar showing Sum = 780, Count = 5, Average = 156 for selected range. Barra de Estado do Excel a mostrar Soma = 780, Contagem = 5, Média = 156 para o intervalo selecionado.",
+      "theory": "Se as fórmulas são receitas, estas três são os ingredientes base que usará sempre. São como as peças Lego mais fundamentais: SOMA (SUM) junta tudo para lhe dar o total, MÉDIA (AVERAGE) diz-lhe o tamanho médio das suas peças, e CONTAR (COUNT) simplesmente diz-lhe quantas peças tem. Dominar estas três é o primeiro passo para qualquer análise.",
+      "quickNote": "Selecione um intervalo de células com números. Olhe para a Barra de Estado (Status Bar), no canto inferior direito. Verá a Soma (Sum), a Contagem (Count) e a Média (Average) desse intervalo calculadas automaticamente! Dica de teclado (Windows): para inserir as funções rapidamente, pode usar Alt+M, U, S (SOMA), Alt+M, U, A (MÉDIA), ou Alt+M, U, O (CONTAR).",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
@@ -23,7 +24,7 @@
         },
         {
           "title": "Exemplo 3 – A Armadilha",
-          "description": "Contar itens numa lista que mistura texto e números.",
+          "description": "Contar itens numa lista que mistura texto e números. A função CONTAR (COUNT) conta apenas números, enquanto a CONTARA (COUNTA) conta todas as células não vazias.",
           "code": "Dados em C1:C5: 'Maçã', 10, 'Pera', 20, (célula vazia)\n---\n=CONTAR(C1:C5) resulta em 2 (só conta números).\n=CONTARA(C1:C5) resulta em 4 (conta texto e números)."
         }
       ],
@@ -32,26 +33,35 @@
           "question": "Qual a função que deve usar para saber quantos valores numéricos existem num intervalo?",
           "options": ["SOMA", "CONTAR", "CONTARA", "MÉDIA"],
           "correctAnswer": "CONTAR",
-          "feedback": "A função `CONTAR` analisa um intervalo e devolve o número de células que contêm valores numéricos, ignorando texto e células vazias."
+          "feedback": "A função `CONTAR` (COUNT) analisa um intervalo e devolve o número de células que contêm valores numéricos, ignorando texto e células vazias."
         },
         {
           "question": "Se o intervalo A1:A4 contém os valores 10, 20, (célula vazia), 30, qual será o resultado de =MÉDIA(A1:A4)?",
           "options": ["15", "20", "Erro", "25"],
           "correctAnswer": "20",
-          "feedback": "A função `MÉDIA` ignora células vazias e de texto. Neste caso, ela soma 10, 20 e 30 (total 60) e divide por 3 (o número de células com valores numéricos), resultando em 20."
+          "feedback": "A função `MÉDIA` (AVERAGE) ignora células vazias e de texto. Neste caso, ela soma 10, 20 e 30 (total 60) e divide por 3 (o número de células com valores numéricos), resultando em 20."
         },
         {
           "question": "Para contar o número total de células preenchidas, independentemente de serem texto ou números, qual é a função correta?",
-          "options": ["CONTAR", "CONTAR.TUDO", "CONTARA", "SOMA.SE"],
+          "options": ["CONTAR", "CONTAR.VALORES", "CONTARA", "SOMA.SE"],
           "correctAnswer": "CONTARA",
-          "feedback": "Para contar todas as células que não estão vazias, incluindo texto e números, usa-se a função `CONTARA`. O 'A' extra significa 'Alfanumérico'."
+          "feedback": "Para contar todas as células que não estão vazias, incluindo texto e números, usa-se a função `CONTARA` (COUNTA). O 'A' extra significa 'Alfanumérico'."
         }
       ],
       "challenge": {
-        "description": "Dada uma pequena lista de vendas diárias, calcule três métricas chave: o total de vendas (receita total), a venda média por dia, e o número de dias em que houve vendas.",
+        "description": "Dada uma pequena lista de vendas diárias, use a Barra de Estado (Status Bar) para prever os resultados antes de escrever as fórmulas. De seguida, calcule três métricas chave: o total de vendas (receita total), a venda média por dia, e o número de dias em que houve vendas.",
         "initialCode": "Dia | Vendas\nSeg | 150€\nTer | 200€\nQua | (sem vendas)\nQui | 180€\nSex | 250€",
         "solution": "Receita Total: =SOMA(B2:B6)\nVenda Média: =MÉDIA(B2:B6)\nDias com Vendas: =CONTAR(B2:B6)"
-      }
+      },
+      "glossary": [
+        { "word": "SOMA / SUM", "def": "Soma todos os números do intervalo." },
+        { "word": "MÉDIA / AVERAGE", "def": "Calcula a média aritmética, ignorando células vazias." },
+        { "word": "CONTAR / COUNT", "def": "Conta apenas células com números." },
+        { "word": "CONTARA / COUNTA", "def": "Conta células não vazias (texto, números, erros, lógicos)." },
+        { "word": "Célula Vazia / Blank Cell", "def": "Não é contada pela MÉDIA nem pelo COUNT." },
+        { "word": "Barra de Estado / Status Bar", "def": "Mostra Soma, Contagem, Média do intervalo seleccionado." },
+        { "word": "Referência / Reference", "def": "Intervalo usado como argumento da função." }
+      ]
     },
     {
       "id": "3.2",
