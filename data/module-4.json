@@ -67,8 +67,9 @@
       "id": "4.2",
       "title": "SE aninhado (notas por escalões)",
       "illustration": "assets/images/modules/04/lessons/02-illust.svg",
+      "illustrationAlt": "Função SE aninhada do Excel a mostrar 'Ouro' para vendas > 5000, 'Prata' > 2000, e 'Bronze' para os restantes casos. Excel nested IF showing 'Gold' for sales > 5000, 'Silver' > 2000, else 'Bronze'.",
       "theory": "Um SE aninhado é como um painel de juízes. O caso (o seu dado) é apresentado ao primeiro juiz (o primeiro SE). Se ele não conseguir dar um veredicto final (se a condição for falsa), o caso passa para o próximo juiz na hierarquia (o segundo SE), e assim por diante, até que uma condição seja satisfeita.",
-      "quickNote": "As versões mais recentes do Excel introduziram a função SE.S (IFS em inglês), que simplifica múltiplos SEs aninhados. A sintaxe é =SE.S(teste1; valor1; teste2; valor2; ...). No entanto, é crucial aprender o SE aninhado, pois é universalmente compatível.",
+      "quickNote": "As versões mais recentes do Excel introduziram a função SE.S (IFS em inglês), que simplifica múltiplos SEs aninhados: =SE.S(teste1; valor1; teste2; valor2; ...). No entanto, aprender o SE aninhado clássico é universalmente compatível. Dica de teclado (Windows): insira a função SE rapidamente com Alt+M, I, F.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
@@ -107,10 +108,19 @@
         }
       ],
       "challenge": {
-        "description": "Classifique o desempenho de vendas com base no valor vendido. Vendas > 5000€ é 'Ouro', vendas > 2000€ é 'Prata', e tudo o resto é 'Bronze'.",
-        "initialCode": "Vendedor | Vendas\nAna | 6500€\nBruno | 2100€\nCarla | 1800€",
-        "solution": "Na célula C2, insira '=SE(B2>5000; \"Ouro\"; SE(B2>2000; \"Prata\"; \"Bronze\"))' e arraste para baixo."
-      }
+        "description": "Classifique o desempenho de vendas com base no valor vendido. Adicione um 4.º escalão ‘Diamante’ para vendas > 10000€, 'Ouro' para vendas > 5000€, 'Prata' para > 2000€, e 'Bronze' para o resto. (Dica de acessibilidade: pode usar 'Estilos de Célula' em vez de cores para indicar os escalões).",
+        "initialCode": "Vendedor | Vendas\nDavid | 12000€\nAna | 6500€\nBruno | 2100€\nCarla | 1800€",
+        "solution": "Na célula C2, insira '=SE(B2>10000; \"Diamante\"; SE(B2>5000; \"Ouro\"; SE(B2>2000; \"Prata\"; \"Bronze\")))' e arraste para baixo."
+      },
+      "glossary": [
+        { "word": "SE Aninhado / Nested IF", "def": "Vários SEs dentro do valor_se_falso." },
+        { "word": "SE.S / IFS", "def": "Função moderna que testa múltiplas condições em ordem." },
+        { "word": "Ordem dos Testes / Test Order", "def": "Do mais específico para o mais geral." },
+        { "word": "Valor_se_Falso Aninhado / Nested Value_if_False", "def": "Onde coloca o próximo SE." },
+        { "word": "64 Níveis / 64 Levels", "def": "Limite moderno de SE aninhados." },
+        { "word": "7 Níveis / 7 Levels", "def": "Limite em Excel 2007-2013." },
+        { "word": "Aspas Duplas / Double Quotes", "def": "Obrigatórias para texto em fórmulas." }
+      ]
     },
     {
       "id": "4.3",
