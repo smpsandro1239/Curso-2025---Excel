@@ -188,23 +188,24 @@
       "id": "2.4",
       "title": "Formatação Condicional",
       "illustration": "assets/images/modules/02/lessons/04-illust.svg",
+      "illustrationAlt": "Excel worksheet with conditional formatting: green bars for values ≥ 9.5 and red text for values < 9.5. Folha de cálculo do Excel com formatação condicional: barras verdes para valores ≥ 9.5 e texto vermelho para valores < 9.5.",
       "theory": "A Formatação Condicional é o 'detetive' do seu Excel. Você dá-lhe um conjunto de regras ('destaque a vermelho tudo o que for negativo', 'pinte a verde os 10 melhores valores') e ele patrulha os seus dados 24 horas por dia, aplicando a formatação automaticamente quando as condições são cumpridas.",
-      "quickNote": "Pode adicionar várias regras às mesmas células. Use 'Formatação Condicional > Gerir Regras' para definir a ordem de prioridade se houver conflitos entre elas.",
+      "quickNote": "Pode adicionar várias regras às mesmas células. Use 'Formatação Condicional > Gerir Regras' (atalho Win: Alt+C, O, L) para definir a prioridade. Dica: para garantir que as regras se expandem com novos dados, formate o seu intervalo como Tabela (Ctrl+T) primeiro.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
           "description": "Destacar todas as células com um valor superior a 1000.",
-          "code": "1. Selecione a lista de números de vendas.\n2. Vá a 'Base' > 'Formatação Condicional' > 'Realçar Regras das Células' > 'É Maior Do Que...'\n3. Insira 1000 e escolha o formato (ex: preenchimento verde)."
+          "code": "1. Selecione a lista de números de vendas.\n2. Vá a 'Base (Home)' > 'Formatação Condicional' > 'Realçar Regras de Células' > 'É Maior Do Que...'\n3. Insira 1000 e escolha o formato (ex: preenchimento verde)."
         },
         {
           "title": "Exemplo 2 – O Caso Comum",
-          "description": "Usar 'Barras de Dados' para visualizar rapidamente as vendas.",
+          "description": "Usar 'Barras de Dados' para visualizar rapidamente as vendas. Clique em 'Mais Regras...' para personalizar o estilo, como escolher entre cor sólida ou gradiente.",
           "code": "1. Selecione a coluna com os valores de vendas.\n2. Vá a 'Formatação Condicional' > 'Barras de Dados'.\n3. Escolha um estilo de preenchimento (ex: gradiente azul).\nCada célula terá agora uma barra horizontal, criando um mini-gráfico."
         },
         {
           "title": "Exemplo 3 – A Armadilha",
           "description": "A regra aplica-se a um intervalo de células errado.",
-          "code": "PROBLEMA: Cria uma regra para A1:A10. Depois adiciona novos dados em A11, que não fica formatada.\nSOLUÇÃO: Formate os dados como uma Tabela (`Ctrl+T`) primeiro. Assim, a formatação condicional expande-se automaticamente para novas linhas."
+          "code": "PROBLEMA: Cria uma regra para A1:A10. Depois adiciona novos dados em A11, que não fica formatada.\nSOLUÇÃO: Formate os dados como uma Tabela (`Ctrl+T`) primeiro. Caso contrário, vá a 'Gerir Regras' > 'Aplica-se a' e edite o intervalo. Com uma Tabela, a formatação expande-se automaticamente."
         }
       ],
       "quiz": [
@@ -228,10 +229,20 @@
         }
       ],
       "challenge": {
-        "description": "Numa lista de notas de alunos (de 0 a 20), crie duas regras de formatação condicional: 1) Notas abaixo de 9.5 devem ter o texto da célula a vermelho. 2) Notas iguais ou superiores a 9.5 devem ter o texto da célula a verde.",
-        "initialCode": "15\n8\n19\n9.4\n10",
-        "solution": "1. Selecione as células com as notas. \n2. Vá a Formatação Condicional > Realçar Regras das Células > É Menor Do Que... > 9.5 > escolha 'Texto Vermelho'. \n3. Com as células ainda selecionadas, adicione uma nova regra: > É Maior ou Igual a... > 9.5 > escolha 'Verde com Texto Verde Escuro' (ou um formato personalizado)."
-      }
+        "description": "Numa lista de notas de alunos (de 0 a 20), crie três regras de formatação condicional: 1) Notas abaixo de 9.5 devem ter o texto da célula a vermelho. 2) Notas iguais ou superiores a 9.5 devem ter o texto da célula a verde. 3) Notas iguais a 20 devem ter um fundo amarelo.",
+        "initialCode": "15\n8\n19\n9.4\n10\n20",
+        "solution": "1. Selecione as células com as notas. \n2. Vá a Formatação Condicional > Realçar Regras de Células > É Menor Do Que... > 9.5 > escolha 'Texto Vermelho'. \n3. Com as células ainda selecionadas, adicione uma nova regra: > É Maior ou Igual a... > 9.5 > escolha 'Verde com Texto Verde Escuro'. \n4. Adicione uma terceira regra: > É Igual a... > 20 > escolha 'Preenchimento Amarelo com Texto Amarelo Escuro'."
+      },
+      "glossary": [
+        { "word": "Formatação Condicional / Conditional Formatting", "def": "Aplica formatação automática baseada em regras." },
+        { "word": "Realçar Regras de Células / Highlight Cells Rules", "def": "Destaca células que cumprem um critério (>, <, =, texto que contém, duplicado, etc.)." },
+        { "word": "Barras de Dados / Data Bars", "def": "Barra horizontal dentro da célula, proporcional ao valor." },
+        { "word": "Escalas de Cor / Color Scales", "def": "Aplica um degradé de 2 ou 3 cores a um intervalo, com base nos valores." },
+        { "word": "Conjuntos de Ícones / Icon Sets", "def": "Adiciona ícones (semáforos, setas, sinais) à célula com base no seu valor." },
+        { "word": "Gerir Regras / Manage Rules", "def": "O centro de controlo onde se pode editar, apagar ou alterar a prioridade das regras de formatação condicional." },
+        { "word": "'Aplica-se a' / 'Applies to'", "def": "O intervalo de células ao qual uma regra de formatação condicional se refere." },
+        { "word": "Ctrl+T (Mac: ⌘+T)", "def": "Atalho para criar uma Tabela oficial, que garante a expansão automática das regras de formatação condicional a novas linhas." }
+      ]
     },
     {
       "id": "2.5",
