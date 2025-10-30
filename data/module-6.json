@@ -1,3 +1,4 @@
+
 {
   "id": "6",
   "title": "Gráficos & Dashboards",
@@ -67,8 +68,9 @@
       "id": "6.2",
       "title": "Gráfico de linhas com tendência",
       "illustration": "assets/images/modules/06/lessons/02-illust.svg",
+      "illustrationAlt": "Gráfico de linhas do Excel com linha de tendência de lucro semestral a mostrar crescimento. Excel line chart with six-month profit trendline showing growth.",
       "theory": "O gráfico de linhas é o 'eletrocardiograma' dos seus dados. Ele mostra o 'pulso' do seu negócio ou de qualquer métrica ao longo do tempo, ligando os pontos para revelar subidas, descidas e padrões. Adicionar uma 'Linha de Tendência' é como pedir a um especialista para traçar a trajetória futura mais provável, com base no histórico.",
-      "quickNote": "Pode adicionar várias séries de dados (várias linhas) ao mesmo gráfico para comparar a evolução de diferentes produtos ou métricas. Basta garantir que os dados estão formatados corretamente na sua tabela de origem.",
+      "quickNote": "Pode adicionar várias séries de dados (várias linhas) ao mesmo gráfico para comparar a evolução de diferentes produtos ou métricas. Dica de teclado (Windows): use Alt+N, N, L para inserir um gráfico de linhas.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
@@ -103,14 +105,23 @@
           "question": "Como pode adicionar uma Linha de Tendência a uma série de dados num gráfico?",
           "options": ["No separador 'Inserir'", "Clicando com o botão direito na série de dados (a linha) e escolhendo 'Adicionar Linha de Tendência'", "Usando a função =TENDÊNCIA() numa célula", "É preciso desenhá-la manualmente"],
           "correctAnswer": "Clicando com o botão direito na série de dados (a linha) e escolhendo 'Adicionar Linha de Tendência'",
-          "feedback": "A forma mais direta de adicionar uma Linha de Tendência é através do menu de contexto. Clicar com o botão direito na linha de dados desejada abre um menu com a opção para a adicionar e formatar."
+          "feedback": "A forma mais direta de adicionar uma Linha de Tendência é através do menu de contexto. Clicar com o botão direito na linha de dados desejada abre um menu com a opção para a adicionar e formatar. A função =TENDÊNCIA() calcula valores numa célula, mas não adiciona a linha visual ao gráfico."
         }
       ],
       "challenge": {
-        "description": "Crie um gráfico de linhas para visualizar a evolução do lucro mensal de uma empresa durante o primeiro semestre. Adicione uma linha de tendência para avaliar o crescimento.",
+        "description": "Crie um gráfico de linhas para visualizar a evolução do lucro mensal de uma empresa durante o primeiro semestre. Adicione uma linha de tendência para avaliar o crescimento. Bónus: Mostre a equação da linha de tendência e o valor de R² no gráfico para uma análise mais detalhada.",
         "initialCode": "Mês | Lucro\nJan | 1.200€\nFev | 1.500€\nMar | 1.400€\nAbr | 1.800€\nMai | 2.100€\nJun | 2.000€",
-        "solution": "1. Selecione os dados. \n2. Vá a 'Inserir' e escolha um gráfico de linhas. \n3. Clique com o botão direito na linha do gráfico. \n4. Selecione 'Adicionar Linha de Tendência...'. \n5. Mantenha a opção 'Linear' e feche o painel."
-      }
+        "solution": "1. Selecione os dados. \n2. Vá a 'Inserir' e escolha um gráfico de linhas. \n3. Clique com o botão direito na linha do gráfico. \n4. Selecione 'Adicionar Linha de Tendência...'. \n5. Mantenha a opção 'Linear'.\nBónus: No painel 'Formatar Linha de Tendência' que se abre, desça e marque as caixas 'Apresentar Equação no gráfico' e 'Apresentar valor de R-quadrado no gráfico'."
+      },
+      "glossary": [
+        { "word": "Gráfico de Linhas / Line Chart", "def": "Liga pontos de dados ao longo de um eixo temporal ou sequencial." },
+        { "word": "Linha de Tendência / Trendline", "def": "Uma linha de regressão estatística sobreposta num gráfico para mostrar a tendência geral dos dados." },
+        { "word": "Série de Dados / Series", "def": "O conjunto de valores relacionados que são representados no gráfico, formando uma linha." },
+        { "word": "Eixo Temporal / Time Axis", "def": "O eixo horizontal (X) que representa um período de tempo contínuo (dias, meses, anos)." },
+        { "word": "TENDÊNCIA / TREND", "def": "Função do Excel que calcula valores de tendência linear numa célula, mas não desenha a linha no gráfico." },
+        { "word": "Adicionar Linha de Tendência / Add Trendline", "def": "O comando no menu de contexto de um gráfico que adiciona a linha de tendência visual." },
+        { "word": "Alt + N, N, L", "def": "Atalho de teclado (Windows) para abrir as opções de inserção de gráficos de linhas." }
+      ]
     },
     {
       "id": "6.3",
