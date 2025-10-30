@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import type { Course } from '../types';
-// FIX: Import Sun and Moon icons from lucide-react.
 import { ChevronDown, ChevronRight, BookOpen, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 
@@ -10,8 +9,24 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ course }) => {
-  const [openModules, setOpenModules] = useState<Set<string>>(new Set(['1']));
+  const [openModules, setOpenModules] = useState<Set<string>>(new Set());
   const { theme, toggleTheme } = useTheme();
+  const location = useLocation();
+
+  useEffect(() => {
+    const pathParts = location.pathname.split('/');
+    // Path is /modules/:moduleId/lessons/:lessonId
+    if (pathParts[1] === 'modules' && pathParts[2]) {
+      const currentModuleId = pathParts[2];
+      if (!openModules.has(currentModuleId)) {
+        setOpenModules(prev => {
+          const newSet = new Set(prev);
+          newSet.add(currentModuleId);
+          return newSet;
+        });
+      }
+    }
+  }, [location.pathname, openModules]);
 
   const toggleModule = (moduleId: string) => {
     setOpenModules(prev => {
