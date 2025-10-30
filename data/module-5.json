@@ -248,8 +248,9 @@
       "id": "5.5",
       "title": "Formato de valor & % do total",
       "illustration": "assets/images/modules/05/lessons/05-illust.svg",
+      "illustrationAlt": "Excel PivotTable showing Sales as Currency and % of Grand Total side by side. Tabela Dinâmica do Excel a mostrar Vendas como Moeda e % do Total Geral lado a lado.",
       "theory": "A última volta no caleidoscópio é mudar a forma como os números são exibidos. Em vez de apenas somas, pode querer ver a média, ou, mais importante, ver um valor como uma percentagem de um total. Isto ajuda a contextualizar os números, respondendo a perguntas como 'Qual a contribuição deste produto para as vendas totais?' sem precisar de cálculos manuais.",
-      "quickNote": "Arraste o mesmo campo (ex: 'Vendas') para a área de Valores VÁRIAS VEZES. Pode ter a 'Soma de Vendas' e, ao lado, a '% de Vendas' na mesma Tabela Dinâmica, mostrando o valor absoluto e o relativo em simultâneo.",
+      "quickNote": "Arraste o mesmo campo (ex: 'Vendas') para a área de Valores VÁRIAS VEZES. Pode ter a 'Soma de Vendas' e, ao lado, a '% de Vendas' na mesma Tabela Dinâmica, mostrando o valor absoluto e o relativo em simultâneo. Dica de teclado (Win): use Alt+JT+J para abrir as 'Definições do Campo de Valor'.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
@@ -258,7 +259,7 @@
         },
         {
           "title": "Exemplo 2 – O Caso Comum",
-          "description": "Mostrar vendas por produto como uma percentagem do total geral.",
+          "description": "Mostrar vendas por produto como uma percentagem do total geral (% of Grand Total).",
           "code": "1. Clique com o botão direito num valor.\n2. Escolha 'Mostrar Valores Como' > '% do Total Geral'.\n3. Agora vê a contribuição de cada produto para o total."
         },
         {
@@ -288,10 +289,20 @@
         }
       ],
       "challenge": {
-        "description": "Este é o Desafio Final do Módulo! Crie um dashboard interativo. A partir de uma lista de vendas (Data, Região, Vendedor, Produto, Vendas), crie UMA Tabela Dinâmica que mostre as vendas por Região (linhas) e por Mês (colunas). Adicione Segmentação de Dados para 'Vendedor' e 'Produto' para filtrar o relatório. Formate os valores como Moeda.",
-        "initialCode": "Data | Região | Vendedor | Produto | Vendas\n(Várias linhas de dados)",
-        "solution": "1. Crie uma Tabela Dinâmica. \n2. Arraste 'Região' para 'Linhas'. \n3. Arraste 'Data' para 'Colunas' (e agrupe por Meses se necessário). \n4. Arraste 'Vendas' para 'Valores' e formate como Moeda. \n5. Selecione a tabela e vá a 'Análise de Tabela Dinâmica' > 'Inserir Segmentação de Dados', e escolha 'Vendedor' e 'Produto'. \n6. Organize os elementos na folha."
-      }
+        "description": "Este é o Desafio Final do Módulo! A partir de uma Tabela Dinâmica que mostra as vendas mensais, adicione duas colunas de cálculo: uma que mostre a contribuição de cada mês para o total anual (% do Total Geral) e outra que mostre o crescimento percentual face ao mês anterior (% da Diferença De...). Formate o valor de vendas original como Moeda.",
+        "initialCode": "Tabela Dinâmica com Vendas mensais:\nMês | Soma de Vendas\nJan | 15.000€\nFev | 18.000€\nMar | 16.500€",
+        "solution": "1. Arraste 'Vendas' para a área de Valores mais duas vezes. 2. Na primeira coluna, clique com o botão direito > 'Formato do Número...' > Moeda. 3. Na segunda, clique com o botão direito > 'Mostrar Valores Como' > '% do Total Geral'. 4. Na terceira, clique com o botão direito > 'Mostrar Valores Como' > '% da Diferença De...' (Baseado em: Mês, Item base: (anterior))."
+      },
+      "glossary": [
+        { "word": "Definições do Campo de Valor / Value Field Settings", "def": "Janela onde se muda função (soma, média) e formato." },
+        { "word": "Mostrar Valores Como / Show Values As", "def": "Transforma valores em percentagens, diferenças, etc." },
+        { "word": "% do Total Geral / % of Grand Total", "def": "Percentagem face ao total geral da TD." },
+        { "word": "% do Total da Coluna / % of Column Total", "def": "Percentagem face ao total da coluna." },
+        { "word": "% da Diferença De… / % Difference From…", "def": "Crescimento percentual face ao item anterior." },
+        { "word": "Total Acumulado / Running Total", "def": "Soma acumulada ao longo de linhas ou colunas." },
+        { "word": "Moeda / Currency", "def": "Formato numérico com símbolo € e duas casas decimais." },
+        { "word": "Alt + JT + J", "def": "Atalho para abrir Definições do Campo de Valor (Win)." }
+      ]
     }
   ]
 }
