@@ -8,13 +8,14 @@
       "id": "5.1",
       "title": "Criar tabela dinâmica em 30 s",
       "illustration": "assets/images/modules/05/lessons/01-illust.svg",
+      "illustrationAlt": "Excel PivotTable Fields pane showing Sales dragged to Rows and Values. Painel de Campos da Tabela Dinâmica do Excel a mostrar os campos Vendas arrastados para as áreas Linhas e Valores.",
       "theory": "A Tabela Dinâmica é como um caleidoscópio. Pega nos seus dados brutos, desorganizados, e com um simples 'rodar', permite-lhe ver os mesmos dados de inúmeras perspetivas, criando resumos e padrões instantaneamente, sem escrever uma única fórmula. É a ferramenta mais rápida para transformar dados em conhecimento.",
-      "quickNote": "Antes de criar uma Tabela Dinâmica, certifique-se de que os seus dados estão limpos: sem linhas ou colunas totalmente em branco e com um cabeçalho único para cada coluna. A melhor prática é formatar os dados como uma Tabela oficial ('Ctrl + T') primeiro.",
+      "quickNote": "A melhor prática é formatar os dados como uma Tabela oficial ('Ctrl + T' (ou ⌘ + T no Mac)) primeiro. Isto garante que a Tabela Dinâmica reconhece novos dados ao atualizar. Se usar um intervalo normal, terá de usar 'Análise de Tabela Dinâmica' > 'Alterar Fonte de Dados'. Atalho para criar TD (Windows): Alt+N+V.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
           "description": "Criar a primeira Tabela Dinâmica.",
-          "code": "1. Clique numa célula da sua tabela de dados.\n2. Vá ao separador 'Inserir' > 'Tabela Dinâmica'.\n3. Confirme o intervalo e clique OK.\n4. Uma Tabela Dinâmica em branco é criada numa nova folha."
+          "code": "1. Clique numa célula da sua tabela de dados.\n2. Vá ao separador 'Inserir (Insert)' > 'Tabela Dinâmica'.\n3. Confirme o intervalo e clique OK.\n4. Uma Tabela Dinâmica em branco é criada numa nova folha."
         },
         {
           "title": "Exemplo 2 – O Caso Comum",
@@ -24,7 +25,7 @@
         {
           "title": "Exemplo 3 – A Armadilha",
           "description": "A Tabela Dinâmica não atualiza quando os dados de origem mudam.",
-          "code": "PROBLEMA: Altera um valor na sua tabela de dados original, mas a Tabela Dinâmica permanece inalterada.\nSOLUÇÃO: Clique com o botão direito na Tabela Dinâmica e escolha 'Atualizar' (ou use o atalho Alt+F5)."
+          "code": "PROBLEMA: Altera um valor na sua tabela de dados original, mas a Tabela Dinâmica permanece inalterada.\nSOLUÇÃO: Clique com o botão direito na Tabela Dinâmica e escolha 'Atualizar' (ou use o atalho Alt+F5 (Win) / ⌘+Alt+R (Mac))."
         }
       ],
       "quiz": [
@@ -48,17 +49,28 @@
         }
       ],
       "challenge": {
-        "description": "Dada uma pequena lista de vendas (Data, Vendedor, Valor), insira uma Tabela Dinâmica numa nova folha de cálculo para começar a sua análise.",
+        "description": "Dada uma pequena lista de vendas, insira uma Tabela Dinâmica numa nova folha. Para uma boa visibilidade, pode usar o estilo 'Estilo de Tabela Dinâmica Claro 1'. Bónus: Adicione uma nova linha de dados à sua tabela de origem e veja a Tabela Dinâmica atualizar-se com o atalho de teclado.",
         "initialCode": "Data | Vendedor | Valor\n01/01 | Ana | 100\n01/01 | Bruno | 150\n02/01 | Ana | 200",
-        "solution": "1. Clique numa célula dos dados. \n2. Vá ao separador 'Inserir' e clique em 'Tabela Dinâmica'. \n3. Na janela que aparece, confirme que o intervalo está correto e que a Tabela será criada numa 'Nova Folha de Cálculo'. \n4. Clique em OK."
-      }
+        "solution": "1. (Recomendado) Selecione os dados e pressione Ctrl+T para os converter numa Tabela.\n2. Clique numa célula dos dados, vá a 'Inserir' > 'Tabela Dinâmica' e clique OK.\nBónus:\n1. Adicione uma nova linha de dados à tabela de origem.\n2. Clique na Tabela Dinâmica e pressione Alt+F5 (Win) ou ⌘+Alt+R (Mac) para ver a nova linha aparecer."
+      },
+      "glossary": [
+        { "word": "Tabela Dinâmica / PivotTable", "def": "Relatório interactivo que resume dados." },
+        { "word": "Campos / Fields", "def": "Nomes das colunas que se arrastam para áreas." },
+        { "word": "Áreas / Areas", "def": "Linhas, Colunas, Valores, Filtros." },
+        { "word": "Linhas / Rows", "def": "Categorias que aparecem em linhas." },
+        { "word": "Valores / Values", "def": "Campos numéricos a agregar (soma, média, etc.)." },
+        { "word": "Atualizar / Refresh", "def": "Alt + F5 (Win) / ⌘ + Alt + R (Mac)." },
+        { "word": "Fonte de Dados / Data Source", "def": "Intervalo ou Tabela que alimenta a TD." },
+        { "word": "Ctrl + T / Ctrl + T (Mac: ⌘ + T)", "def": "Cria Tabela oficial antes da TD." }
+      ]
     },
     {
       "id": "5.2",
       "title": "Arrastar campos (linhas, colunas, valores)",
       "illustration": "assets/images/modules/05/lessons/02-illust.svg",
-      "theory": "O painel de campos da Tabela Dinâmica é o seu estúdio de DJ. Os campos (os cabeçalhos das suas colunas) são os discos. As quatro áreas (Filtros, Colunas, Linhas, Valores) são os pratos. Ao arrastar e misturar os 'discos' nos 'pratos', você cria um novo 'remix' dos seus dados, respondendo a diferentes perguntas a cada segundo.",
-      "quickNote": "A área 'Valores' é tipicamente para campos numéricos. O Excel irá, por defeito, somá-los (Soma de...). Se arrastar um campo de texto, como 'Nome do Cliente', o Excel irá contá-lo (Contagem de...), o que é útil para saber quantos clientes compraram, por exemplo.",
+      "illustrationAlt": "Excel PivotTable with Product in Rows, Region in Columns, and Sales in Values. Tabela Dinâmica do Excel com Produto em Linhas, Região em Colunas e Vendas em Valores.",
+      "theory": "O painel de campos da Tabela Dinâmica é o seu estúdio de DJ. Os campos (os cabeçalhos das suas colunas) são os discos. As quatro áreas (Filtros (Filters), Colunas (Columns), Linhas (Rows), Valores (Values)) são os pratos. Ao arrastar e misturar os 'discos' nos 'pratos', você cria um novo 'remix' dos seus dados, respondendo a diferentes perguntas a cada segundo.",
+      "quickNote": "A área 'Valores' é tipicamente para campos numéricos. O Excel irá, por defeito, somá-los (Soma de...). Se arrastar um campo de texto, como 'Nome do Cliente', o Excel irá contá-lo (Contagem de...), o que é útil para saber quantos clientes compraram, por exemplo. Dica de teclado (Win): use Alt+JT+L para mostrar/ocultar o Painel de Campos.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
@@ -97,10 +109,20 @@
         }
       ],
       "challenge": {
-        "description": "A partir de uma Tabela Dinâmica, crie um relatório que mostre o total de vendas por Vendedor (linhas) e por Categoria de Produto (colunas).",
+        "description": "A partir de uma Tabela Dinâmica, crie um relatório que mostre o total de vendas por Vendedor (linhas) e por Categoria de Produto (colunas). Bónus: introduzindo o tema da próxima lição, arraste o campo 'Vendas' uma segunda vez para a área de Valores e veja o que acontece.",
         "initialCode": "Vendedor | Categoria | Vendas\nAna | Tech | 500\nBruno | Mobiliário | 300\nAna | Mobiliário | 200",
-        "solution": "1. Arraste 'Vendedor' para a área 'Linhas'. \n2. Arraste 'Categoria' para a área 'Colunas'. \n3. Arraste 'Vendas' para a área 'Valores'."
-      }
+        "solution": "1. Arraste 'Vendedor' para a área 'Linhas'. \n2. Arraste 'Categoria' para a área 'Colunas'. \n3. Arraste 'Vendas' para a área 'Valores'.\nBónus: Arraste 'Vendas' novamente para a área de Valores. A Tabela Dinâmica mostrará duas colunas de 'Soma de Vendas'. Na próxima lição, aprenderemos a transformar a segunda em percentagem."
+      },
+      "glossary": [
+        { "word": "Painel de Campos / Field List", "def": "Janela onde se arrastam campos para áreas." },
+        { "word": "Linhas / Rows", "def": "Área que gera cabeçalhos de linha no relatório." },
+        { "word": "Colunas / Columns", "def": "Área que gera cabeçalhos de coluna no relatório." },
+        { "word": "Valores / Values", "def": "Área onde se colocam campos a agregar (soma, contagem, etc.)." },
+        { "word": "Filtros / Filters", "def": "Área que permite filtrar toda a TD." },
+        { "word": "Arrastar / Drag", "def": "Acção de mover campos com o rato ou teclado." },
+        { "word": "Contagem / Count", "def": "Agregação padrão quando se arrasta texto para Valores." },
+        { "word": "Número de Série / Serial Number", "def": "Número inteiro que representa uma data no Excel." }
+      ]
     },
     {
       "id": "5.3",
