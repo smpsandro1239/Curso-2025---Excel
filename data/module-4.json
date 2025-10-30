@@ -246,18 +246,19 @@
       "id": "4.5",
       "title": "SEERRO para mensagens amigáveis",
       "illustration": "assets/images/modules/04/lessons/05-illust.svg",
-      "theory": "A função SEERRO é a 'equipa de relações públicas' dos seus relatórios. Ela antecipa qualquer erro que uma fórmula possa gerar (#N/D, #VALOR!, #DIV/0!) e, em vez de mostrar essa mensagem técnica e feia, substitui-a por uma alternativa elegante que você define, como 'Não encontrado', '0', ou uma célula em branco. Isto torna os seus dashboards muito mais profissionais e fáceis de usar.",
-      "quickNote": "Uma prática comum é usar SEERRO para devolver uma célula em branco (\"\") em caso de erro. Isto é útil em tabelas e gráficos, pois evita que zeros ou textos de erro sejam representados visualmente, mantendo o design limpo.",
+      "illustrationAlt": "Excel IFERROR wrapping INDEX+MATCH, showing 'Cliente não encontrado' instead of #N/A. SEERRO do Excel a 'embrulhar' ÍNDICE+CORRESP, mostrando 'Cliente não encontrado' em vez de #N/A.",
+      "theory": "A função SEERRO (IFERROR em EN) é a 'equipa de relações públicas' dos seus relatórios. Ela antecipa qualquer erro que uma fórmula possa gerar (#N/D, #VALOR!, #DIV/0!) e, em vez de mostrar essa mensagem técnica e feia, substitui-a por uma alternativa elegante que você define, como 'Não encontrado', '0', ou uma célula em branco. Isto torna os seus dashboards muito mais profissionais e fáceis de usar.",
+      "quickNote": "Uma prática comum é usar SEERRO para devolver uma célula em branco (\"\") em caso de erro. Isto é útil em tabelas e gráficos, pois evita que zeros ou textos de erro sejam representados visualmente, mantendo o design limpo. Dica de teclado (Windows): insira a função SEERRO rapidamente com Alt+M, E, E.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
           "description": "Evitar um erro de divisão por zero.",
-          "code": "Fórmula original: =A1/B1 (devolve #DIV/0! se B1 for 0)\nFórmula com SEERRO: =SEERRO(A1/B1; 0)\nResultado: Devolve o valor 0, que é mais útil para cálculos posteriores."
+          "code": "Fórmula original: =A1/B1 (devolve #DIV/0! se B1 for 0)\nFórmula com SEERRO (IFERROR em EN): =SEERRO(A1/B1; 0)\nResultado: Devolve o valor 0, que é mais útil para cálculos posteriores."
         },
         {
           "title": "Exemplo 2 – O Caso Comum",
           "description": "Tratar procuras sem sucesso com ÍNDICE + CORRESP.",
-          "code": "Fórmula original: =ÍNDICE(...) (devolve #N/D se não encontrar)\nFórmula com SEERRO: =SEERRO(ÍNDICE(...); \"Cliente não encontrado\")\nResultado: Exibe uma mensagem clara e amigável."
+          "code": "Fórmula original: =ÍNDICE(...) (devolve #N/D se não encontrar)\nFórmula com SEERRO (IFERROR em EN): =SEERRO(ÍNDICE(...); \"Cliente não encontrado\")\nResultado: Exibe uma mensagem clara e amigável."
         },
         {
           "title": "Exemplo 3 – A Armadilha",
@@ -270,26 +271,37 @@
           "question": "A função SEERRO interceta qual tipo de erro?",
           "options": ["Apenas o erro #N/D", "Apenas os erros #VALOR! e #DIV/0!", "Qualquer erro de fórmula (ex: #N/D, #VALOR!, #REF!, #NOME?)", "Não interceta erros, apenas formata a célula"],
           "correctAnswer": "Qualquer erro de fórmula (ex: #N/D, #VALOR!, #REF!, #NOME?)",
-          "feedback": "A função SEERRO é uma função genérica que interceta qualquer tipo de erro de fórmula, tornando-a muito versátil para o tratamento de exceções."
+          "feedback": "A função SEERRO (IFERROR em EN) é uma função genérica que interceta qualquer tipo de erro de fórmula, tornando-a muito versátil para o tratamento de exceções."
         },
         {
           "question": "Quantos argumentos tem a função SEERRO?",
           "options": ["Um", "Dois", "Três", "Quatro"],
           "correctAnswer": "Dois",
-          "feedback": "A função SEERRO tem dois argumentos: 1) o valor ou fórmula a avaliar; 2) o valor a devolver se o primeiro argumento resultar num erro."
+          "feedback": "A função SEERRO (IFERROR em EN) tem dois argumentos: 1) o valor ou fórmula a avaliar; 2) o valor a devolver se o primeiro argumento resultar num erro."
         },
         {
           "question": "Quando é que o uso de SEERRO pode ser considerado uma má prática?",
           "options": ["Quando o relatório é para um cliente", "Quando a fórmula é muito longa", "Quando está a esconder problemas com os dados de origem que deveriam ser corrigidos", "Nunca, é sempre uma boa prática"],
           "correctAnswer": "Quando está a esconder problemas com os dados de origem que deveriam ser corrigidos",
-          "feedback": "SEERRO deve ser usado para gerir erros esperados (ex: uma pesquisa não encontrar resultado). Usá-lo para mascarar erros causados por dados de má qualidade é uma má prática, pois impede a correção do problema na sua origem."
+          "feedback": "SEERRO (IFERROR em EN) deve ser usado para gerir erros esperados (ex: uma pesquisa não encontrar resultado). Usá-lo para mascarar erros causados por dados de má qualidade é uma má prática, pois impede a correção do problema na sua origem."
         }
       ],
       "challenge": {
-        "description": "Este é o Desafio Final do Módulo! Crie um classificador de crédito automático. Dadas as condições: Aprovado se Score > 750 E Rácio Dívida/Rendimento < 30%. Negado se Score < 600. Nos outros casos, 'Pede Análise'. Use SEs aninhados e a função E para construir esta lógica.",
-        "initialCode": "Cliente|Score|Dívida Anual|Rendimento Anual\nJosé|780|15000|60000\nMaria|650|25000|50000\nPaulo|550|10000|40000",
-        "solution": "Na célula E2: '=SE(B2<600; \"Negado\"; SE(E(B2>750; C2/D2<0.3); \"Aprovado\"; \"Pede Análise\"))'.\nBónus: =SEERRO(SE(...); \"Dados Inválidos\") para tratar possíveis erros de dados."
-      }
+        "description": "Este é o Desafio Final do Módulo! Crie um classificador de crédito automático. Dadas as condições: Aprovado se Score > 750 E Rácio Dívida/Rendimento < 30%. Negado se Score < 600. Nos outros casos, 'Pede Análise'. Embrulhe a sua lógica em SEERRO para devolver 'Dados Inválidos' se ocorrer um erro (ex: um 'Score' em texto ou uma divisão por zero no rácio).",
+        "initialCode": "Cliente|Score|Dívida Anual|Rendimento Anual\nJosé|780|15000|60000\nMaria|650|25000|50000\nPaulo|550|10000|40000\nSofia|'N/A'|12000|70000",
+        "solution": "Fórmula base em E2: '=SE(B2<600; \"Negado\"; SE(E(B2>750; C2/D2<0.3); \"Aprovado\"; \"Pede Análise\"))'\nSolução com SEERRO: '=SEERRO(SE(B2<600; \"Negado\"; SE(E(B2>750; C2/D2<0.3); \"Aprovado\"; \"Pede Análise\")); \"Dados Inválidos\")'"
+      },
+      "glossary": [
+        { "word": "SEERRO / IFERROR", "def": "Devolve valor alternativo se a fórmula gerar erro." },
+        { "word": "Valor_se_Erro / Value_if_Error", "def": "O 2.º argumento da função SEERRO: pode ser texto, um número ou uma célula vazia (\"\")." },
+        { "word": "Qualquer Erro / Any Error", "def": "SEERRO interceta todos os tipos de erro: #N/D, #VALOR!, #DIV/0!, #REF!, #NOME?, etc." },
+        { "word": "Célula Vazia / Blank Cell", "def": "Usar \"\" como segundo argumento em SEERRO é útil para manter tabelas e gráficos limpos visualmente." },
+        { "word": "Máscara de Erro / Error Mask", "def": "Uso indevido de SEERRO para esconder problemas nos dados de origem que deveriam ser corrigidos." },
+        { "word": "Erro Esperado / Expected Error", "def": "Um erro que é uma consequência normal da lógica, como um PROCV não encontrar uma chave. É o caso de uso ideal para SEERRO." },
+        { "word": "Dashboard / Dashboard", "def": "Um relatório visual que beneficia de mensagens de erro limpas e amigáveis para o utilizador." },
+        { "word": "ERRO.TIPO / ERROR.TYPE", "def": "Devolve um número que corresponde ao tipo de erro, permitindo um tratamento de erros mais específico." },
+        { "word": "#N/D / #N/A", "def": "Erro de 'Não Disponível', comum em funções de procura quando o valor não é encontrado. É um erro esperado e ideal para ser tratado com SEERRO." }
+      ]
     }
   ]
 }
