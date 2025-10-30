@@ -1,4 +1,3 @@
-
 {
   "id": "2",
   "title": "Formatação & Estética",
@@ -69,18 +68,19 @@
       "id": "2.2",
       "title": "Cores, Gradientes e Bordas",
       "illustration": "assets/images/modules/02/lessons/02-illust.svg",
+      "illustrationAlt": "Excel header row with dark grey fill, white font and thick bottom border. Fila de cabeçalho do Excel com preenchimento cinzento-escuro, tipo de letra branco e borda inferior espessa.",
       "theory": "Se a formatação é o 'Photoshop das tabelas', então as cores, gradientes e bordas são os seus pincéis e canetas. Use-os para guiar o olhar do leitor, criar secções lógicas e dar vida a uma grelha de dados monótona, transformando-a num relatório claro e apelativo.",
-      "quickNote": "Use cores de forma consistente. Por exemplo, use sempre um tom de verde para valores positivos/bons e um tom de vermelho para negativos/maus. O nosso cérebro processa esta informação visual muito mais rápido do que lê os números.",
+      "quickNote": "Use cores de forma consistente. Por exemplo, use sempre um tom de verde para valores positivos e um tom de vermelho para negativos. O nosso cérebro processa esta informação visual muito mais rápido do que lê os números. Dica extra: use 'Ctrl+Shift+F' para aceder diretamente à janela de formatação de tipo de letra e cor.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
           "description": "Mudar a cor de fundo de uma linha de cabeçalho.",
-          "code": "1. Selecione as células do cabeçalho (ex: A1:C1).\n2. No separador 'Base', use o 'Balde de Tinta' para escolher um fundo azul-escuro.\n3. Use a 'Cor do Tipo de Letra' para mudar o texto para branco."
+          "code": "1. Selecione as células do cabeçalho (ex: A1:C1).\n2. No separador 'Base', use a 'Cor de Preenchimento' (Fill Color – ícone de balde) para escolher um fundo azul-escuro.\n3. Use a 'Cor do Tipo de Letra' para mudar o texto para branco."
         },
         {
           "title": "Exemplo 2 – O Caso Comum",
           "description": "Criar uma borda dupla por baixo de uma linha de totais.",
-          "code": "1. Selecione a célula ou linha de totais.\n2. No separador 'Base', clique na seta ao lado do ícone 'Bordas'.\n3. Escolha 'Borda Dupla Inferior'."
+          "code": "1. Selecione a célula ou linha de totais.\n2. No separador 'Base', clique na seta ao lado do ícone 'Bordas'.\n3. Escolha 'Borda Inferior Dupla' (Bottom Double Border)."
         },
         {
           "title": "Exemplo 3 – A Armadilha",
@@ -90,10 +90,10 @@
       ],
       "quiz": [
         {
-          "question": "Onde se encontram as opções de cor de preenchimento ('balde de tinta') e cor do tipo de letra?",
+          "question": "Onde se encontram as opções de Cor de Preenchimento (ícone de balde) e Cor do Tipo de Letra?",
           "options": ["No separador 'Inserir', grupo 'Gráficos'", "No separador 'Base', grupo 'Tipo de Letra'", "No separador 'Esquema de Página', grupo 'Temas'", "Clicando com o botão direito > Opções da Célula"],
           "correctAnswer": "No separador 'Base', grupo 'Tipo de Letra'",
-          "feedback": "As opções de formatação mais comuns, como a cor de preenchimento (balde de tinta) e a cor do tipo de letra, estão localizadas no separador 'Base', dentro do grupo 'Tipo de Letra' para acesso rápido."
+          "feedback": "As opções de formatação mais comuns, como a Cor de Preenchimento (ícone de balde) e a Cor do Tipo de Letra, estão localizadas no separador 'Base', dentro do grupo 'Tipo de Letra' para acesso rápido."
         },
         {
           "question": "Qual é o objetivo principal de usar bordas numa tabela?",
@@ -109,10 +109,20 @@
         }
       ],
       "challenge": {
-        "description": "Crie um cabeçalho para uma tabela de 3 colunas. Centre o texto, coloque-o a negrito, mude a cor de fundo para um cinzento-escuro e a cor do texto para branco. Adicione uma borda inferior espessa para o separar dos dados.",
+        "description": "Crie um cabeçalho para uma tabela de 3 colunas. Centre o texto, coloque-o a negrito, mude a cor de fundo para um cinzento-escuro e a cor do texto para branco. Adicione uma borda inferior espessa para o separar dos dados. (Alternativa de alto contraste: use um Estilo de Tabela pré-definido). Bónus: Crie uma linha de totais com uma borda inferior dupla e um gradiente de fundo subtil.",
         "initialCode": "A1: Cabeçalho 1 | B1: Cabeçalho 2 | C1: Cabeçalho 3",
-        "solution": "1. Selecione as células do cabeçalho. \n2. No separador 'Base', clique em 'Negrito' e 'Centrar'. \n3. Use o 'balde de tinta' para a cor de fundo e o 'A' com barra de cor para o texto. \n4. No menu de Bordas, escolha 'Borda Inferior Espessa'."
-      }
+        "solution": "1. Selecione as células do cabeçalho.\n2. No separador 'Base', clique em 'Negrito' e 'Centrar'.\n3. Use a 'Cor de Preenchimento' (atalho: Alt+C, H) e a 'Cor do Tipo de Letra'.\n4. No menu de Bordas (atalho: Alt+C, B), escolha 'Borda Inferior Espessa'.\nBónus:\n1. Selecione a linha de totais.\n2. Menu de Bordas > 'Borda Inferior Dupla'.\n3. Cor de Preenchimento > 'Efeitos de Preenchimento...' (Gradient Fill) > escolha um gradiente subtil."
+      },
+      "glossary": [
+        { "word": "Cor de Preenchimento / Fill Color", "def": "Ícone de 'balde' que aplica cor ao fundo da célula." },
+        { "word": "Cor do Tipo de Letra / Font Color", "def": "Altera a cor do texto." },
+        { "word": "Borda / Border", "def": "Linha que delimita célula(s); pode ser inferior, dupla, espessa, etc." },
+        { "word": "Borda Inferior Dupla / Bottom Double Border", "def": "Estilo clássico para linha de totais." },
+        { "word": "Gradiente / Gradient", "def": "Degradé de cores no fundo da célula, acessível através das opções de Cor de Preenchimento." },
+        { "word": "Espessura da Borda / Border Weight", "def": "Espessura da linha (fina, média, espessa), definida nas opções de bordas." },
+        { "word": "Paleta de Cores / Color Palette", "def": "Conjunto restrito de cores usado consistentemente no ficheiro." },
+        { "word": "“Menos é Mais” / “Less is More”", "def": "Princípio de design que defende a simplicidade e a clareza, evitando sobrecarga visual com excesso de formatação." }
+      ]
     },
     {
       "id": "2.3",
