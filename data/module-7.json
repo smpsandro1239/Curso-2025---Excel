@@ -1,4 +1,3 @@
-
 {
   "id": "7",
   "title": "Colaboração & Automização",
@@ -131,7 +130,7 @@
       "illustration": "assets/images/modules/07/lessons/03-illust.svg",
       "illustrationAlt": "Folha de Excel com um botão de forma que executa uma macro para limpar células de input. Excel sheet with shape button that runs a macro to clear input cells.",
       "theory": "Uma macro é um robot assistente na sua central de comando. Em vez de fazer uma sequência de tarefas repetitivas manualmente, você faz uma vez, enquanto o 'Gravador de Macros' observa e anota cada passo. Depois, pode atribuir essa gravação a um botão que, quando pressionado, executa toda a sequência de tarefas instantaneamente.",
-      "quickNote": "Para usar macros, precisa de ativar o separador 'Programador'. Vá a 'Ficheiro' > 'Opções' > 'Personalizar Faixa de Opções' e marque a caixa 'Programador'. Dica de teclado (Windows): use Alt+W, M, R para abrir o gravador de macros.",
+      "quickNote": "Para usar macros, precisa de ativar o separador 'Programador'. Vá a 'Ficheiro' > 'Opções' > 'Personalizar Faixa de Opções' e marque a caixa 'Programador'. Dica de teclado (Windows): use Alt+T, M, R para abrir o gravador de macros.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
@@ -182,7 +181,7 @@
         { "word": "Botão de Forma / Shape Button", "def": "Forma que pode executar macro." },
         { "word": "Programador / Developer", "def": "Separador que deve ser activado." },
         { "word": "Guardar Como / Save As", "def": "Necessário para escolher .xlsm." },
-        { "word": "Alt + W, M, R", "def": "Atalho para gravador (Win)." }
+        { "word": "Alt + T, M, R (Win)", "def": "Atalho para abrir o gravador de macros." }
       ]
     },
     {
@@ -242,7 +241,7 @@
         { "word": "Passos / Steps", "def": "Lista cronológica de transformações." },
         { "word": "Atualizar / Refresh", "def": "Reaplica todos os passos com novos dados." },
         { "word": "Delimitador / Delimiter", "def": "Caractere que separa colunas (ex: espaço)." },
-        { "word": "Alt + A, P, T, C", "def": "Atalho para importar texto/CSV (Win)." },
+        { "word": "Alt + A, P, T, C (Win)", "def": "Atalho para importar texto/CSV." },
         { "word": "Não-destrutivo / Non-destructive", "def": "Transformações não alteram origem." }
       ]
     },
@@ -250,8 +249,9 @@
       "id": "7.5",
       "title": "Agendamento e Partilha OneDrive",
       "illustration": "assets/images/modules/07/lessons/05-illust.svg",
+      "illustrationAlt": "Excel Online with scheduled refresh icon and shared OneDrive folder. Excel Online com ícone de atualização agendada e pasta partilhada do OneDrive.",
       "theory": "A verdadeira automação na sua central de comando acontece quando os relatórios se atualizam e se distribuem sozinhos. Ao guardar os seus ficheiros e as suas fontes de dados na nuvem (OneDrive, SharePoint), pode configurar o Excel para se atualizar automaticamente a intervalos regulares e garantir que toda a equipa está sempre a ver a versão mais recente dos dados, em qualquer dispositivo.",
-      "quickNote": "A coautoria em tempo real é uma das maiores vantagens de trabalhar na nuvem. Se guardar um ficheiro no OneDrive e o partilhar, pode ver os cursores dos seus colegas a moverem-se e a editarem o ficheiro ao mesmo tempo que você.",
+      "quickNote": "A coautoria em tempo real é uma das maiores vantagens de trabalhar na nuvem. Se guardar um ficheiro no OneDrive e o partilhar, pode ver os cursores dos seus colegas a moverem-se e a editarem o ficheiro ao mesmo tempo que você. Dica de teclado (Win): use Alt+A, Y, 3 para partilhar e Alt+A, R, A para 'Atualizar Tudo'.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
@@ -290,10 +290,21 @@
         }
       ],
       "challenge": {
-        "description": "Este é o Desafio Final do Curso! Automatize um relatório semanal. O cenário: tem um ficheiro CSV ('dados_semana.csv') que é substituído todas as semanas numa pasta do OneDrive. O seu desafio é criar um ficheiro de relatório que, com um único clique em 'Atualizar Tudo', importa e limpa os dados do novo CSV via Power Query e atualiza uma Tabela Dinâmica e um Gráfico Dinâmico que resumem as vendas.",
+        "description": "Este é o Desafio Final do Curso! Automatize um relatório semanal. O cenário: tem um ficheiro CSV ('dados_semana.csv') que é substituído todas as semanas numa pasta do OneDrive. O seu desafio é criar um ficheiro de relatório que, com um único clique em 'Atualizar Tudo', importa e limpa os dados do novo CSV via Power Query e atualiza uma Tabela Dinâmica e um Gráfico Dinâmico que resumem as vendas. Bónus: Explore as definições do ficheiro no Excel para a Web e configure uma atualização diária automática.",
         "initialCode": "1. Ficheiro 'dados_semana.csv' numa pasta OneDrive.\n2. Ficheiro 'relatorio.xlsx' em branco.",
         "solution": "1. No 'relatorio.xlsx', use 'Dados' > 'Obter Dados' para se ligar ao 'dados_semana.csv' no OneDrive. \n2. No Power Query, faça as limpezas necessárias e carregue os dados para uma folha. \n3. Crie uma Tabela Dinâmica e um Gráfico Dinâmico baseados na tabela de dados importada. \n4. Guarde o relatório. Agora, quando o CSV for substituído, basta abrir o relatório e ir a 'Dados' > 'Atualizar Tudo'."
-      }
+      },
+      "glossary": [
+        { "word": "OneDrive / OneDrive", "def": "Nuvem da Microsoft para guardar e partilhar ficheiros." },
+        { "word": "SharePoint / SharePoint", "def": "Plataforma corporativa de colaboração." },
+        { "word": "Coautoria / Co-authoring", "def": "Edição simultânea por vários utilizadores." },
+        { "word": "Atualização Agendada / Scheduled Refresh", "def": "Actualização automática periódica." },
+        { "word": "Fonte de Dados / Data Source", "def": "Ficheiro externo que alimenta o relatório." },
+        { "word": "Power BI / Power BI", "def": "Serviço que permite agendamento avançado." },
+        { "word": "Alt + A, Y, 3 (Win)", "def": "Atalho para partilhar (Win)." },
+        { "word": "Atualizar Tudo / Refresh All", "def": "Botão que reimporta dados e actualiza TD e gráficos." },
+        { "word": "CSV / CSV", "def": "Ficheiro de valores separados por vírgula." }
+      ]
     }
   ]
 }
