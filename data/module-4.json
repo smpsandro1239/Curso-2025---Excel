@@ -124,7 +124,7 @@
     },
     {
       "id": "4.3",
-      "title": "E / OU dentro de SE",
+      "title": "E (AND) / OU (OR) dentro de SE",
       "illustration": "assets/images/modules/04/lessons/03-illust.svg",
       "illustrationAlt": "Função SE do Excel com E(Experiência>3; OU(Skill=\"Excel\"; Skill=\"Power BI\")) a devolver VERDADEIRO. Excel IF with AND(Experience>3, OR(Skill=\"Excel\", Skill=\"Power BI\")) returning TRUE.",
       "theory": "As funções E (AND) e OU (OR) são os 'assessores' do juiz SE. O assessor 'E' (AND) é muito rigoroso: só diz 'verdadeiro' ao juiz se TODAS as provas (condições) forem verdadeiras. O assessor 'OU' (OR) é mais flexível: basta que UMA das provas seja verdadeira para ele dizer 'verdadeiro'. O juiz SE baseia então o seu veredicto no parecer destes assessores.",
@@ -184,15 +184,16 @@
     },
     {
       "id": "4.4",
-      "title": "ÍNDICE + CORRESP (busca lateral)",
+      "title": "ÍNDICE (INDEX) + CORRESP (MATCH) (busca lateral)",
       "illustration": "assets/images/modules/04/lessons/04-illust.svg",
-      "theory": "Esta dupla é o sistema de arquivamento de elite do Excel. Pense nele assim: 'CORRESP' é o bibliotecário que lhe diz em que prateleira (número da linha) está o livro que procura. 'ÍNDICE' é o assistente que vai a essa prateleira (e a uma coluna específica, se necessário) e lhe traz o livro (o valor da célula). Juntos, são mais flexíveis e poderosos do que a popular função PROCV, pois conseguem 'procurar para a esquerda'.",
-      "quickNote": "O último argumento da função CORRESP é crucial. Use '0' para uma correspondência exata. Use '1' ou '-1' apenas se a sua lista estiver ordenada e quiser encontrar o valor mais próximo. Em 99% dos casos, vai querer usar '0'.",
+      "illustrationAlt": "Excel ÍNDICE+CORRESP a devolver o nome da coluna da esquerda usando correspondência exata (0). Excel INDEX+MATCH returning name from left column using exact match (0).",
+      "theory": "Esta dupla é o sistema de arquivamento de elite do Excel. Pense nele assim: 'CORRESP (MATCH)' é o bibliotecário que lhe diz em que prateleira (número da linha) está o livro que procura. 'ÍNDICE (INDEX)' é o assistente que vai a essa prateleira (e a uma coluna específica, se necessário) e lhe traz o livro (o valor da célula). Juntos, são mais flexíveis e poderosos do que a popular função PROCV, pois conseguem 'procurar para a esquerda'.",
+      "quickNote": "O último argumento da função CORRESP (MATCH) é crucial. Use '0' para uma correspondência exata. Use '1' ou '-1' apenas se a sua lista estiver ordenada e quiser encontrar o valor mais próximo. Em 99% dos casos, vai querer usar '0'. Lembre-se que o Excel em português usa ';' como delimitador de argumentos, enquanto em inglês usa ','. Dica de teclado (Windows): Alt+M, E, I (ÍNDICE) e Alt+M, E, M (CORRESP).",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
           "description": "Procurar o preço de um produto.",
-          "code": "Dados: Coluna A com produtos, Coluna B com preços.\nObjetivo: Encontrar o preço da 'Pera'.\nFórmula: =ÍNDICE(B:B; CORRESP(\"Pera\"; A:A; 0))\nExplicação: CORRESP encontra a posição da 'Pera' na coluna A, e ÍNDICE devolve o valor nessa mesma posição da coluna B."
+          "code": "Dados: Coluna A com produtos, Coluna B com preços.\nObjetivo: Encontrar o preço da 'Pera'.\nFórmula: =ÍNDICE(B:B; CORRESP(\"Pera\"; A:A; 0))\nExplicação: CORRESP (MATCH) encontra a posição da 'Pera' na coluna A, e ÍNDICE (INDEX) devolve o valor nessa mesma posição da coluna B."
         },
         {
           "title": "Exemplo 2 – O Caso Comum",
@@ -201,35 +202,45 @@
         },
         {
           "title": "Exemplo 3 – A Armadilha",
-          "description": "Não usar o '0' para correspondência exata na função CORRESP.",
+          "description": "Não usar o '0' para correspondência exata na função CORRESP (MATCH).",
           "code": "PROBLEMA: A sua lista de produtos não está por ordem alfabética e usa =CORRESP(\"Pera\"; A:A) sem o '; 0' no final.\nCONSEQUÊNCIA: A função pode devolver um erro #N/D ou, pior, a posição de um produto errado.\nSOLUÇÃO: Use sempre '; 0' no final para garantir uma correspondência exata."
         }
       ],
       "quiz": [
         {
-          "question": "O que é que a função CORRESP devolve?",
+          "question": "O que é que a função CORRESP (MATCH) devolve?",
           "options": ["O valor de uma célula", "Um valor VERDADEIRO ou FALSO", "A posição numérica de um item num intervalo", "Uma referência a uma célula"],
           "correctAnswer": "A posição numérica de um item num intervalo",
-          "feedback": "A função CORRESP procura um item num intervalo e devolve a sua posição relativa (ex: 3º item da lista), não o valor em si. É este número que a função ÍNDICE utiliza."
+          "feedback": "A função CORRESP (MATCH) procura um item num intervalo e devolve a sua posição relativa (ex: 3º item da lista), não o valor em si. É este número que a função ÍNDICE (INDEX) utiliza."
         },
         {
-          "question": "Qual é a principal vantagem da combinação ÍNDICE + CORRESP sobre a função PROCV?",
+          "question": "Qual é a principal vantagem da combinação ÍNDICE (INDEX) + CORRESP (MATCH) sobre a função PROCV?",
           "options": ["É mais curta de escrever", "Consegue procurar valores em colunas à esquerda da coluna de pesquisa", "É mais rápida em folhas de cálculo pequenas", "Usa menos memória"],
           "correctAnswer": "Consegue procurar valores em colunas à esquerda da coluna de pesquisa",
-          "feedback": "A grande vantagem de ÍNDICE + CORRESP é a sua flexibilidade. Ao contrário da PROCV, que só procura na primeira coluna e devolve valores à direita, esta combinação permite procurar numa coluna e devolver o valor correspondente de qualquer outra coluna, incluindo as que estão à esquerda."
+          "feedback": "A grande vantagem de ÍNDICE (INDEX) + CORRESP (MATCH) é a sua flexibilidade. Ao contrário da PROCV, que só procura na primeira coluna e devolve valores à direita, esta combinação permite procurar numa coluna e devolver o valor correspondente de qualquer outra coluna, incluindo as que estão à esquerda."
         },
         {
           "question": "Na fórmula =ÍNDICE(A1:C10; 3; 2), que valor será devolvido?",
           "options": ["O valor na célula C2", "O valor na célula B3", "O valor na célula A3", "O valor na célula C3"],
           "correctAnswer": "O valor na célula B3",
-          "feedback": "A função ÍNDICE devolve o valor na intersecção de uma linha e coluna dentro de um intervalo. Neste caso, procura na 3ª linha e na 2ª coluna do intervalo A1:C10, o que corresponde à célula B3."
+          "feedback": "A função ÍNDICE (INDEX) devolve o valor na intersecção de uma linha e coluna dentro de um intervalo. Neste caso, procura na 3ª linha e na 2ª coluna do intervalo A1:C10, o que corresponde à célula B3."
         }
       ],
       "challenge": {
-        "description": "Tem uma tabela com 'ID do Funcionário', 'Nome' e 'Departamento'. Numa outra célula, um utilizador insere um ID de funcionário. Crie uma fórmula que devolva o Nome correspondente a esse ID.",
+        "description": "Tem uma tabela com 'ID do Funcionário', 'Nome' e 'Departamento'. Numa outra célula, um utilizador insere um ID de funcionário. Crie uma fórmula que devolva o Nome correspondente a esse ID. Bónus: Numa única fórmula, devolva o nome e o departamento, separados por um hífen (ex: 'Bruno - IT').",
         "initialCode": "ID | Nome | Dept.\n101 | Ana | Vendas\n102 | Bruno | IT\n103 | Carla | Mktg\n\nID a procurar: 102",
-        "solution": "Assumindo que os IDs estão em A2:A4, os Nomes em B2:B4, e o ID a procurar em E2, a fórmula seria: '=ÍNDICE(B2:B4; CORRESP(E2; A2:A4; 0))'. O resultado seria 'Bruno'."
-      }
+        "solution": "Assumindo que os IDs estão em A2:A4, os Nomes em B2:B4, o Departamento em C2:C4, e o ID a procurar em E2, a fórmula seria: '=ÍNDICE(B2:B4; CORRESP(E2; A2:A4; 0))'. O resultado seria 'Bruno'.\nBónus: =ÍNDICE(B2:B4; CORRESP(E2; A2:A4; 0)) & \" - \" & ÍNDICE(C2:C4; CORRESP(E2; A2:A4; 0))"
+      },
+      "glossary": [
+        { "word": "ÍNDICE / INDEX", "def": "Devolve o valor de uma célula numa matriz, com base na linha e coluna." },
+        { "word": "CORRESP / MATCH", "def": "Devolve a posição (número) de um valor num intervalo." },
+        { "word": "Busca Lateral / Left Lookup", "def": "Procurar à esquerda da coluna de pesquisa (impossível com PROCV)." },
+        { "word": "Correspondência Exata / Exact Match", "def": "Usar “0” no 3.º argumento de CORRESP." },
+        { "word": "Linha / Row", "def": "Número da linha dentro da matriz." },
+        { "word": "Coluna / Column", "def": "Número da coluna dentro da matriz." },
+        { "word": "Matriz / Array", "def": "Intervalo rectangular de células." },
+        { "word": "#N/D / #N/A", "def": "Erro quando o valor não é encontrado." }
+      ]
     },
     {
       "id": "4.5",
