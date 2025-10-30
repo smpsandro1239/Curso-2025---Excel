@@ -1,3 +1,4 @@
+
 export interface GlossaryTerm {
   word: string;
   def: string;
@@ -26,6 +27,7 @@ export interface Lesson {
   id: string;
   title: string;
   illustration: string;
+  illustrationAlt?: string;
   theory: string;
   quickNote?: string;
   examples: Example[];

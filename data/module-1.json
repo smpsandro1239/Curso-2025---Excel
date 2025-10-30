@@ -1,3 +1,4 @@
+
 {
   "id": "1",
   "title": "Introdução ao Excel",
@@ -14,12 +15,12 @@
         {
           "title": "Exemplo 1 – O Básico",
           "description": "Inserir texto numa célula.",
-          "code": "1. Clique na célula A1.\n2. Digite: Olá, Mundo!\n3. Pressione Enter."
+          "code": "1. Clique na célula A1 (ou use as setas para navegar até ela).\n2. Digite: Olá, Mundo!\n3. Carregue em Enter."
         },
         {
           "title": "Exemplo 2 – O Caso Comum",
-          "description": "Inserir um número e formatá-lo como moeda.",
-          "code": "1. Na célula B1, digite: 1234.5\n2. No separador 'Base', no grupo 'Número', escolha 'Moeda'.\n3. O Excel exibe: 1.234,50 €"
+          "description": "Inserir um número e formatá-lo como moeda. Para outras moedas, pode usar a pequena seta junto ao botão 'Moeda'.",
+          "code": "1. Na célula B1, digite: 1234,5\n2. No separador 'Base', no grupo 'Número', escolha 'Moeda'.\n3. O Excel exibe: 1.234,50 €"
         },
         {
           "title": "Exemplo 3 – A Armadilha",
@@ -36,7 +37,7 @@
         },
         {
           "question": "Como pode forçar o Excel a tratar '10/12' como texto em vez de uma data?",
-          "options": ["Colocar entre aspas: \"10/12\"", "Digitar um apóstrofo antes: '10/12", "Usar parênteses: (10/12)", "Não é possível"],
+          "options": ["Digitar a fórmula =\"10/12\"", "Digitar um apóstrofo antes: '10/12", "Usar parênteses: (10/12)", "Não é possível"],
           "correctAnswer": "Digitar um apóstrofo antes: '10/12",
           "feedback": "A resposta correta é usar um apóstrofo ('). Ao iniciar a inserção com ', o Excel interpreta tudo o que se segue como texto literal, ignorando a formatação automática de data."
         },
@@ -48,13 +49,13 @@
         }
       ],
       "challenge": {
-        "description": "Crie uma pequena lista de compras. Na primeira coluna (A), liste 3 itens. Na segunda coluna (B), coloque os seus preços. Na célula B4, use a função SOMA para calcular o total.",
+        "description": "Crie uma pequena lista de compras. Na primeira coluna (A), liste 3 itens. Na segunda coluna (B), coloque os seus preços. Na célula B5, use a função SOMA para calcular o total. Bónus: formate o total a negrito. Não se esqueça de guardar o seu trabalho (Ctrl+S)!",
         "initialCode": "A1: Itens     | B1: Preços\nA2: Maçã      | B2: 5.50\nA3: Leite     | B3: 4.20\nA4: Pão       | B4: 8.00",
         "solution": "Na célula B5, digite a fórmula: =SOMA(B2:B4)"
       },
       "glossary": [
-        { "word": "Célula", "def": "A intersecção de uma linha e uma coluna. É a unidade base onde se insere dados." },
-        { "word": "Pasta de Trabalho", "def": "O nome de um ficheiro Excel. Pode conter várias Folhas de cálculo." },
+        { "word": "Célula", "def": "A intersecção de uma linha e uma coluna. É a unidade base onde se insere dados. A célula ativa, marcada com uma moldura verde, é onde o que digita irá aparecer." },
+        { "word": "Pasta de Trabalho", "def": "O nome de um ficheiro Excel (.xlsx). Pode conter várias Folhas de cálculo. (Não confundir com uma pasta do sistema operativo Windows!)" },
         { "word": "Folha de cálculo", "def": "Uma grelha de células dentro de uma Pasta de Trabalho, também conhecida como 'aba' ou 'separador'." }
       ]
     },
@@ -62,23 +63,24 @@
       "id": "1.2",
       "title": "Interface Rápida",
       "illustration": "assets/images/modules/01/lessons/02-illust.svg",
-      "theory": "A interface do Excel é como o cockpit de um avião. A 'Faixa de Opções' no topo tem todos os botões e comandos. A 'Barra de Fórmulas' é o seu GPS, mostrando o conteúdo real da célula. E os 'Separadores' na base permitem navegar entre as diferentes folhas da sua pasta de trabalho.",
-      "quickNote": "Pressione a tecla 'Alt' para ver letras e números sobre a Faixa de Opções. Estes são os atalhos para aceder a qualquer comando sem usar o rato.",
+      "illustrationAlt": "Excel UI highlighted: Ribbon (Home tab), Formula Bar, Sheet tabs and Status bar. Destaques na interface do Excel: Faixa de Opções (separador Base), Barra de Fórmulas, Separadores de folhas e Barra de Estado.",
+      "theory": "A interface do Excel é como o cockpit de um avião. A 'Faixa de Opções' (Ribbon) no topo tem todos os botões e comandos. A 'Barra de Fórmulas' é o seu GPS, mostrando o conteúdo real da célula. E os 'Separadores' na base permitem navegar entre as diferentes folhas da sua pasta de trabalho.",
+      "quickNote": "Pressione a tecla 'Alt' para ver letras e números sobre a Faixa de Opções. Estes são os atalhos para aceder a qualquer comando sem usar o rato. Dica extra: use Ctrl + roda do rato para fazer zoom in/out rapidamente.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
           "description": "Encontrar o botão 'Negrito'.",
-          "code": "1. Selecione a célula A1.\n2. Vá ao separador 'Base' na Faixa de Opções.\n3. No grupo 'Tipo de Letra', clique no 'N' (Negrito)."
+          "code": "1. Selecione a célula A1.\n2. Vá ao separador 'Home (Base)' na Faixa de Opções.\n3. No grupo 'Tipo de Letra', clique no 'N' (Negrito) (atalho: Ctrl+N)."
         },
         {
           "title": "Exemplo 2 – O Caso Comum",
           "description": "Mudar o nome de uma folha de cálculo.",
-          "code": "1. Na parte inferior do Excel, encontre o separador 'Folha1'.\n2. Faça duplo clique sobre o nome.\n3. Digite o novo nome, por exemplo 'Orçamento 2024', e pressione Enter."
+          "code": "1. Na parte inferior do Excel, encontre o separador 'Folha1'.\n2. Faça duplo clique sobre o nome (ou selecione o separador e pressione F2).\n3. Digite o novo nome, por exemplo 'Orçamento 2026', e carregue em Enter."
         },
         {
           "title": "Exemplo 3 – A Armadilha",
           "description": "Editar uma fórmula longa na célula.",
-          "code": "PROBLEMA: Tentar editar uma fórmula complexa diretamente na célula oferece pouco espaço e é confuso.\nSOLUÇÃO: Clique na célula e edite a fórmula na Barra de Fórmulas (a barra longa acima da grelha). Ela oferece muito mais espaço e clareza."
+          "code": "PROBLEMA: Tentar editar uma fórmula complexa diretamente na célula oferece pouco espaço e é confuso.\nSOLUÇÃO: Clique na célula (ou pressione F2) e edite a fórmula na Barra de Fórmulas (a barra longa acima da grelha). Ela oferece muito mais espaço e clareza."
         }
       ],
       "quiz": [
@@ -86,38 +88,48 @@
           "question": "Qual o nome da barra no topo do Excel que contém todos os separadores e botões?",
           "options": ["Barra de Ferramentas", "Barra de Fórmulas", "Faixa de Opções", "Menu Principal"],
           "correctAnswer": "Faixa de Opções",
-          "feedback": "A barra superior que agrupa todos os comandos em separadores (Base, Inserir, etc.) chama-se 'Faixa de Opções' (Ribbon). É o principal centro de controlo do Excel."
+          "feedback": "A barra superior que agrupa todos os comandos em separadores (Home (Base), Inserir, etc.) chama-se 'Faixa de Opções' (Ribbon). É o principal centro de controlo do Excel."
         },
         {
           "question": "Onde pode ver ou editar o conteúdo 'verdadeiro' de uma célula, especialmente fórmulas?",
           "options": ["Na própria célula", "Na Barra de Fórmulas", "Na Barra de Estado", "Numa janela pop-up"],
           "correctAnswer": "Na Barra de Fórmulas",
-          "feedback": "A 'Barra de Fórmulas', localizada acima da grelha, mostra sempre o conteúdo real de uma célula. É especialmente útil para ver e editar fórmulas, que na célula mostram apenas o resultado."
+          "feedback": "A 'Barra de Fórmulas', localizada acima da grelha, mostra sempre o conteúdo real de uma célula. É especialmente útil para ver e editar fórmulas, que na célula mostram apenas o resultado. A 'Barra de Estado', no fundo da janela, mostra informações rápidas como a Soma ou Média das células selecionadas."
         },
         {
             "question": "Um método rápido para mudar o nome de uma folha de cálculo é:",
             "options": ["Clicar com o botão direito e escolher 'Mudar o Nome'", "Fazer duplo clique no separador", "Selecionar a folha e pressionar F2", "Todas as anteriores"],
             "correctAnswer": "Todas as anteriores",
-            "feedback": "Todas as opções estão corretas. O Excel é flexível, permitindo fazer a mesma ação de várias formas: com o botão direito, com um duplo clique ou com a tecla de atalho F2."
+            "feedback": "Todas as opções estão corretas. O Excel é flexível. Nota sobre F2: para funcionar, o separador tem de estar ativo (clique nele ou use Ctrl+PgUp/PgDn para navegar até ele)."
         }
       ],
       "challenge": {
-        "description": "Encontre o botão 'Pincel de Formatação' no separador 'Base'. Formate uma célula com cor de fundo amarela e texto a negrito. Depois, use o Pincel para copiar esse mesmo estilo para outra célula com um só clique.",
+        "description": "Encontre o botão 'Pincel de Formatação' no separador 'Home (Base)'. Formate uma célula com cor de fundo amarela (ou qualquer cor visível; atalho para paleta: Alt+C+C) e texto a negrito. Depois, use o Pincel para copiar esse mesmo estilo para outra célula com um só clique. Bónus: Renomeie a folha atual para 'Desafio' em menos de 3 segundos, usando apenas o teclado.",
         "initialCode": "Célula A1: 'Original' (sem formato)\nCélula B1: 'Alvo'",
-        "solution": "1. Selecione A1, aplique fundo amarelo e negrito.\n2. Com A1 ainda selecionada, clique no 'Pincel de Formatação'.\n3. Clique na célula B1."
-      }
+        "solution": "1. Selecione A1, aplique fundo amarelo e negrito (Ctrl+N).\n2. Com A1 ainda selecionada, clique no 'Pincel de Formatação' (ou use o atalho Alt+C+FP).\n3. Clique na célula B1.\nSolução Bónus (teclado): Pressione Alt+C+O+M, digite 'Desafio' e carregue em Enter."
+      },
+      "glossary": [
+        { "word": "Faixa de Opções / Ribbon", "def": "A barra superior que agrupa todos os comandos em separadores (tabs)." },
+        { "word": "Barra de Fórmulas / Formula Bar", "def": "O campo acima da grelha onde se vê e edita o conteúdo real da célula." },
+        { "word": "Barra de Estado / Status Bar", "def": "A barra no fundo da janela que mostra informações rápidas (Soma, Média, etc.) das células selecionadas. Clique com o botão direito sobre ela para personalizar." },
+        { "word": "Separador / Sheet Tab", "def": "A pequena aba na base que representa cada folha de cálculo." },
+        { "word": "Pincel de Formatação / Format Painter", "def": "Ferramenta que copia a formatação (cores, tipo de letra, bordas) de uma célula para outra com um clique." },
+        { "word": "Caixa de Nome / Name Box", "def": "A pequena caixa à esquerda da Barra de Fórmulas que mostra a referência da célula ativa (ex: A1)." },
+        { "word": "Controlo de Zoom / Zoom Slider", "def": "A barra no canto inferior direito que ajusta a ampliação da grelha." }
+      ]
     },
     {
       "id": "1.3",
       "title": "A Sua Primeira Fórmula (SOMA)",
       "illustration": "assets/images/modules/01/lessons/03-illust.svg",
+      "illustrationAlt": "Excel worksheet showing numbers in B2:B5 and AutoSum Σ button highlighted in Home tab. Folha de Excel a mostrar números em B2:B5 e o botão Soma Automática Σ destacado no separador Base.",
       "theory": "As fórmulas são receitas mágicas que o Excel segue. Toda a receita começa com o sinal de igual (=). A função SOMA é a receita mais básica e poderosa: ela pega num conjunto de ingredientes (números) e dá-lhe o resultado total, instantaneamente.",
-      "quickNote": "Depois de escrever '=SOMA(', pode selecionar as células com o rato ou as setas do teclado. O Excel escreverá o intervalo (ex: A1:A10) por si.",
+      "quickNote": "Depois de escrever '=SOMA(', pode selecionar as células com o rato ou as setas do teclado. O Excel escreverá o intervalo (ex: A1:A10) por si. Lembre-se: use a vírgula decimal (5,5) se o seu sistema estiver em português, e o ponto (5.5) se estiver em inglês.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
           "description": "Somar dois números diretamente.",
-          "code": "Numa célula vazia, digite: =5+10\nPressione Enter. O resultado será 15."
+          "code": "Numa célula vazia, digite: =5+10\nCarregue em Enter. O resultado será 15."
         },
         {
           "title": "Exemplo 2 – O Caso Comum",
@@ -147,85 +159,108 @@
             "question": "Onde se encontra o botão 'Soma Automática' (símbolo Σ), um atalho para a função SOMA?",
             "options": ["Separador 'Dados'", "Separador 'Inserir'", "Separador 'Fórmulas'", "Separador 'Base' e 'Fórmulas'"],
             "correctAnswer": "Separador 'Base' e 'Fórmulas'",
-            "feedback": "Devido à sua elevada frequência de uso, o botão 'Soma Automática' (Σ) está convenientemente localizado tanto no separador 'Base' como no separador 'Fórmulas'."
+            "feedback": "Devido à sua elevada frequência de uso, o botão 'Soma Automática' (Σ) está convenientemente localizado no separador 'Fórmulas' (Windows e Mac) e também no separador 'Base' (apenas Windows)."
         }
       ],
       "challenge": {
-        "description": "Tem uma lista de despesas semanais nas células B2, B3, B4 e B5. Use o botão Soma Automática para calcular o total na célula B6 com um único clique.",
+        "description": "Tem uma lista de despesas semanais nas células B2, B3, B4 e B5. Use o botão Soma Automática (ou o atalho Alt+=) para calcular o total na célula B6. Bónus: Calcule a média dessas despesas na célula B7 usando o menu dropdown ao lado do botão Σ.",
         "initialCode": "B2: 50\nB3: 25\nB4: 100\nB5: 15",
-        "solution": "1. Clique na célula B6, logo abaixo da lista.\n2. Vá ao separador 'Base' e clique no botão 'Soma Automática' (Σ).\n3. O Excel sugere a fórmula =SOMA(B2:B5). Pressione Enter."
-      }
+        "solution": "1. Clique na célula B6, logo abaixo da lista.\n2. Vá ao separador 'Base' e clique no botão 'Soma Automática' (Σ) (ou pressione Alt+=).\n3. O Excel sugere a fórmula =SOMA(B2:B5). Carregue em Enter.\nBónus:\n1. Clique na célula B7.\n2. Clique na seta ao lado do botão Σ e escolha 'Média'.\n3. O Excel insere =MÉDIA(B2:B6). Corrija o intervalo para =MÉDIA(B2:B5) e carregue em Enter."
+      },
+      "glossary": [
+        { "word": "Fórmula / Formula", "def": "Expressão que começa com '=' e devolve um resultado." },
+        { "word": "Função / Function", "def": "Palavra-reservada (ex: SOMA, SUM) que executa um cálculo pré-definido." },
+        { "word": "Intervalo / Range", "def": "Um conjunto contíguo de células, definido pela célula inicial e final, separadas por dois pontos (ex: A1:A10)." },
+        { "word": "Soma Automática / AutoSum", "def": "O botão (Σ) que insere automaticamente a função SOMA para um intervalo de células adjacente." },
+        { "word": "Referência Relativa / Relative Reference", "def": "Um endereço de célula numa fórmula (ex: A1) que se ajusta automaticamente quando a fórmula é copiada para outra célula." },
+        { "word": "Referência Absoluta / Absolute Reference", "def": "Um endereço de célula fixo numa fórmula (ex: $A$1) que não muda quando a fórmula é copiada." },
+        { "word": "Erro #VALOR! / #VALUE!", "def": "Erro que ocorre quando uma fórmula usa um tipo de argumento ou operando incorreto, como tentar somar texto com números." },
+        { "word": "Separador Decimal / Decimal Separator", "def": "O carácter usado para separar a parte inteira da parte decimal de um número. É definido pelas definições regionais do sistema operativo (vírgula em português, ponto em inglês)." }
+      ]
     },
     {
       "id": "1.4",
       "title": "Atalhos que Poupam Minutos",
       "illustration": "assets/images/modules/01/lessons/04-illust.svg",
+      "illustrationAlt": "Excel grid with shortcut keys overlay: Ctrl+C, Ctrl+V, Ctrl+Arrow Down highlighted. Grelha do Excel com sobreposição de atalhos de teclado: Ctrl+C, Ctrl+V, Ctrl+Seta para Baixo em destaque.",
       "theory": "Pense nos atalhos como teletransporte. Em vez de percorrer o caminho longo com o rato, chega instantaneamente onde quer com uma combinação de teclas. Dominar alguns atalhos essenciais é a diferença entre ser um utilizador comum e um mestre do Excel.",
-      "quickNote": "'Ctrl + Z' (Anular) é o seu melhor amigo. Fez algo errado? Apenas anule sem pânico. Pode pressioná-lo várias vezes para voltar vários passos atrás.",
+      "quickNote": "'Ctrl+Z' (ou ⌘+Z no Mac) é o seu melhor amigo. Fez algo errado? Apenas anule sem pânico. Pode pressioná-lo várias vezes para voltar vários passos atrás. Atenção: o histórico de anulações é apagado ao fechar o ficheiro, por isso guarde o seu trabalho frequentemente!",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
           "description": "Copiar e colar conteúdo.",
-          "code": "1. Selecione a célula A1.\n2. Pressione Ctrl + C (Copiar).\n3. Selecione a célula B1.\n4. Pressione Ctrl + V (Colar)."
+          "code": "1. Selecione a célula A1.\n2. Pressione Ctrl+C (Copiar) (ou ⌘+C no Mac).\n3. Selecione a célula B1.\n4. Pressione Ctrl+V (Colar) (ou ⌘+V no Mac)."
         },
         {
           "title": "Exemplo 2 – O Caso Comum",
-          "description": "Navegar rapidamente por tabelas grandes.",
-          "code": "Cenário: Está na célula A1 de uma tabela com 1000 linhas.\nAção: Pressione Ctrl + Seta para Baixo.\nResultado: Salta instantaneamente para a célula A1000."
+          "description": "Navegar rapidamente por tabelas grandes. O atalho para na primeira célula vazia que encontrar.",
+          "code": "Cenário: Está na célula A1 de uma tabela com 1000 linhas contínuas.\nAção: Pressione Ctrl + Seta para Baixo (ou ⌘ + Seta para Baixo no Mac).\nResultado: Salta instantaneamente para a célula A1000."
         },
         {
           "title": "Exemplo 3 – A Armadilha",
           "description": "Selecionar uma linha inteira vs. o conteúdo da linha.",
-          "code": "Para selecionar a LINHA INTEIRA (ex: linha 5): Clique no número 5 à esquerda ou use o atalho Shift + Espaço.\n\nPara selecionar apenas AS CÉLULAS PREENCHIDAS na linha 5: Use Ctrl + Shift + Seta para a Direita."
+          "code": "Para selecionar a LINHA INTEIRA (ex: linha 5): Clique no número 5 à esquerda ou use o atalho Shift+Espaço (ou ⌘+Shift+Espaço no Mac).\n\nPara selecionar apenas AS CÉLULAS PREENCHIDAS na linha 5: Use Ctrl+Shift+Seta para a Direita (ou ⌘+Shift+Seta para a Direita no Mac)."
         }
       ],
       "quiz": [
         {
           "question": "Qual o atalho universal que serve para 'Anular' a última ação?",
-          "options": ["Ctrl + Y", "Ctrl + Z", "Ctrl + D", "Alt + Z"],
-          "correctAnswer": "Ctrl + Z",
-          "feedback": "O atalho 'Ctrl + Z' é universal para anular a última ação. É uma das combinações de teclas mais importantes para corrigir erros rapidamente em quase qualquer software."
+          "options": ["Ctrl+Y", "Ctrl+Z", "Ctrl+D", "Alt+Z"],
+          "correctAnswer": "Ctrl+Z",
+          "feedback": "O atalho 'Ctrl+Z' (ou ⌘+Z no Mac) é universal para anular a última ação. É uma das combinações de teclas mais importantes para corrigir erros rapidamente em quase qualquer software."
         },
         {
           "question": "Estou na célula A1 de uma grande tabela. Como vou para a última célula da mesma coluna?",
-          "options": ["Seta para Baixo (repetidamente)", "Page Down", "Ctrl + Seta para Baixo", "End"],
-          "correctAnswer": "Ctrl + Seta para Baixo",
-          "feedback": "A combinação 'Ctrl + Seta' permite navegar até à última célula preenchida numa direção. 'Ctrl + Seta para Baixo' salta para o fim do bloco de dados atual nessa coluna, uma técnica essencial para grandes tabelas."
+          "options": ["Seta para Baixo (repetidamente)", "Page Down", "Ctrl+Seta para Baixo", "End"],
+          "correctAnswer": "Ctrl+Seta para Baixo",
+          "feedback": "A combinação 'Ctrl+Seta' (ou ⌘+Seta no Mac) permite navegar até à última célula preenchida numa direção. 'Ctrl+Seta para Baixo' salta para o fim do bloco de dados atual nessa coluna, uma técnica essencial para grandes tabelas."
         },
         {
             "question": "Qual é o atalho para guardar o seu trabalho?",
-            "options": ["Ctrl + G", "Ctrl + S", "Ctrl + W", "Alt + S"],
-            "correctAnswer": "Ctrl + S",
-            "feedback": "O atalho para guardar é 'Ctrl + S' (de 'Save' em inglês, ou 'Salvar' noutras línguas, mas o atalho é universal). É uma boa prática usá-lo frequentemente para não perder trabalho."
+            "options": ["Ctrl+G", "Ctrl+S", "Ctrl+W", "Alt+S"],
+            "correctAnswer": "Ctrl+S",
+            "feedback": "O atalho para guardar é 'Ctrl+S' (ou ⌘+S no Mac). É uma boa prática usá-lo frequentemente para não perder trabalho."
         }
       ],
       "challenge": {
-        "description": "Dada uma célula, use um atalho de teclado para preencher a data atual automaticamente, sem precisar de a digitar.",
+        "description": "Dada uma célula, use um atalho de teclado para preencher a data atual automaticamente. O formato da data pode variar conforme as suas definições regionais (dd-mm-yyyy ou mm/dd/yyyy). Bónus: Noutra célula, insira a hora atual usando um atalho.",
         "initialCode": "Célula A1 vazia.",
-        "solution": "Clique na célula A1 e pressione o atalho: Ctrl + ; (ponto e vírgula)."
-      }
+        "solution": "Clique na célula A1 e pressione o atalho: Ctrl+; (ou ⌘+; no Mac).\nBónus: Para a hora atual, use Ctrl+Shift+; (ou ⌘+Shift+; no Mac)."
+      },
+      "glossary": [
+        { "word": "Anular / Undo", "def": "Ctrl+Z (ou ⌘+Z no Mac) – reverte a última ação." },
+        { "word": "Refazer / Redo", "def": "Ctrl+Y (ou ⌘+Y no Mac) – refaz a ação que foi anulada." },
+        { "word": "Copiar / Copy", "def": "Ctrl+C (ou ⌘+C no Mac) – copia o conteúdo selecionado para a área de transferência." },
+        { "word": "Colar / Paste", "def": "Ctrl+V (ou ⌘+V no Mac) – cola o conteúdo da área de transferência." },
+        { "word": "Data do sistema / System Date", "def": "A data atual fornecida pelo sistema operativo do computador." },
+        { "word": "Ctrl + Seta / Ctrl + Arrow", "def": "Atalho para saltar até ao limite da região contígua de dados na direção da seta." },
+        { "word": "Seleção de Linha Inteira / Entire Row Selection", "def": "Shift+Espaço (Windows) ou ⌘+Shift+Espaço (Mac) para selecionar a linha inteira da célula ativa." },
+        { "word": "Guardar / Save", "def": "Ctrl+S (ou ⌘+S no Mac) – grava as alterações no ficheiro atual." },
+        { "word": "Limite de Anulação / Undo Limit", "def": "O Excel armazena aproximadamente as últimas 100 ações. Este histórico é perdido ao fechar o ficheiro." }
+      ]
     },
     {
       "id": "1.5",
       "title": "Guardar e Partilhar Ficheiros",
       "illustration": "assets/images/modules/01/lessons/05-illust.svg",
+      "illustrationAlt": "Excel backstage view showing Export > Create PDF/XPS button highlighted. Vista de bastidores do Excel a mostrar o botão Exportar > Criar PDF/XPS em destaque.",
       "theory": "Guardar o seu trabalho é como tirar uma fotografia de uma escultura de areia antes que a maré suba. Você captura o estado atual. Partilhar é como enviar essa fotografia para outras pessoas. Saber o formato certo (Excel, PDF) é crucial para que todos vejam o que você quer que eles vejam.",
-      "quickNote": "Use 'Guardar Como' (atalho F12) para criar uma cópia do seu ficheiro com um novo nome ou num formato diferente, preservando o ficheiro original.",
+      "quickNote": "Use 'Guardar Como' (atalho F12, ou ⌘+Shift+S no Mac) para criar uma cópia do seu ficheiro. Para criar um PDF rapidamente com o teclado (Windows), use a sequência Alt+F, E, P e depois Enter.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
           "description": "Guardar o ficheiro pela primeira vez.",
-          "code": "1. Pressione Ctrl + S.\n2. Uma janela abrir-se-á.\n3. Escolha a localização e o nome do ficheiro. Clique em 'Guardar'."
+          "code": "1. Pressione Ctrl + S (ou ⌘+S no Mac).\n2. Uma janela abrir-se-á.\n3. Escolha a localização e o nome do ficheiro. Clique em 'Guardar'."
         },
         {
           "title": "Exemplo 2 – O Caso Comum",
           "description": "Criar um PDF para um relatório.",
-          "code": "1. Vá a 'Ficheiro' > 'Exportar'.\n2. Clique em 'Criar PDF/XPS'.\n3. Escolha o nome e a localização e clique em 'Publicar'.\nIsto gera um documento estático e profissional que não pode ser alterado facilmente."
+          "code": "1. Vá a 'Ficheiro' > 'Exportar'.\n2. Clique em 'Criar PDF/XPS' (Create PDF/XPS Document).\n3. Escolha o nome e a localização e clique em 'Publicar'.\nIsto gera um documento estático e profissional que não pode ser alterado facilmente."
         },
         {
           "title": "Exemplo 3 – A Armadilha",
           "description": "Enviar um ficheiro Excel com ligações para outros ficheiros locais.",
-          "code": "PROBLEMA: A sua fórmula em [FicheiroA.xlsx] busca dados de [FicheiroB.xlsx] no seu computador. Ao enviar apenas o FicheiroA, o destinatário verá erros de #REF!.\nSOLUÇÃO: Incorpore os dados necessários ou partilhe todos os ficheiros ligados."
+          "code": "PROBLEMA: A sua fórmula em [FicheiroA.xlsx] busca dados de [FicheiroB.xlsx] no seu computador. Ao enviar apenas o FicheiroA, o destinatário verá erros como #REF!, #NOME?, ou valores que não atualizam.\nSOLUÇÃO: Incorpore os dados necessários ou partilhe todos os ficheiros ligados."
         }
       ],
       "quiz": [
@@ -239,20 +274,31 @@
           "question": "Qual o formato que escolheria para partilhar dados que precisam de ser abertos em quase qualquer programa de folhas de cálculo, mesmo os mais antigos?",
           "options": [".xlsx", ".pdf", ".csv", ".txt"],
           "correctAnswer": ".csv",
-          "feedback": "O formato '.csv' (Valores Separados por Vírgulas) é a melhor opção para compatibilidade universal. É um ficheiro de texto simples que guarda os dados em grelha, mas atenção: perde toda a formatação, fórmulas e gráficos."
+          "feedback": "O formato '.csv' (Valores Separados por Vírgulas) é a melhor opção para compatibilidade universal. Atenção: perde toda a formatação, fórmulas e gráficos, guardando apenas os valores visíveis. O seu delimitador (o carácter que separa as colunas) depende das definições regionais (ponto e vírgula em português, vírgula em inglês)."
         },
         {
           "question": "O atalho F12 abre qual funcionalidade?",
           "options": ["Imprimir", "Guardar", "Guardar Como", "Abrir novo ficheiro"],
           "correctAnswer": "Guardar Como",
-          "feedback": "A tecla F12 ativa a janela 'Guardar Como', que permite guardar o ficheiro com um novo nome, numa nova localização ou num formato diferente, mantendo o original intacto."
+          "feedback": "A tecla F12 (ou ⌘+Shift+S no Mac) ativa a janela 'Guardar Como', que permite guardar o ficheiro com um novo nome, numa nova localização ou num formato diferente, mantendo o original intacto."
         }
       ],
       "challenge": {
-        "description": "Este é o Desafio Final do Módulo! Crie uma folha de orçamento pessoal simples. Coluna A para itens (Salário, Renda, Alimentação, Lazer), Coluna B para valores. Calcule o total de despesas e o saldo final. Por fim, guarde o ficheiro como PDF.",
+        "description": "Este é o Desafio Final do Módulo! Crie uma folha de orçamento pessoal simples. Coluna A para itens (Salário, Renda, Alimentação, Lazer), Coluna B para valores. Calcule o total de despesas e o saldo final. Por fim, guarde o ficheiro como PDF (Dica: nas opções de PDF, pode marcar uma caixa para o tornar mais acessível a leitores de ecrã). Bónus: Guarde o mesmo ficheiro em formato .csv e observe o que acontece às fórmulas e à formatação.",
         "initialCode": "A1: Item        | B1: Valor\nA2: Salário     | B2: 3000\nA3: Renda       | B3: -1200\nA4: Alimentação | B4: -600\nA5: Lazer       | B5: -250",
         "solution": "1. Na célula B6 (Total Despesas), use a fórmula: =SOMA(B3:B5)\n2. Na célula B7 (Saldo Final), use a fórmula: =B2+B6\n3. Vá a Ficheiro > Exportar e crie um PDF."
-      }
+      },
+      "glossary": [
+        { "word": "Guardar / Save", "def": "Ctrl+S (⌘+S Mac) – grava o ficheiro actual." },
+        { "word": "Guardar Como / Save As", "def": "F12 (⌘+Shift+S Mac) – permite mudar nome, local ou formato." },
+        { "word": "PDF / PDF", "def": "Formato estático; preserva layout mas não fórmulas." },
+        { "word": "CSV / CSV", "def": "Texto com valores separados por vírgula ou ponto-e-vírgula; perde formatação." },
+        { "word": "XLSX / XLSX", "def": "Formato predefinido moderno (XML compactado)." },
+        { "word": "Ligação Externa / External Link", "def": "Fórmula que referencia outro ficheiro; quebra-se se o ficheiro for movido." },
+        { "word": "#REF! / #REF!", "def": "Erro que indica referência inválida." },
+        { "word": "Delimitador / Delimiter", "def": "Caractere que separa colunas no CSV (pt-PT: ; | en-US: ,)." },
+        { "word": "OneDrive / OneDrive", "def": "Nuvem da Microsoft; permite “Partilhar” com link em vez de anexo." }
+      ]
     }
   ]
 }

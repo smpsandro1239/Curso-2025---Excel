@@ -1,3 +1,4 @@
+
 {
   "id": "2",
   "title": "Formatação & Estética",
@@ -8,8 +9,9 @@
       "id": "2.1",
       "title": "Formatos de Célula",
       "illustration": "assets/images/modules/02/lessons/01-illust.svg",
+      "illustrationAlt": "Excel Format Cells dialog showing Number, Currency, Custom and Date categories. Janela 'Formatar Células' do Excel a mostrar as categorias Número, Moeda, Personalizado e Data.",
       "theory": "Os formatos de célula são como as 'lentes' que usa para ver os seus dados. O número '45321' é sempre o mesmo, mas com a lente 'Data' torna-se '21/02/2024', e com a lente 'Moeda' fica '45.321,00 €'. A formatação muda a aparência, não o valor real que o Excel armazena.",
-      "quickNote": "Use o atalho 'Ctrl + 1' para abrir a janela 'Formatar Células', o centro de controlo para toda a formatação. É o atalho mais importante deste módulo!",
+      "quickNote": "Use o atalho 'Ctrl + 1' (ou ⌘ + 1 no Mac) para abrir a janela 'Formatar Células', o centro de controlo para toda a formatação. É o atalho mais importante deste módulo! Dica extra: para manter zeros à esquerda (ex: 00123), formate a célula como Texto ou inicie a inserção com um apóstrofo (').",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
@@ -18,7 +20,7 @@
         },
         {
           "title": "Exemplo 2 – O Caso Comum",
-          "description": "Exibir um número de telefone com indicativo e espaçamento.",
+          "description": "Exibir um número de telefone com indicativo e espaçamento. Nota: este formato é apenas visual. Para forçar o prefixo '+' ou manter zeros iniciais, formate a célula como Texto ou inicie a inserção com um apóstrofo (').",
           "code": "Célula A1 contém: 912345678\n---\nAplicar formato personalizado: +351 ### ### ###\n---\nResultado: A célula exibe '+351 912 345 678'"
         },
         {
@@ -32,13 +34,13 @@
           "question": "Qual é o atalho de teclado mais rápido para abrir o menu 'Formatar Células'?",
           "options": ["Alt + 1", "Shift + F", "Ctrl + 1", "F2"],
           "correctAnswer": "Ctrl + 1",
-          "feedback": "O atalho 'Ctrl + 1' abre a janela 'Formatar Células', que é o painel de controlo completo para todas as opções de formatação de número, alinhamento, tipo de letra, borda, preenchimento e proteção."
+          "feedback": "O atalho 'Ctrl + 1' (ou ⌘ + 1 no Mac) abre a janela 'Formatar Células', que é o painel de controlo completo para todas as opções de formatação de número, alinhamento, tipo de letra, borda, preenchimento e proteção."
         },
         {
-          "question": "Se vir o número '45000' numa célula, o que pode ele representar se o formato correto for 'Data'?",
+          "question": "Se vir o número '44987' numa célula, o que pode ele representar se o formato correto for 'Data'?",
           "options": ["Um valor monetário", "Uma data no ano de 2023", "Um código postal", "Um erro de fórmula"],
           "correctAnswer": "Uma data no ano de 2023",
-          "feedback": "O Excel gere datas como números de série, contando os dias desde 01/01/1900. O número 45000, quando formatado como data, corresponde a 18 de março de 2023. A formatação apenas muda a forma como vemos o valor."
+          "feedback": "O Excel gere datas como números de série, contando os dias desde 01/01/1900. O número 44987, quando formatado como data, corresponde a 21 de fevereiro de 2023. A formatação apenas muda a forma como vemos o valor."
         },
         {
           "question": "Como pode exibir um número como '007' numa célula sem que o Excel remova os zeros à esquerda?",
@@ -48,10 +50,20 @@
         }
       ],
       "challenge": {
-        "description": "Dada uma lista de números, formate a primeira coluna para ter sempre duas casas decimais, a segunda como Moeda (€ com o símbolo à direita) e a terceira como Percentagem com uma casa decimal.",
+        "description": "Dada uma lista de números, formate a primeira coluna para ter sempre duas casas decimais, a segunda como Contabilístico (para alinhar o € à esquerda) e a terceira como Percentagem com uma casa decimal. Bónus: Noutra célula, crie um formato personalizado que mostre um número como '123 kg' mas que ainda permita fazer cálculos com ele.",
         "initialCode": "Coluna A: 123.456\nColuna B: 500\nColuna C: 0.8765",
-        "solution": "1. Selecione a coluna A > Ctrl+1 > Número > Posições decimais: 2.\n2. Selecione a coluna B > Ctrl+1 > Moeda > Símbolo: € (Português).\n3. Selecione a coluna C > Ctrl+1 > Percentagem > Posições decimais: 1."
-      }
+        "solution": "1. Selecione a coluna A > Pressione Ctrl+1 (ou ⌘ + 1 no Mac), escolha 'Número', defina 2 casas decimais e pressione Enter.\n2. Selecione a coluna B > Pressione Ctrl+1, escolha 'Contabilístico', Símbolo: € e pressione Enter.\n3. Selecione a coluna C > Pressione Ctrl+1, escolha 'Percentagem', defina 1 casa decimal e pressione Enter.\nBónus: Selecione a célula > Ctrl+1 > Personalizado. No campo 'Tipo', escreva `0\" kg\"`."
+      },
+      "glossary": [
+        { "word": "Formato de Célula / Number Format", "def": "Máscara que altera a apresentação de um valor, não o valor em si." },
+        { "word": "Data de Série / Serial Date", "def": "A forma como o Excel armazena datas: um número inteiro que representa os dias desde 01-01-1900." },
+        { "word": "Ctrl + 1 (Mac: ⌘ + 1)", "def": "O atalho de teclado universal para abrir a janela 'Formatar Células'." },
+        { "word": "#####", "def": "Não é um erro. Significa que a coluna é demasiado estreita para mostrar o valor. Aumente a largura da coluna." },
+        { "word": "Formato Texto / Text Format", "def": "Trata qualquer inserção como texto literal, impedindo conversões automáticas e preservando zeros à esquerda." },
+        { "word": "Zeros à Esquerda / Leading Zeros", "def": "Zeros no início de um número (ex: 007) que são removidos em formatos numéricos mas preservados em formato de Texto." },
+        { "word": "Contabilístico / Accounting", "def": "Formato numérico que alinha os símbolos de moeda e os sinais de negativo, usando parênteses para valores negativos." },
+        { "word": "Personalizado / Custom", "def": "Categoria de formato que permite criar as suas próprias máscaras de exibição para números, datas e texto." }
+      ]
     },
     {
       "id": "2.2",
