@@ -8,8 +8,9 @@
       "id": "4.1",
       "title": "SE simples (aprovado/reprovado)",
       "illustration": "assets/images/modules/04/lessons/01-illust.svg",
+      "illustrationAlt": "Função SE do Excel a mostrar 'Aprovado' se a nota for ≥ 9.5, caso contrário 'Reprovado'. Excel IF function showing 'Aprovado' if grade ≥ 9.5, else 'Reprovado'.",
       "theory": "A função SE é o 'juiz' do Excel. Ela faz uma pergunta de 'sim' ou 'não' (o teste lógico) e emite um de dois veredictos: um resultado se a resposta for verdadeira, e outro se for falsa. É a base para que as suas folhas de cálculo tomem decisões automáticas.",
-      "quickNote": "Qualquer valor pode ser usado no teste lógico. Pode testar se uma célula é maior que um número (A1>10), se é igual a um texto (B1=\"Sim\"), ou até mesmo se está vazia (C1=\"\").",
+      "quickNote": "Qualquer valor pode ser usado no teste lógico. Pode testar se uma célula é maior que um número (A1>10), se é igual a um texto (B1=\"Sim\"), ou até mesmo se está vazia (C1=\"\"). Dica de teclado (Windows): insira a função SE rapidamente com Alt+M, I, F.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
@@ -41,17 +42,26 @@
           "feedback": "O teste lógico é 'A1<10'. Como A1 é 15, a condição 15<10 é FALSA. Portanto, a função SE devolve o seu terceiro argumento, o 'valor_se_falso', que neste caso é 100."
         },
         {
-          "question": "Como se testa se a célula B2 está vazia?",
-          "options": ["=SE(B2=VAZIO; ...)", "=SE(B2=\"\"; ...)", "=SE(É.VAZIA(B2); ...)", "As opções B e C estão corretas"],
-          "correctAnswer": "As opções B e C estão corretas",
-          "feedback": "Para testar se uma célula está vazia, pode-se compará-la com duas aspas seguidas (B2=\"\"), que representam uma cadeia de texto vazia, ou usar a função específica para isso, É.VAZIA(B2)."
+          "question": "Qual das seguintes é uma forma correta de testar se a célula B2 está vazia?",
+          "options": ["=SE(B2=\"\"; ...)", "=SE(É.VAZIA(B2); ...)", "=SE(B2=0; ...)", "As opções A e B estão corretas"],
+          "correctAnswer": "As opções A e B estão corretas",
+          "feedback": "Para testar se uma célula está vazia, pode-se compará-la com duas aspas seguidas (B2=\"\"), que representam uma cadeia de texto vazia, ou usar a função específica para isso, É.VAZIA(B2) (ISBLANK em EN)."
         }
       ],
       "challenge": {
-        "description": "Crie uma verificação de stock. Numa lista de produtos, se a quantidade em stock (Coluna B) for inferior a 20, a célula ao lado (Coluna C) deve exibir a mensagem \"Repor Stock\". Caso contrário, deve exibir \"OK\".",
-        "initialCode": "Produto | Quantidade\nCanetas | 50\nCadernos| 15\nBorrachas | 150",
-        "solution": "Na célula C2, insira a fórmula '=SE(B2<20; \"Repor Stock\"; \"OK\")' e arraste para baixo."
-      }
+        "description": "Crie uma verificação de stock com 3 níveis de alerta (preparação para a próxima lição!). A fórmula deve devolver ‘Crítico’ se o stock for inferior a 10, ‘Baixo’ se for inferior a 20, e ‘OK’ nos restantes casos.",
+        "initialCode": "Produto | Quantidade\nCanetas | 50\nCadernos| 15\nBorrachas | 8",
+        "solution": "Isto é uma introdução ao SE aninhado! A solução seria: =SE(B2<10; \"Crítico\"; SE(B2<20; \"Baixo\"; \"OK\"))"
+      },
+      "glossary": [
+        { "word": "SE / IF", "def": "Função que devolve um valor com base num teste lógico." },
+        { "word": "Teste Lógico / Logical Test", "def": "Expressão que resulta em VERDADEIRO ou FALSO." },
+        { "word": "Valor_se_Verdadeiro / Value_if_True", "def": "Resultado quando o teste é verdadeiro." },
+        { "word": "Valor_se_Falso / Value_if_False", "def": "Resultado quando o teste é falso." },
+        { "word": "É.VAZIA / ISBLANK", "def": "Devolve VERDADEIRO se a célula estiver vazia." },
+        { "word": "\"\" / Empty String", "def": "Texto vazio; pode ser usado em comparações." },
+        { "word": "#NOME? / #NAME?", "def": "Erro quando o Excel não reconhece o texto (ex: função mal escrita)." }
+      ]
     },
     {
       "id": "4.2",
