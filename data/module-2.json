@@ -1,3 +1,4 @@
+
 {
   "id": "2",
   "title": "Formatação & Estética",
@@ -36,10 +37,10 @@
           "feedback": "O atalho 'Ctrl + 1' (ou ⌘ + 1 no Mac) abre a janela 'Formatar Células', que é o painel de controlo completo para todas as opções de formatação de número, alinhamento, tipo de letra, borda, preenchimento e proteção."
         },
         {
-          "question": "Se vir o número '44987' numa célula, o que pode ele representar se o formato correto for 'Data'?",
+          "question": "Se vir o número '45000' numa célula, o que pode ele representar se o formato correto for 'Data'?",
           "options": ["Um valor monetário", "Uma data no ano de 2023", "Um código postal", "Um erro de fórmula"],
           "correctAnswer": "Uma data no ano de 2023",
-          "feedback": "O Excel gere datas como números de série, contando os dias desde 01/01/1900. O número 44987, quando formatado como data, corresponde a 21 de fevereiro de 2023. A formatação apenas muda a forma como vemos o valor."
+          "feedback": "O Excel gere datas como números de série, contando os dias desde 01/01/1900. O número 45000, quando formatado como data, corresponde a 18 de agosto de 2023. A formatação apenas muda a forma como vemos o valor."
         },
         {
           "question": "Como pode exibir um número como '007' numa célula sem que o Excel remova os zeros à esquerda?",
@@ -248,23 +249,24 @@
       "id": "2.5",
       "title": "Temas e Identidade Visual",
       "illustration": "assets/images/modules/02/lessons/05-illust.svg",
+      "illustrationAlt": "Excel workbook with ‘Facet’ theme applied: green header, grey body, Calibri Light font. Livro de Excel com o tema 'Faceta' aplicado: cabeçalho verde, corpo cinzento, tipo de letra Calibri Light.",
       "theory": "Pense nos Temas como um 'guarda-roupa' completo para o seu ficheiro Excel. Em vez de escolher a cor de cada peça (célula, gráfico, tabela), você escolhe um conjunto coordenado (o Tema) e o Excel aplica-o de forma consistente em todo o lado. Mudar o tema altera instantaneamente a aparência de tudo.",
-      "quickNote": "Crie um tema com as cores e tipos de letra da sua empresa e guarde-o. Assim, todos os seus relatórios terão uma identidade visual profissional e consistente com um só clique. Encontra esta opção em 'Esquema de Página > Temas > Guardar Tema Atual'.",
+      "quickNote": "Crie um tema com as cores e tipos de letra da sua empresa e guarde-o. Encontra esta opção em 'Esquema de Página > Temas > Guardar Tema Atual' (Mac: Ficheiro > Guardar como Tema). O ficheiro .thmx gerado fica disponível em todas as aplicações do Office, garantindo uma identidade visual consistente.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
           "description": "Mudar o tema de um relatório.",
-          "code": "1. Vá ao separador 'Esquema de Página' > 'Temas'.\n2. Passe o rato por cima dos diferentes temas (ex: 'Verde').\n3. Verá uma pré-visualização ao vivo. Clique para aplicar.\nTodos os elementos do relatório que usam 'Cores do Tema' mudam instantaneamente."
+          "code": "1. Vá ao separador 'Esquema de Página (Page Layout)' > 'Temas' (atalho: Alt+P, TH).\n2. Passe o rato por cima dos diferentes temas (ex: 'Verde').\n3. Verá uma pré-visualização ao vivo. Clique para aplicar.\nTodos os elementos do relatório que usam 'Cores do Tema' mudam instantaneamente."
         },
         {
           "title": "Exemplo 2 – O Caso Comum",
           "description": "Personalizar as cores de um tema para corresponder a uma marca.",
-          "code": "1. Vá a 'Esquema de Página' > 'Cores' > 'Personalizar Cores...'\n2. Defina a cor 'Ênfase 1' como o código exato da cor da sua marca.\n3. Agora, sempre que usar a primeira cor da paleta, será a cor certa."
+          "code": "1. Vá a 'Esquema de Página' > 'Cores' > 'Personalizar Cores...'\n2. Defina a cor 'Ênfase 1' como o código exato da cor da sua marca.\n3. Dê um nome ao seu novo conjunto de cores e guarde-o."
         },
         {
           "title": "Exemplo 3 – A Armadilha",
           "description": "Usar cores 'manuais' (Cores Padrão) em vez das 'Cores do Tema'.",
-          "code": "PROBLEMA: Ao formatar, escolhe um tom de azul da paleta 'Cores Padrão' (na parte inferior do seletor de cores).\nCONSEQUÊNCIA: Ao mudar de tema, essa célula não se altera, porque a sua cor não estava ligada à paleta do tema.\nSOLUÇÃO: Use sempre as 'Cores do Tema' (as de cima) para garantir que os seus ficheiros são dinâmicos e fáceis de atualizar."
+          "code": "PROBLEMA: Ao formatar, escolhe um tom de azul da paleta 'Cores Padrão' (na parte inferior do seletor de cores).\nCONSEQUÊNCIA: Ao mudar de tema, essa célula, gráfico ou forma não se altera, porque a sua cor não estava ligada à paleta do tema.\nSOLUÇÃO: Use sempre as cores da primeira linha ('Cores do Tema') para garantir que os seus ficheiros são dinâmicos e fáceis de atualizar."
         }
       ],
       "quiz": [
@@ -278,7 +280,7 @@
           "question": "Um Tema do Office controla principalmente quais elementos de design?",
           "options": ["Tipos de Letra e Cores", "Fórmulas e Dados", "Macros e Ligações Externas", "Opções de Impressão"],
           "correctAnswer": "Tipos de Letra e Cores",
-          "feedback": "Um Tema é um pacote de design que define dois elementos principais: a paleta de 'Cores do Tema' e o par de 'Tipos de Letra do Tema' (um para cabeçalhos, outro para o corpo). Mudar o tema altera estes elementos em todo o ficheiro."
+          "feedback": "Um Tema é um pacote de design que define três elementos principais: a paleta de 'Cores do Tema', o par de 'Tipos de Letra do Tema' (um para cabeçalhos, outro para o corpo) e os 'Efeitos do Tema' (estilos de formas)."
         },
         {
           "question": "Qual é a grande vantagem de usar 'Cores do Tema' em vez de 'Cores Padrão' ao formatar?",
@@ -288,10 +290,20 @@
         }
       ],
       "challenge": {
-        "description": "Este é o Desafio Final do Módulo! Pegue numa tabela de vendas desformatada. Em menos de 3 minutos: 1. Converta-a para uma Tabela oficial. 2. Aplique um estilo de tabela 'Médio' à sua escolha. 3. Adicione Formatação Condicional de 'Barras de Dados' à coluna de valores de vendas. 4. Mude o Tema do documento para um diferente do padrão 'Office'.",
+        "description": "Este é o Desafio Final do Módulo! Pegue numa tabela de vendas desformatada. Em menos de 3 minutos: 1. Converta-a para uma Tabela oficial. 2. Aplique um estilo de tabela 'Médio' à sua escolha. 3. Adicione Formatação Condicional de 'Barras de Dados' à coluna de valores de vendas. 4. Mude o Tema do documento para um diferente do padrão 'Office'. Bónus: Crie um tema com duas cores personalizadas que representem a sua marca e guarde-o como um ficheiro .thmx partilhável.",
         "initialCode": "Mês | Vendas\nJan | 1500\nFev | 2200\nMar | 1800\nAbr | 2500",
-        "solution": "1. Clique nos dados > Ctrl+T > Enter. \n2. Com a tabela selecionada, vá a 'Design da Tabela' e escolha um estilo médio. \n3. Selecione os valores das vendas > Formatação Condicional > Barras de Dados > escolha um preenchimento. \n4. Vá a 'Esquema de Página' > Temas > e escolha um tema como 'Retrospectiva' ou 'Circuito'."
-      }
+        "solution": "1. Clique nos dados > Ctrl+T > Enter. \n2. Com a tabela selecionada, vá a 'Design da Tabela' e escolha um estilo médio. \n3. Selecione os valores das vendas > Formatação Condicional > Barras de Dados > escolha um preenchimento. \n4. Vá a 'Esquema de Página' > Temas > e escolha um tema como 'Retrospectiva' ou 'Circuito'.\nBónus: Vá a 'Esquema de Página' > 'Cores' > 'Personalizar Cores...', defina as suas cores, guarde o conjunto e depois vá a 'Temas' > 'Guardar Tema Atual' (atalho: Alt+P, TH, S)."
+      },
+      "glossary": [
+        { "word": "Tema / Theme", "def": "Conjunto de cores, tipos de letra e efeitos aplicáveis em todo o workbook." },
+        { "word": "Cores do Tema / Theme Colors", "def": "Paleta de 12 cores que mudam quando o tema muda." },
+        { "word": "Cores Padrão / Standard Colors", "def": "Paleta fixa; NÃO muda com o tema." },
+        { "word": "Tipo de Letra do Tema / Theme Fonts", "def": "Par de fontes (título e corpo) que se atualizam globalmente." },
+        { "word": "Efeitos do Tema / Theme Effects", "def": "Estilos de preenchimento, contornos e sombras predefinidos para formas." },
+        { "word": ".thmx", "def": "Extensão do ficheiro de tema do Office, partilhável entre aplicações." },
+        { "word": "Guardar Tema Atual / Save Current Theme", "def": "Comando que cria o ficheiro .thmx a partir das suas personalizações." },
+        { "word": "Esquema de Página / Page Layout", "def": "Separador da Faixa de Opções onde se encontram os Temas, Cores, Tipos de Letra e Efeitos." }
+      ]
     }
   ]
 }
