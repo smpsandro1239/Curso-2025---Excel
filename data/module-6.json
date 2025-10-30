@@ -127,8 +127,9 @@
       "id": "6.3",
       "title": "Pizza e donut (quando usar)",
       "illustration": "assets/images/modules/06/lessons/03-illust.svg",
+      "illustrationAlt": "Gráfico de anel do Excel com 4 fatias de orçamento e o valor total no centro. Excel donut chart with 4 budget slices and total value in the center.",
       "theory": "Os gráficos de pizza e de donut são o canal de culinária da sua TV de dados. São perfeitos para mostrar como uma receita (o seu total de 100%) é dividida pelos seus ingredientes (as categorias). A regra de ouro é: se a 'pizza' tiver mais de 5 ou 6 fatias, ninguém vai conseguir distinguir os sabores. Use-os apenas para mostrar a composição de um todo com poucas partes.",
-      "quickNote": "O gráfico de donut é muitas vezes preferível ao de pizza. O buraco no meio pode ser usado para exibir o valor total ou a métrica principal, tornando-o mais informativo.",
+      "quickNote": "O gráfico de donut é muitas vezes preferível ao de pizza. O buraco no meio pode ser usado para exibir o valor total ou a métrica principal, tornando-o mais informativo. Dica de teclado (Windows): use Alt+N, Q, P para pizza ou Alt+N, Q, O para donut.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
@@ -167,10 +168,20 @@
         }
       ],
       "challenge": {
-        "description": "Crie um gráfico de donut para mostrar a repartição do seu orçamento mensal. Adicione etiquetas de dados que mostrem a percentagem de cada categoria.",
-        "initialCode": "Categoria | Valor\nRenda | 800€\nAlimentação | 400€\nTransporte | 150€\nLazer | 250€",
-        "solution": "1. Selecione os dados. \n2. Vá a 'Inserir' > 'Gráficos' e, no ícone de Pizza, escolha 'Donut'. \n3. Clique no botão '+' ao lado do gráfico (ou clique com o botão direito) e ative as 'Etiquetas de Dados'. \n4. Clique novamente nas etiquetas para as formatar e mostrar a percentagem."
-      }
+        "description": "Crie um gráfico de pizza para a seguinte lista de 7 categorias. Observe como fica visualmente confuso. Depois, converta-o num gráfico de barras ordenado para ver a melhoria na clareza.",
+        "initialCode": "Categoria | Vendas\nProduto A | 250\nProduto B | 220\nProduto C | 180\nProduto D | 150\nProduto E | 120\nProduto F | 80\nProduto G | 50",
+        "solution": "1. Selecione os dados > Inserir > Pizza. \n2. Observe a dificuldade em comparar as fatias. \n3. Clique no gráfico > separador 'Design do Gráfico' > 'Alterar Tipo de Gráfico'. \n4. Escolha 'Barras' e clique OK. \n5. Para ordenar, ordene os dados de origem."
+      },
+      "glossary": [
+        { "word": "Gráfico de Pizza / Pie Chart", "def": "Representa as partes de um todo, somando 100%." },
+        { "word": "Gráfico de Donut / Donut Chart", "def": "Uma variação do gráfico de pizza com um centro vazio, ideal para exibir um total ou uma métrica chave." },
+        { "word": "Fatia / Slice", "def": "Cada categoria representada como uma secção do gráfico." },
+        { "word": "Regra das 5-6 Fatias / 5-6 Slice Rule", "def": "Diretriz de boas práticas que recomenda não usar mais de 5-6 categorias para garantir a legibilidade." },
+        { "word": "Perspetiva 3D / 3D Perspective", "def": "Efeito visual que deve ser evitado, pois distorce a perceção do tamanho das fatias." },
+        { "word": "Etiquetas de Dados / Data Labels", "def": "Texto que mostra o valor ou a percentagem de cada fatia, melhorando a clareza." },
+        { "word": "Alt + N, Q, O", "def": "Atalho de teclado (Windows) para inserir um gráfico de anel (donut)." },
+        { "word": "Total no Centro / Center Total", "def": "Um valor ou texto informativo colocado no centro de um gráfico de anel." }
+      ]
     },
     {
       "id": "6.4",
