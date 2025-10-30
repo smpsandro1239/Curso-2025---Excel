@@ -188,8 +188,9 @@
       "id": "5.4",
       "title": "Agrupar datas (mês, trimestre)",
       "illustration": "assets/images/modules/05/lessons/04-illust.svg",
+      "illustrationAlt": "Excel PivotTable with dates grouped by Quarter and Year. Tabela Dinâmica do Excel com datas agrupadas por Trimestre e Ano.",
       "theory": "O Excel é muito inteligente com datas. Ele entende que dias pertencem a meses, meses a trimestres, e trimestres a anos. A função 'Agrupar' do seu caleidoscópio permite-lhe juntar automaticamente os seus dados de transações diárias em blocos de tempo maiores, revelando tendências sazonais e de longo prazo com apenas alguns cliques.",
-      "quickNote": "Este agrupamento automático só funciona se a sua coluna de datas não tiver células em branco ou com texto. Todos os valores têm de ser datas válidas que o Excel reconheça. Limpar os dados é sempre o primeiro passo.",
+      "quickNote": "Este agrupamento automático só funciona se a sua coluna de datas não tiver células em branco ou com texto. Todos os valores têm de ser datas válidas. Limpar os dados é sempre o primeiro passo. Dica de teclado (Win): use Alt+JT+G para abrir a janela de agrupamento.",
       "examples": [
         {
           "title": "Exemplo 1 – O Básico",
@@ -228,10 +229,20 @@
         }
       ],
       "challenge": {
-        "description": "A partir de uma lista de vendas com datas específicas ao longo de um ano, agrupe os dados para mostrar o total de vendas por Trimestre.",
+        "description": "A partir de uma lista de vendas com datas específicas ao longo de um ano, agrupe os dados para mostrar o total de vendas por Trimestre. Para uma boa visibilidade, pode usar o estilo 'Estilo de Tabela Dinâmica Claro 1'. Bónus: Numa outra Tabela Dinâmica com uma lista de idades, crie faixas etárias (ex: 20-29, 30-39) agrupando os valores numéricos.",
         "initialCode": "Data | Vendas\n15/01/2023 | 500\n20/03/2023 | 600\n10/05/2023 | 700\n05/08/2023 | 800",
-        "solution": "1. Crie uma Tabela Dinâmica com 'Data' nas Linhas e 'Vendas' nos Valores. \n2. Clique com o botão direito em qualquer data na nova tabela. \n3. Escolha 'Agrupar'. \n4. Na janela de agrupamento, desmarque todas as opções exceto 'Trimestres' e 'Anos'. Clique em OK."
-      }
+        "solution": "1. Crie uma Tabela Dinâmica com 'Data' nas Linhas e 'Vendas' nos Valores. \n2. Clique com o botão direito em qualquer data na nova tabela. \n3. Escolha 'Agrupar'. \n4. Na janela de agrupamento, desmarque todas as opções exceto 'Trimestres' e 'Anos'. Clique em OK.\nBónus: Crie uma TD com idades nas linhas. Clique com o botão direito numa idade > Agrupar. Defina os limites 'Começar em' e 'Terminar em', e o tamanho da faixa em 'Por:' (ex: 10 para agrupar por décadas)."
+      },
+      "glossary": [
+        { "word": "Agrupar / Group", "def": "Função que junta valores em blocos (datas ou números)." },
+        { "word": "Trimestre / Quarter", "def": "Período de 3 meses (Q1, Q2, Q3, Q4)." },
+        { "word": "Faixa / Bin", "def": "Intervalo numérico criado pelo agrupamento." },
+        { "word": "Data Válida / Valid Date", "def": "Valor reconhecido como data pelo Excel." },
+        { "word": "Célula em Branco / Blank Cell", "def": "Impede agrupamento se existir no intervalo." },
+        { "word": "Alt+JT+G", "def": "Atalho para abrir janela de agrupamento (Win)." },
+        { "word": "Começar em / Starting at", "def": "Limite inferior definido pelo utilizador na janela de agrupamento." },
+        { "word": "Terminar em / Ending at", "def": "Limite superior definido pelo utilizador na janela de agrupamento." }
+      ]
     },
     {
       "id": "5.5",
