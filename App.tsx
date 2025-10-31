@@ -45,17 +45,17 @@ function App() {
 
   if (error) {
     return (
-       <div className="bg-white dark:bg-navy min-h-screen flex items-center justify-center text-center p-4">
-        <h1 className="text-xl font-bold text-red-500">{error}</h1>
+       <div className="bg-navy min-h-screen flex items-center justify-center text-center p-4">
+        <h1 className="text-xl font-bold text-red-400">{error}</h1>
       </div>
     );
   }
 
   if (!courseData) {
     return (
-      <div className="bg-white dark:bg-navy min-h-screen flex items-center justify-center">
+      <div className="bg-navy min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-emerald-600 dark:text-green animate-pulse">
+          <h1 className="text-2xl font-bold text-green animate-pulse">
             A carregar o curso...
           </h1>
         </div>

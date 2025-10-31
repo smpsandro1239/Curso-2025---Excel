@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Sidebar from './Sidebar';
@@ -15,7 +16,7 @@ const Shell: React.FC<{ course: Course }> = ({ course }) => {
   }, [location]);
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row bg-slate-50 dark:bg-navy text-slate-800 dark:text-lightest-slate">
+    <div className="min-h-screen flex flex-col md:flex-row bg-navy dark:bg-navy text-lightest-slate dark:text-lightest-slate">
       {/* Overlay for mobile menu */}
       {isMenuOpen && (
         <div 
@@ -25,7 +26,7 @@ const Shell: React.FC<{ course: Course }> = ({ course }) => {
       )}
 
       <aside 
-        className={`fixed top-0 left-0 h-full w-64 bg-slate-100 dark:bg-light-navy transform ${
+        className={`fixed top-0 left-0 h-full w-64 bg-light-navy dark:bg-light-navy transform ${
           isMenuOpen ? 'translate-x-0' : '-translate-x-full'
         } transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:w-72 z-30 flex-shrink-0`}
       >
@@ -33,12 +34,12 @@ const Shell: React.FC<{ course: Course }> = ({ course }) => {
       </aside>
 
       <div className="flex-1 flex flex-col">
-        <header className="sticky top-0 bg-white/80 dark:bg-navy/80 backdrop-blur-sm z-10 p-4 flex justify-between items-center md:hidden border-b border-slate-200 dark:border-lightest-navy/20">
-          <button onClick={() => setIsMenuOpen(true)} className="p-2 text-emerald-600 dark:text-green">
+        <header className="sticky top-0 bg-navy/80 dark:bg-navy/80 backdrop-blur-sm z-10 p-4 flex justify-between items-center md:hidden">
+          <button onClick={() => setIsMenuOpen(true)} className="p-2 text-green">
             <Menu size={24} />
           </button>
-          <h1 className="text-lg font-bold text-emerald-600 dark:text-green">Excel Completo</h1>
-          <button onClick={toggleTheme} className="p-2 text-emerald-600 dark:text-green">
+          <h1 className="text-lg font-bold text-green">Excel Completo</h1>
+          <button onClick={toggleTheme} className="p-2 text-green">
             {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
           </button>
         </header>
